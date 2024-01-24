@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { motion, useAnimation } from "framer-motion";
 import PopupForm from "./PopupForm";
+import Image from "next/image";
+import logo from "../app/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +63,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="z-10 bg-transparent flex justify-between items-center h-[20vh] w-[100vw] px-4 md:px-20 text-black fixed top-0"
+      className="z-10 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary fixed top-0 md:h-[20vh]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -78,9 +80,14 @@ const Navbar = () => {
         }}
       >
         <Link href={"/"}>
-          <h1 onClick={scrollToTop} className="w-full text-3xl font-bold text-black">
-            CMD
-          </h1>
+          <Image
+            onClick={scrollToTop}
+            src={logo}
+            width={"auto"}
+            height={"auto"}
+            alt="logo"
+            className="w-[110px]"
+          />
         </Link>
       </motion.div>
       {/* Desktop Navigation */}
@@ -89,7 +96,7 @@ const Navbar = () => {
         whileInView={{ y: 0, opacity: 1 }}
         animate={controls}
         exit={{ opacity: 0 }}
-        className="hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-amber-500"
+        className="hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-primary"
         transition={{
           type: "spring",
           stiffness: 40,
@@ -98,11 +105,11 @@ const Navbar = () => {
         }}
       >
         {/* Logo */}
-        <div className="hidden md:flex justify-between">
+        <div className="hidden md:flex justify-evenly ml-8 gap-8">
           {navItems.map((item) => (
             <div
               key={item.id}
-              className="p-2 hover:bg-amber-500 rounded-xl m-2 cursor-pointer duration-300 hover:text-white"
+              className="p-2 text-black hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-montserrat"
             >
               <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
                 {item.text}
@@ -110,29 +117,29 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        <button
-          onClick={handleRedirect}
-          className="bg-amber-500 m-1 rounded-lg text-center	align-middle transition duration-200	 hover:scale-90 "
-        >
-          <span className="p-4 text-white" onClick={handleToggleForm}>
+        <button onClick={handleRedirect} className="primary-button">
+          <span className="p-4 text-white font-montserrat" onClick={handleToggleForm}>
             Demander un Devis
           </span>
         </button>
       </motion.div>
       {/* Mobile Navigation Icon */}
-      <div onClick={handleClick} className="flex flex-col justify-center items-center md:hidden">
+      <div
+        onClick={handleClick}
+        className="flex flex-col justify-center items-center md:hidden z-40 mr-2"
+      >
         <span
-          className={`bg-white block transition-all duration-300 ease-out h-1 w-8 rounded-sm ${
+          className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 rounded-sm ${
             isOpen ? "rotate-45 translate-y-2" : "-translate-y-1"
           }`}
         ></span>
         <span
-          className={`bg-white block transition-all duration-300 ease-out h-1 w-8 rounded-sm my-1 ${
+          className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 rounded-sm my-1 ${
             isOpen ? "opacity-0" : "opacity-100"
           }`}
         ></span>
         <span
-          className={`bg-white block transition-all duration-300 ease-out h-1 w-8 rounded-sm ${
+          className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 rounded-sm ${
             isOpen ? "-rotate-45 -translate-y-2" : "translate-y-1"
           }`}
         ></span>
@@ -141,15 +148,26 @@ const Navbar = () => {
       <ul
         className={
           isOpen
-            ? "fixed mt-32 md:hidden left-0 top-0 w-[60%] h-full bg-[#000300] ease-in-out duration-500"
+            ? "fixed md:hidden left-0 top-0 w-[100%] h-full bg-white ease-in-out duration-500"
             : "mt-24 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
         }
       >
         {/* Mobile Navigation Items */}
+        <button
+          onClick={handleRedirect}
+          className="bg-primary m-8 rounded-lg text-center	align-middle transition duration-200 hover:scale-90 "
+        >
+          <span
+            className="p-4 text-white flex justify-center text-center"
+            onClick={handleToggleForm}
+          >
+            Demander un Devis
+          </span>
+        </button>
         {navItems.map((item) => (
           <li
             key={item.id}
-            className="p-4 rounded-xl hover:bg-white duration-300 hover:text-black cursor-pointer"
+            className="p-4 rounded-xl ml-6 font-semibold hover:bg-white duration-300 hover:text-primary cursor-pointer"
           >
             <ScrollLink
               to={item.target}

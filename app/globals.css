@@ -7,6 +7,9 @@
 
 /* import Google fonts here from Google fonts website */
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,26 +28,53 @@ body {
   h3,
   h4,
   h5,
-  h6 {
-    @apply text-white;
+  h6,
+  p,
+  span {
+    @apply text-white font-poppins;
   }
 
-  p {
-    @apply text-gray-300;
+  input,
+  textarea {
+    @apply bg-lightGrey;
+  }
+
+  label {
+    @apply text-darkGrey block text-sm font-medium;
   }
 }
 
 /* Some Buttons examples */
 
-.transparent-button {
-  background-color: rgba(255, 255, 255, 0.1);
-  @apply transition-transform transform duration-100 scale-100 hover:scale-95;
+.primary-button {
+  @apply transition-transform transform duration-100 scale-100 m-1 rounded-lg bg-primary hover:scale-95 text-center justify-center align-middle;
 }
 
-.dark-button {
-  @apply bg-black transition-transform transform duration-100 scale-100 hover:scale-95;
+.hexagon-container {
+  width: 100px; /* Adjust the size as needed */
+  height: 58px; /* Adjust the size as needed */
+  margin-right: 1px; /* Adjust the spacing between hexagons */
 }
 
-.white-button {
-  @apply bg-white transition-transform transform duration-100 scale-100 hover:scale-95;
+.hexagon {
+  width: 100%;
+  padding-bottom: 115%; /* Controls the height of the hexagon */
+  position: relative;
+}
+
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.hexagon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }

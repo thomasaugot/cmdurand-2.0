@@ -5,6 +5,11 @@ import Head from "next/head";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+library.add(fab);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="./your-logo.jpg" sizes="any" />
+        <link rel="icon" href="./logo.png" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body className={`${inter.className} bg-darkBlue`}>
