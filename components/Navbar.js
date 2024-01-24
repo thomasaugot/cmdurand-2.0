@@ -86,7 +86,7 @@ const Navbar = () => {
             width={"auto"}
             height={"auto"}
             alt="logo"
-            className="w-[110px]"
+            className="w-[150px]"
           />
         </Link>
       </motion.div>
@@ -96,7 +96,7 @@ const Navbar = () => {
         whileInView={{ y: 0, opacity: 1 }}
         animate={controls}
         exit={{ opacity: 0 }}
-        className="hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-primary"
+        className="hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-darkGrey"
         transition={{
           type: "spring",
           stiffness: 40,
@@ -109,7 +109,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <div
               key={item.id}
-              className="p-2 text-black hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-montserrat"
+              className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-montserrat"
             >
               <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
                 {item.text}
