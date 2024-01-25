@@ -75,16 +75,27 @@ const Carousel = () => {
         navigation={true}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination]}
-        className=" absolute top-12 my-24"
+        className=" absolute my-24"
       >
         {images.map((item, index) => (
-          <SwiperSlide key={item.id} className="w-[18vw] mt-5 relative">
-            <div style={{ width: "300px", height: "250px" }}>
-              <Image src={item.imageUrl} alt="image" layout="fill" objectFit="cover" />
+          <SwiperSlide key={item.id} className="w-[18vw] my-20 relative">
+            <div
+              style={{
+                width: "300px",
+                height: "270px",
+              }}
+            >
+              <Image
+                src={item.imageUrl}
+                alt="image"
+                layout="fill"
+                objectFit="cover"
+                style={{ boxShadow: "0px 0px 63px 3px rgba(0,0,0,0.75)" }}
+              />
             </div>
           </SwiperSlide>
         ))}
-        <div className="mt-[50px]"></div>
+        <div className="mt-[10px]"></div>
       </Swiper>
     </>
   );

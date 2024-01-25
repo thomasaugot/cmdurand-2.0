@@ -37,17 +37,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="about" className="flex justify-between p-12 relative h-[120vh] bg-lightGrey">
+      <section
+        id="about"
+        className="flex justify-between p-12 relative h-auto min-h-[120vh] bg-lightGrey"
+      >
         <div>
           <svg
             width="100vw"
             height="140"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute left-0 top-[15.5%]"
+            className="absolute left-0 top-[17%]"
           >
             <rect width="100%" height="100%" fill="#3b3b3b" />
           </svg>
-          <h1 className="absolute top-[21%] left-[5%] w-[30vw] font-bold text-2xl">
+          <h1 className="absolute top-[22.5%] left-[5%] w-[30vw] font-bold text-2xl">
             <span className="text-primary text-5xl">N</span>os Services
           </h1>
           <div className="absolute w-[75vw] right-0 mt-10">
@@ -55,8 +58,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="gallery" className="relative flex items-center justify-around bg-white h-[80vh]">
-        <h1 className="absolute top-[12%] left-[5%] w-[30vw] font-bold text-2xl text-darkGrey">
+      <section id="gallery" className="h-auto relative flex items-center justify-around bg-white">
+        <h1 className="absolute top-[9%] left-[5%] w-[30vw] font-bold text-2xl text-darkGrey">
           <span className="text-primary text-5xl">G</span>alerie
         </h1>
         <Carousel />
