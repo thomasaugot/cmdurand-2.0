@@ -37,20 +37,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="about" className="flex justify-between p-12 relative h-[110vh] bg-lightGrey">
+      <section id="about" className="flex justify-between p-12 relative h-[120vh] bg-lightGrey">
         <div>
           <svg
             width="100vw"
             height="140"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute left-0 top-[14%]"
+            className="absolute left-0 top-[15.5%]"
           >
             <rect width="100%" height="100%" fill="#3b3b3b" />
           </svg>
-          <h1 className="absolute top-[22%] left-[5%] w-[30vw] font-bold text-2xl">
+          <h1 className="absolute top-[21%] left-[5%] w-[30vw] font-bold text-2xl">
             <span className="text-primary text-5xl">N</span>os Services
           </h1>
-          <div className="absolute w-[75vw] right-0">
+          <div className="absolute w-[75vw] right-0 mt-10">
             <ServiceCards />
           </div>
         </div>
