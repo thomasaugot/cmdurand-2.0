@@ -59,7 +59,13 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-8 text-center">
-        <p>&copy; {currentYear} Sarl Charpente Menuiserie Durand. Tous droits réservés.</p>
+        <p>
+          &copy; {currentYear} Sarl Charpente Menuiserie Durand. Développé par{" "}
+          <a href="https://thomasaugot.com/" target="_blank" rel="noreferrer">
+            Thomas Augot
+          </a>
+          .
+        </p>
       </div>
     </footer>
   );

@@ -62,10 +62,12 @@ const ServiceCard = ({ title, imageUrl }) => {
 
 const ServiceCards = () => {
   return (
-    <div className="flex flex-wrap">
-      {services.map((service) => (
-        <ServiceCard key={service.id} {...service} />
-      ))}
+    <div className="absolute top-[22.5%] right-0 mt-10">
+      <div className="flex flex-wrap w-[85vw]">
+        {services.map((service) => (
+          <ServiceCard key={service.id} {...service} />
+        ))}
+      </div>
     </div>
   );
 };
