@@ -6,7 +6,6 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { motion, useAnimation } from "framer-motion";
 import PopupForm from "./PopupForm";
 import Image from "next/image";
-import logo from "../app/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,40 +62,17 @@ const Navbar = () => {
 
   return (
     <div
-      className="z-10 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary fixed top-0 md:h-[20vh]"
+      className="z-10 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary fixed top-9 md:h-[20vh] md:ml-12"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <motion.div
-        initial={{ y: -50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        animate={controls}
-        exit={{ opacity: 0 }}
-        transition={{
-          type: "spring",
-          stiffness: 40,
-          delay: 0.2,
-          ease: "easeOut",
-        }}
-      >
-        <Link href={"/"}>
-          <Image
-            onClick={scrollToTop}
-            src={logo}
-            width={"auto"}
-            height={"auto"}
-            alt="logo"
-            className="w-[150px]"
-          />
-        </Link>
-      </motion.div>
       {/* Desktop Navigation */}
       <motion.div
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         animate={controls}
         exit={{ opacity: 0 }}
-        className="hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-darkGrey"
+        className="hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-primary"
         transition={{
           type: "spring",
           stiffness: 40,
@@ -107,14 +83,14 @@ const Navbar = () => {
         {/* Logo */}
         <div className="hidden md:flex justify-evenly ml-8 gap-8">
           {navItems.map((item) => (
-            <div
+            <p
               key={item.id}
               className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-montserrat"
             >
               <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
                 {item.text}
               </ScrollLink>
-            </div>
+            </p>
           ))}
         </div>
         <button onClick={handleRedirect} className="primary-button">
