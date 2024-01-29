@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="./logo-sans-text.png" sizes="any" />
+        <link rel="icon" href="./icon.png" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body className={`${inter.className} bg-white`}>

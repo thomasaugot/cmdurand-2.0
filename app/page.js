@@ -3,6 +3,7 @@
 // here is all the code found on the homepage
 
 import testimonialBgImg from "../assets/img/testimonial-bg.jpg";
+import servicesBgImg from "../assets/img/wave-bg.svg";
 import ServiceCards from "@/components/ServiceCards";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
@@ -58,16 +59,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="flex p-12 relative bg-darkGrey h-[130vh] ">
+      <section
+        id="about"
+        className="flex p-12 relative h-[130vh] "
+        style={{
+          backgroundImage: `url(${servicesBgImg.src})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          zIndex: -1,
+        }}
+      >
         <div>
-          <svg
-            width="100vw"
-            height="140"
-            xmlns="http://www.w3.org/2000/svg"
-            className="absolute left-0 top-[17%]"
-          >
-            <rect width="100%" height="100%" fill="#3b3b3b" />
-          </svg>
           <h1 className="text-white absolute top-[22.5%] left-[5%] w-[30vw] font-bold text-2xl">
             <span className="text-primary text-5xl">N</span>os Services
           </h1>
@@ -114,7 +117,7 @@ export default function Home() {
         <div className="flex">
           <OpeningHours />
           <div className="flex flex-col">
-            <h1 className="text-black font-semibold mb-8">
+            <h1 className="text-black font-semibold mb-8 text-lg">
               Besoin d&apos;un renseignement? D&apos;un devis? Laissez-nous un message !
             </h1>
             <StaticForm />
