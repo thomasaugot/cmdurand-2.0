@@ -13,22 +13,63 @@ import menuiserieExt from "/assets/img/menuiserie-ext.jpg";
 import bardage from "/assets/img/bardage.jpg";
 import solivage from "/assets/img/solivage.jpg";
 import menuiserieG from "/assets/img/menuiserie-g.jpg";
+import Link from "next/link";
 
 const services = [
-  { id: 1, title: "Charpente traditionnelle", imageUrl: charpenteTrad },
-  { id: 1, title: "Charpente industrielle", imageUrl: charpenteIndus },
-  { id: 1, title: "extension ou maison ossature", imageUrl: ossature },
-  { id: 1, title: "Préau", imageUrl: preau },
-  { id: 1, title: "Carport", imageUrl: carport },
-  { id: 1, title: "Terrasse", imageUrl: terrasse },
-  { id: 1, title: "Aménagement des combles", imageUrl: charpenteTrad },
-  { id: 1, title: "Menuiserie extérieure", imageUrl: menuiserieExt },
-  { id: 1, title: "Bardage (différents types de revêtements extérieurs )", imageUrl: bardage },
-  { id: 1, title: "Solivage porteur (plancher)", imageUrl: solivage },
-  { id: 1, title: "Menuiserie Générale", imageUrl: menuiserieG },
+  {
+    id: 1,
+    title: "Charpente traditionnelle",
+    imageUrl: charpenteTrad,
+    endPoint: "/charpente-traditionelle",
+  },
+  {
+    id: 2,
+    title: "Charpente industrielle",
+    imageUrl: charpenteIndus,
+    endPoint: "/Charpente-industrielle",
+  },
+  {
+    id: 3,
+    title: "Extension ou maison ossature",
+    imageUrl: ossature,
+    endPoint: "/extension-ou-maison-ossature",
+  },
+  { id: 4, title: "Préau", imageUrl: preau, endPoint: "/préau" },
+  { id: 5, title: "Carport", imageUrl: carport, endPoint: "/carport" },
+  { id: 6, title: "Terrasse", imageUrl: terrasse, endPoint: "/terrasse" },
+  {
+    id: 7,
+    title: "Aménagement des combles",
+    imageUrl: charpenteTrad,
+    endPoint: "/aménagement-des-combles",
+  },
+  {
+    id: 8,
+    title: "Menuiserie extérieure",
+    imageUrl: menuiserieExt,
+    endPoint: "/menuiserie-extérieure",
+  },
+  {
+    id: 9,
+    title: "Bardage (différents types de revêtements extérieurs )",
+    imageUrl: bardage,
+    endPoint: "/bardage",
+  },
+  {
+    id: 10,
+    title: "Solivage porteur (plancher)",
+    imageUrl: solivage,
+    endPoint: "/solivage-porteur",
+  },
+  {
+    id: 11,
+    title: "Menuiserie Générale",
+    imageUrl: menuiserieG,
+    endPoint: "/menuiserie-générale",
+  },
 ];
 
-const ServiceCard = ({ title, imageUrl }) => {
+const ServiceCard = ({ title, imageUrl, endPoint }) => {
   const [isHovered, setHovered] = React.useState(false);
 
   return (
@@ -48,7 +89,17 @@ const ServiceCard = ({ title, imageUrl }) => {
           }`}
         />
       </div>
-      {isHovered ? null : (
+      {isHovered ? (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Link
+            href={endPoint}
+            passHref
+            className="bg-white text-black px-4 py-2 rounded-lg shadow-md"
+          >
+            En savoir plus
+          </Link>
+        </div>
+      ) : (
         <h1
           className="filter-none z-10 text-2xl justify-center text-center font-bold capitalize"
           style={{ WebkitTextStroke: "1px black" }}

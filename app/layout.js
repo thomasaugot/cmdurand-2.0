@@ -3,11 +3,13 @@
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import logo from "../app/logo.png";
+import Image from "next/image";
+import ContactDetails from "@/components/ContactDetails";
 
 library.add(fab);
 
@@ -26,7 +28,19 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body className={`${inter.className} bg-darkBlue`}>
-        <Navbar />
+        <div className=" relative">
+          <div className="absolute z-0 w-[100vw] bg-transparent backdrop-blur-4xl opacity-40 px-10 py-4"></div>
+          <Link href={"/"}>
+            <Image
+              src={logo}
+              width={"auto"}
+              height={"auto"}
+              alt="logo"
+              className="w-[230px] h-auto z-10 absolute py-3 px-8"
+            />
+          </Link>
+          <ContactDetails />
+        </div>
         {children}
         <Footer />
       </body>

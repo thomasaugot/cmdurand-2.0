@@ -87,9 +87,15 @@ const Navbar = () => {
               key={item.id}
               className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-montserrat"
             >
-              <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
-                {item.text}
-              </ScrollLink>
+              {item.text === "Accueil" ? (
+                <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
+                  {item.text}
+                </ScrollLink>
+              ) : (
+                <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
+                  {item.text}
+                </ScrollLink>
+              )}
             </p>
           ))}
         </div>

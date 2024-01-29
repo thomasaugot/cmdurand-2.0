@@ -9,10 +9,7 @@ import ServiceCards from "@/components/ServiceCards";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
 import GoogleWidget from "@/components/GoogleWidget";
-import Link from "next/link";
-import { FaLocationDot } from "react-icons/fa6";
-import logo from "../app/logo.png";
-import { FaPhoneAlt } from "react-icons/fa";
+import Navbar from "@/components/Navbar";
 
 const avis = [
   {
@@ -26,10 +23,6 @@ const avis = [
 ];
 
 export default function Home() {
-  const handlePhoneClick = () => {
-    window.location.href = "tel:+33676508551";
-  };
-
   return (
     <main className="flex flex-col">
       <section
@@ -42,46 +35,21 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="h-[100px] relative">
-          <div className="absolute z-0 h-full w-[100vw] bg-white backdrop-blur-4xl opacity-40 px-10 py-4"></div>
-          <Link href={"/"}>
-            <Image
-              src={logo}
-              width={"auto"}
-              height={"auto"}
-              alt="logo"
-              className="w-[230px] h-auto z-10 relative py-3 px-8"
-            />
-          </Link>
-          <div className="absolute top-6 right-12">
-            <div className="flex gap-16">
-              <div className="flex gap-2" onClick={handlePhoneClick} style={{ cursor: "pointer" }}>
-                <FaPhoneAlt size={25} color="#f37139" />
-                <p className="text-black text-base font-medium	">+33 6 76 50 85 51</p>
-              </div>
-              <div className="flex gap-2">
-                <FaLocationDot size={25} color="#f37139" />
-                <p className="text-black text-base font-medium	">
-                  Z.A. la Pommeraie, Rue des Indes 44780 Missillac
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Navbar />
         <div className="absolute top-[25%] left-[17%] ">
           <div className="relative">
             <svg width="150" height="400" xmlns="http://www.w3.org/2000/svg">
               <rect width="100%" height="100%" fill="#f37139" />
             </svg>
             <h1 className="absolute top-[8%] left-[20%] w-[30vw] font-bold text-6xl leading-normal">
-              <span className="text-black text-7xl">C</span>harpente
+              <span className="text-black text-6xl">C</span>harpente
               <br />
-              <span className="text-black text-7xl">M</span>enuiserie
+              <span className="text-black text-6xl">M</span>enuiserie
               <br />
-              <span className="text-black text-7xl">D</span>urand
+              <span className="text-black text-6xl">D</span>urand
             </h1>
             <p className="absolute bottom-[10%] left-[22%] w-[60vw] overflow text-2xl">
-              Vous accompagner dans vos projets
+              L&apos;expertise Bois au Service de vos Projets
             </p>
           </div>
         </div>

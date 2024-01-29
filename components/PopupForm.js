@@ -5,7 +5,8 @@ const PopupForm = ({ isOpen, closeModal }) => {
     <div
       className={`fixed inset-0 bg-black bg-opacity-50 ${
         isOpen ? "ease-in" : "ease-out opacity-0 pointer-events-none"
-      } transition-opacity duration-300`}
+      } transition-opacity duration-300 `}
+      style={{ zIndex: 50 }}
     >
       <div className="flex items-center justify-center min-h-screen">
         <div className="bg-white p-8 rounded-lg shadow-md relative w-[90vw] md:w-[50vw]">
