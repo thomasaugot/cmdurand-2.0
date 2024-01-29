@@ -24,12 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="./logo.png" sizes="any" />
+        <link rel="icon" href="./logo-sans-text.png" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <body className={`${inter.className} bg-darkBlue`}>
-        <div className=" relative">
-          <div className="absolute z-0 w-[100vw] bg-transparent backdrop-blur-4xl opacity-40 px-10 py-4"></div>
+      <body className={`${inter.className} bg-white`}>
+        <div className="relative">
+          <div className="absolute z-0 w-[100vw] h-[100px] backdrop-blur-[7px]  px-10"></div>
           <Link href={"/"}>
             <Image
               src={logo}

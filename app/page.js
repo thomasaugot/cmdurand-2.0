@@ -2,14 +2,14 @@
 
 // here is all the code found on the homepage
 
-import Image from "next/image";
-import yourImg from "../assets/img/placeholder-img.jpg";
-import backgroundImg from "../assets/img/bg-homepage.jpg";
+import testimonialBgImg from "../assets/img/testimonial-bg.jpg";
 import ServiceCards from "@/components/ServiceCards";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
 import GoogleWidget from "@/components/GoogleWidget";
 import Navbar from "@/components/Navbar";
+import OpeningHours from "@/components/OpeningHours";
+import StaticForm from "@/components/StaticForm";
 
 const avis = [
   {
@@ -25,36 +25,40 @@ const avis = [
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <section
-        id="home"
-        className="relative w-[100%] h-[100vh] items-center justify-center"
-        style={{
-          backgroundImage: `url(${backgroundImg.src})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <section id="home" className="relative w-[100%] h-[100vh] flex items-center px-24 ">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${testimonialBgImg.src})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            filter: "grayscale(50%)",
+            zIndex: -1,
+          }}
+        />
         <Navbar />
-        <div className="absolute top-[25%] left-[17%] ">
+        <div className="absolute top-[32%] left-[17%] ">
           <div className="relative">
-            <svg width="150" height="400" xmlns="http://www.w3.org/2000/svg">
+            <svg width="150" height="330" xmlns="http://www.w3.org/2000/svg">
               <rect width="100%" height="100%" fill="#f37139" />
             </svg>
-            <h1 className="absolute top-[8%] left-[20%] w-[30vw] font-bold text-6xl leading-normal">
+            <h1 className="absolute top-[8%] left-[20%] w-[30vw] font-semibold text-5xl leading-normal text-white">
               <span className="text-black text-6xl">C</span>harpente
               <br />
               <span className="text-black text-6xl">M</span>enuiserie
               <br />
               <span className="text-black text-6xl">D</span>urand
             </h1>
-            <p className="absolute bottom-[10%] left-[22%] w-[60vw] overflow text-2xl">
-              L&apos;expertise Bois au Service de vos Projets
+            <p className="text-white absolute bottom-[10%] left-[22%] w-[60vw] overflow text-2xl font-semibold">
+              <span className="text-black text-3xl">L&apos;</span>expertise Bois au Service de vos
+              Projets
             </p>
           </div>
         </div>
       </section>
-      <section id="about" className="flex p-12 relative bg-lightGrey h-[130vh] ">
+
+      <section id="about" className="flex p-12 relative bg-darkGrey h-[130vh] ">
         <div>
           <svg
             width="100vw"
@@ -64,7 +68,7 @@ export default function Home() {
           >
             <rect width="100%" height="100%" fill="#3b3b3b" />
           </svg>
-          <h1 className="absolute top-[22.5%] left-[5%] w-[30vw] font-bold text-2xl">
+          <h1 className="text-white absolute top-[22.5%] left-[5%] w-[30vw] font-bold text-2xl">
             <span className="text-primary text-5xl">N</span>os Services
           </h1>
           <div className="absolute top-0 -right-24 mt-10">
@@ -79,11 +83,22 @@ export default function Home() {
         </h1>
         <Carousel />
       </section>
-      <section id="testimonials" className="relative flex items-center bg-lightGrey px-24">
-        <h1 className="absolute top-[9%] left-[5%] w-[30vw] font-bold text-2xl text-darkGrey">
+      <section id="testimonials" className="relative flex items-center px-24 ">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${testimonialBgImg.src})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            filter: "grayscale(60%)",
+            zIndex: -1,
+          }}
+        />
+        <h1 className="absolute top-[9%] left-[5%] w-[30vw] font-bold text-2xl text-white">
           <span className="text-primary text-5xl">I</span>ls nous ont fait confiance
         </h1>
-        <div className="flex mt-[150px]">
+        <div className="flex my-[150px]">
           <div className="flex flex-col relative">
             {avis.map((item, index) => (
               <TestimonialItem key={index} text={item.text} author={item.author} />
@@ -92,9 +107,19 @@ export default function Home() {
           <GoogleWidget />
         </div>
       </section>
-      <section id="contact" className="flex items-center justify-around bg-gray-300 h-[60vh]">
-        <span>Contact</span>
-        <Image src={yourImg} width={"auto"} height={"auto"} alt="yourImg" className="w-24" />
+      <section
+        id="contact"
+        className="flex flex-col items-center justify-around bg-white h-full p-24"
+      >
+        <div className="flex">
+          <OpeningHours />
+          <div className="flex flex-col">
+            <h1 className="text-black font-semibold mb-8">
+              Besoin d&apos;un renseignement? D&apos;un devis? Laissez-nous un message !
+            </h1>
+            <StaticForm />
+          </div>
+        </div>
       </section>
     </main>
   );

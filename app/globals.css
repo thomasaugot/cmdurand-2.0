@@ -23,17 +23,6 @@ body {
 }
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span {
-    @apply text-white font-poppins;
-  }
-
   input,
   textarea {
     @apply bg-lightGrey;
@@ -48,10 +37,6 @@ body {
 
 .primary-button {
   @apply transition-transform transform duration-100 scale-100 m-1 rounded-lg bg-primary hover:scale-95 text-center justify-center align-middle;
-}
-
-.filter-primary {
-  filter: brightness(1.2) sepia(1) hue-rotate(10deg);
 }
 
 /* Styles for the carousel and its pagination bullets */

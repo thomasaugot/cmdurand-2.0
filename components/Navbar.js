@@ -1,11 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { motion, useAnimation } from "framer-motion";
 import PopupForm from "./PopupForm";
-import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

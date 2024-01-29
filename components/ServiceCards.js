@@ -94,15 +94,15 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
           <Link
             href={endPoint}
             passHref
-            className="bg-white text-black px-4 py-2 rounded-lg shadow-md"
+            className="backdrop-blur-md text-white text-xl px-5 py-3 rounded-lg shadow-md"
           >
             En savoir plus
           </Link>
         </div>
       ) : (
         <h1
-          className="filter-none z-10 text-2xl justify-center text-center font-bold capitalize"
-          style={{ WebkitTextStroke: "1px black" }}
+          className="filter-none z-10 text-2xl justify-center text-center font-black capitalize"
+          style={{ WebkitTextStroke: "0.2px black" }}
         >
           {title}
         </h1>

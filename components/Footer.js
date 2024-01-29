@@ -60,7 +60,7 @@ const Footer = () => {
       </div>
       <div className="mt-8 text-center">
         <p>
-          &copy; {currentYear} Sarl Charpente Menuiserie Durand. Développé par{" "}
+          &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand. Développé par{" "}
           <a href="https://thomasaugot.com/" target="_blank" rel="noreferrer">
             Thomas Augot
           </a>
