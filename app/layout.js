@@ -29,14 +29,14 @@ export default function RootLayout({ children }) {
       </Head>
       <body className={`${inter.className} bg-white`}>
         <div className="relative">
-          <div className="absolute z-0 w-[100vw] h-[100px] backdrop-blur-[7px]  px-10"></div>
+          <div className="fixed md:absolute z-0 w-[100vw] h-[100px] backdrop-blur-[7px] px-10"></div>
           <Link href={"/"}>
             <Image
               src={logo}
               width={"auto"}
               height={"auto"}
               alt="logo"
-              className="w-[230px] h-auto z-10 absolute py-3 px-8"
+              className=" w-[230px] h-auto z-10 block absolute py-3 px-8"
             />
           </Link>
           <ContactDetails />
