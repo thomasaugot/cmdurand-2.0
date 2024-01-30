@@ -22,10 +22,7 @@ const StaticForm = () => {
           rows="6"
         ></textarea>
       </div>
-      <button
-        type="submit"
-        className="bg-primary transition text-white py-2 px-4 rounded-md hover:scale-90 flex mx-auto"
-      >
+      <button type="submit" className="flex mx-auto primary-button primary-button-bg">
         Envoyer
       </button>
     </form>

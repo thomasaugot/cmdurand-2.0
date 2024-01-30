@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="z-10 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary fixed top-9 md:h-[20vh] md:ml-12"
+      className="z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary fixed top-9 md:h-[20vh] md:ml-12"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -70,7 +70,7 @@ const Navbar = () => {
         whileInView={{ y: 0, opacity: 1 }}
         animate={controls}
         exit={{ opacity: 0 }}
-        className="hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-primary"
+        className="dark-shadow hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-primary"
         transition={{
           type: "spring",
           stiffness: 40,
@@ -86,21 +86,19 @@ const Navbar = () => {
               className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-montserrat"
             >
               {item.text === "Accueil" ? (
-                <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
+                <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={0}>
                   {item.text}
                 </ScrollLink>
               ) : (
-                <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={-50}>
+                <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={0}>
                   {item.text}
                 </ScrollLink>
               )}
             </p>
           ))}
         </div>
-        <button onClick={handleRedirect} className="primary-button">
-          <span className="p-4 text-white font-montserrat" onClick={handleToggleForm}>
-            Demander un Devis
-          </span>
+        <button onClick={handleToggleForm} className="primary-button primary-button-bg">
+          Demander un Devis
         </button>
       </motion.div>
       {/* Mobile Navigation Icon */}
@@ -154,7 +152,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-50}
+              offset={0}
               onClick={handleClick}
             >
               {item.text}

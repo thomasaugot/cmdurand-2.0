@@ -74,7 +74,7 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
 
   return (
     <div
-      className="relative flex items-center justify-center w-[220px] h-48 overflow-hidden m-2 transition-transform transform hover:scale-105 text-white"
+      className="image-shadow relative flex items-center justify-center w-[200px] h-[200px] overflow-hidden m-2 transition-transform transform hover:scale-105 text-white"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -113,12 +113,10 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
 
 const ServiceCards = () => {
   return (
-    <div className="absolute top-[22.5%] right-0 mt-10">
-      <div className="flex flex-wrap w-[85vw]">
-        {services.map((service) => (
-          <ServiceCard key={service.id} {...service} />
-        ))}
-      </div>
+    <div className="flex flex-wrap w-[95vw] z-40 mb-8">
+      {services.map((service) => (
+        <ServiceCard key={service.id} {...service} />
+      ))}
     </div>
   );
 };

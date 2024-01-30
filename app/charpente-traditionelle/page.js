@@ -19,14 +19,14 @@ function CharpenteTraditionelle() {
   };
 
   return (
-    <div className="h-full px-48 py-[150px] flex flex-col gap-10 relative">
+    <div className="h-full px-48 py-[150px] flex flex-col gap-10 relative brick-bg">
       <BackToHomepageButton />
       <div className="relative flex">
         <svg
           width="300"
           height="400"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-4 left-4 z-10"
+          className="absolute top-4 left-4 z-10 dark-shadow"
         >
           <rect width="100%" height="100%" fill="#f37139" />
         </svg>
@@ -38,13 +38,13 @@ function CharpenteTraditionelle() {
           className="w-[300px] z-20"
         />
         <div className="flex flex-col ml-20 relative w-[40vw]">
-          <Image
+          {/* <Image
             src={logobg}
             width={200}
             height={"auto"}
             alt="yourImg"
             className="w-[510px] -z-10 absolute top-[150px] -right-[100px] opacity-20"
-          />
+          /> */}
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -71,15 +71,10 @@ function CharpenteTraditionelle() {
               Des questions? Nous sommes là pour vous renseigner !
             </p>
             <button
-              onClick={handleRedirect}
-              className="bg-primary rounded-lg text-center	align-middle transition duration-200 hover:scale-90 "
+              onClick={handleToggleForm}
+              className="primary-button primary-button-bg dark-shadow text-nowrap"
             >
-              <span
-                className="p-4 text-white flex justify-center text-center font-semibold text-nowrap"
-                onClick={handleToggleForm}
-              >
-                Nous Contacter
-              </span>
+              Nous Contacter
             </button>
           </div>
         </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function GoogleWidget() {
   return (
-    <div className="p-6 my-auto bg-white flex flex-col items-center justify-center rounded-lg gap-4">
+    <div className="p-6 my-auto bg-white flex flex-col items-center justify-center rounded-lg gap-4 form-shadow">
       <h1 className="text-black text-3xl transition duration-200 hover:scale-125">Excellent</h1>
       <div className="flex text-[#FFFF00]">
         <IoMdStar size={25} />

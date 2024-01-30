@@ -1,8 +1,11 @@
 "use client";
 
-import Image from "next/image";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import facebook from "../assets/img/facebook.svg";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaFacebook } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,35 +18,71 @@ const Footer = () => {
     window.location.href = "tel:+33676508551";
   };
 
+  const aboutRef = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    aboutRef.current = document.getElementById("footer");
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    handleResize(); // Check initial viewport width
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <footer className="bg-darkGrey text-white py-8">
+    <footer
+      id="footer"
+      className={`relative bg-darkGrey text-white py-8 ${isDesktop ? "visible" : ""}`}
+    >
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
-          <p>Sarl Charpente Menuiserie Durand</p>
-          <p>Z.A. la Pommeraie, Rue des Indes</p>
-          <p>44780 Missillac</p>
+          <div className="flex">
+            <FaLocationDot size={25} color="#f37139" className="mr-2" />
+            <div className="flex flex-col">
+              <p>Sarl Charpente Menuiserie Durand</p>
+              <p>Z.A. la Pommeraie, Rue des Indes</p>
+              <p>44780 Missillac</p>
+            </div>
+          </div>
+
           <br />
-          <p onClick={handleEmailClick} style={{ cursor: "pointer" }}>
-            contact@cmdurand.fr
-          </p>
-          <p onClick={handlePhoneClick} style={{ cursor: "pointer" }}>
-            +33 6 76 50 85 51
-          </p>
+          <div onClick={handleEmailClick} className="flex" style={{ cursor: "pointer" }}>
+            <MdEmail size={25} color="#f37139" className="mr-2" />
+            <p>contact@cmdurand.fr</p>
+          </div>
+          <br />
+          <div onClick={handlePhoneClick} className="flex" style={{ cursor: "pointer" }}>
+            <FaPhoneAlt size={23} color="#f37139" className="mr-2" />
+            <p>+33 6 76 50 85 51</p>
+          </div>
         </div>
-        <div className="flex items-center justify-center">
-          <h2 className="text-2xl font-semibold mr-4">Suivez-nous</h2>
+        <motion.div
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 20, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 40,
+            delay: 0.4,
+            ease: "easeOut",
+          }}
+          className="flex items-center image-shadow justify-center bg-primary p-4 absolute top-[30%] right-0"
+        >
+          <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous</h2>
           <a
             href="https://www.facebook.com/profile.php?id=100063695462775"
             target="_blank"
             rel="noreferrer"
           >
-            <Image
-              src={facebook}
-              width={"auto"}
-              height={"auto"}
-              alt="facebook"
-              className="w-[50px] transition hover:scale-90"
-            />
+            <FaFacebook size={40} className="w-[50px] transition hover:scale-90 text-white" />
           </a>
           <div className="flex space-x-4">
             <a href="#" className="text-xl">
@@ -56,7 +95,7 @@ const Footer = () => {
               <i className="fab fa-instagram"></i>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="mt-8 text-center">
         <p>

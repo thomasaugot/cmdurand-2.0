@@ -3,7 +3,6 @@
 // here is all the code found on the homepage
 
 import testimonialBgImg from "../assets/img/testimonial-bg.jpg";
-import servicesBgImg from "../assets/img/wave-bg.svg";
 import ServiceCards from "@/components/ServiceCards";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
@@ -26,7 +25,7 @@ const avis = [
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <section id="home" className="relative w-[100%] h-[100vh] flex items-center px-24 ">
+      <section id="home" className="relative w-[100%] h-[100vh] flex items-center px-24">
         <div
           className="absolute inset-0"
           style={{
@@ -39,52 +38,40 @@ export default function Home() {
           }}
         />
         <Navbar />
-        <div className="absolute top-[32%] left-[17%] ">
-          <div className="relative">
-            <svg width="150" height="330" xmlns="http://www.w3.org/2000/svg">
-              <rect width="100%" height="100%" fill="#f37139" />
-            </svg>
-            <h1 className="absolute top-[8%] left-[20%] w-[30vw] font-semibold text-5xl leading-normal text-white">
+        <div>
+          <div className="polygon-home bg-primary"></div>
+          <div className="flex flex-col z-20 mt-8 ml-12 absolute top-[190px] left-[220px]">
+            <h1 className="font-semibold text-5xl leading-normal text-white">
               <span className="text-black text-6xl">C</span>harpente
               <br />
               <span className="text-black text-6xl">M</span>enuiserie
               <br />
               <span className="text-black text-6xl">D</span>urand
+              <br />
+              <div className="text-white text-3xl mt-4 text-nowrap">
+                <span className="text-black text-5xl">L&apos;</span>
+                expertise Bois au Service de vos Projets
+              </div>
             </h1>
-            <p className="text-white absolute bottom-[10%] left-[22%] w-[60vw] overflow text-2xl font-semibold">
-              <span className="text-black text-3xl">L&apos;</span>expertise Bois au Service de vos
-              Projets
-            </p>
           </div>
         </div>
       </section>
-
-      <section
-        id="about"
-        className="flex p-12 relative h-[130vh] "
-        style={{
-          backgroundImage: `url(${servicesBgImg.src})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          zIndex: -1,
-        }}
-      >
-        <div>
-          <h1 className="text-white absolute top-[22.5%] left-[5%] w-[30vw] font-bold text-2xl">
-            <span className="text-primary text-5xl">N</span>os Services
-          </h1>
-          <div className="absolute top-0 -right-24 mt-10">
-            <ServiceCards />
-          </div>
+      <section id="about" className="flex flex-col p-12 relative h-auto bg-darkGrey">
+        <h1 className="text-white w-[30vw] font-bold text-2xl">
+          <span className="text-primary text-5xl ml-3 mt-4">N</span>os Services
+        </h1>
+        <div className="flex mx-auto my-12 z-99">
+          <ServiceCards />
         </div>
+        <div className="polygon w-[49vw] h-[55px] bg-primary overflow-hidden absolute bottom-0 -right-[200px] z-20"></div>
       </section>
 
-      <section id="gallery" className="h-auto relative flex items-center justify-around bg-white">
-        <h1 className="absolute top-[9%] left-[5%] w-[30vw] font-bold text-2xl text-darkGrey">
-          <span className="text-primary text-5xl">G</span>alerie
+      <section id="gallery" className="h-auto relative flex items-center justify-around brick-bg">
+        <h1 className="absolute top-[9%] left-[5%] w-full font-bold text-2xl text-darkGrey">
+          <span className="text-primary text-5xl">N</span>os réalisations en quelques photos
         </h1>
         <Carousel />
+        <div className="polygon w-[49vw] h-[55px] bg-darkGrey overflow-hidden absolute bottom-0 -right-[200px] z-20"></div>
       </section>
       <section id="testimonials" className="relative flex items-center px-24 ">
         <div
@@ -101,8 +88,8 @@ export default function Home() {
         <h1 className="absolute top-[9%] left-[5%] w-[30vw] font-bold text-2xl text-white">
           <span className="text-primary text-5xl">I</span>ls nous ont fait confiance
         </h1>
-        <div className="flex my-[150px]">
-          <div className="flex flex-col relative">
+        <div className="flex my-[150px] gap-8 mx-auto items-center">
+          <div className="flex relative">
             {avis.map((item, index) => (
               <TestimonialItem key={index} text={item.text} author={item.author} />
             ))}
@@ -112,13 +99,14 @@ export default function Home() {
       </section>
       <section
         id="contact"
-        className="flex flex-col items-center justify-around bg-white h-full p-24"
+        className="flex flex-col items-center justify-around brick-bg  h-full p-24 relative"
       >
-        <div className="flex">
+        <div className="polygon w-[49vw] h-[55px] bg-primary overflow-hidden absolute top-0 -left-[200px] z-20"></div>
+        <div className="flex gap-12 items-center">
           <OpeningHours />
-          <div className="flex flex-col">
+          <div className="flex flex-col form-shadow p-8">
             <h1 className="text-black font-semibold mb-8 text-lg">
-              Besoin d&apos;un renseignement? D&apos;un devis? Laissez-nous un message !
+              Besoin d&apos;un renseignement? Laissez-nous un message !
             </h1>
             <StaticForm />
           </div>
