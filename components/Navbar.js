@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary fixed top-9 md:h-[20vh] md:ml-12"
+      className="z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary fixed top-9 md:h-[20vh]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -70,7 +70,7 @@ const Navbar = () => {
         whileInView={{ y: 0, opacity: 1 }}
         animate={controls}
         exit={{ opacity: 0 }}
-        className="dark-shadow hidden md:flex bg-white justify-between mx-auto rounded-xl w-[70vw] border-2 border-primary"
+        className="dark-shadow hidden md:flex bg-white justify-between mx-auto rounded-xl w-[90%] border-2 border-primary"
         transition={{
           type: "spring",
           stiffness: 40,
