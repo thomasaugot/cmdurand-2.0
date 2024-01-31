@@ -50,7 +50,7 @@ export default function Home() {
               <br />
               <div className="text-white text-center md:text-left text-2xl md:text-3xl mt-4 md:mt-8 max-w-[80vw] md:text-nowrap">
                 <span className="text-black text-5xl">L&apos;</span>
-                expertise Bois au Service de vos Projets
+                expertise bois au service de vos projets
               </div>
             </h1>
           </div>
@@ -60,7 +60,7 @@ export default function Home() {
         id="about"
         className="flex flex-col px-2 py-8 md:px-12 md:py-12 relative h-auto bg-darkGrey"
       >
-        <h1 className="text-white max-w-[80vw] font-bold text-2xl ml-3 md:ml-3 my-4 text-center md:text-left">
+        <h1 className="text-white max-w-[80vw] font-bold text-2xl md:ml-[5%] my-4 text-center md:text-left">
           <span className="text-primary text-5xl">N</span>os Services
         </h1>
         <div className="flex w-full md:my-12 z-30 mx-auto max-w-[1200px]">
@@ -73,7 +73,7 @@ export default function Home() {
         id="gallery"
         className="h-auto relative flex items-center justify-around brick-bg px-2 py-8"
       >
-        <h1 className="absolute top-[5%] md:top-[9%] md:left-[5%] w-full font-bold text-2xl text-darkGrey mx-auto text-center md:text-left">
+        <h1 className="absolute top-[5%] md:top-[9%] md:left-[5%] max-w-[85vw] font-bold text-2xl text-darkGrey mx-auto text-center md:text-left">
           <span className="text-primary text-5xl">N</span>os réalisations en quelques photos
         </h1>
         <Carousel />
@@ -110,7 +110,7 @@ export default function Home() {
         <div className="polygon w-[120vw] md:w-[49vw] h-[55px] bg-primary overflow-hidden absolute top-0 right-[105px] md:left-[-200px] z-20"></div>
         <div className="flex flex-col md:flex-row md:gap-12 items-center">
           <OpeningHours />
-          <div className="flex flex-col md:form-shadow p-8 mx-4 -mt-16 md:mt-0">
+          <div className="flex flex-col form-shadow p-8 mx-4 -mt-16 md:mt-0">
             <h1 className="text-black font-semibold mb-8 text-lg max-w-[90vw]">
               Besoin d&apos;un renseignement? Laissez-nous un message !
             </h1>

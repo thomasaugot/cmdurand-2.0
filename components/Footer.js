@@ -41,16 +41,15 @@ const Footer = () => {
   return (
     <footer id="footer" className={`relative bg-darkGrey text-white py-12 md:py-8 `}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-4 md:mb-0">
-          <div className="flex">
+        <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
+          <div className="flex mt-6">
             <FaLocationDot size={25} color="#f37139" className="mr-2" />
-            <div className="flex flex-col">
+            <div className="flex flex-col text-center">
               <p>Sarl Charpente Menuiserie Durand</p>
               <p>Z.A. la Pommeraie, Rue des Indes</p>
               <p>44780 Missillac</p>
             </div>
           </div>
-
           <br />
           <div onClick={handleEmailClick} className="flex" style={{ cursor: "pointer" }}>
             <MdEmail size={25} color="#f37139" className="mr-2" />
@@ -71,9 +70,9 @@ const Footer = () => {
             delay: 0.4,
             ease: "easeOut",
           }}
-          className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-16 md:top-[30%] right-0"
+          className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] md:top-[30%] right-0"
         >
-          <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous</h2>
+          <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous !</h2>
           <a
             href="https://www.facebook.com/profile.php?id=100063695462775"
             target="_blank"
@@ -83,10 +82,15 @@ const Footer = () => {
           </a>
         </motion.div>
       </div>
-      <div className="mt-8 text-center">
+      <div className="mt-8 text-center mx-auto max-w-[90vw]">
         <p>
-          &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand. Développé par{" "}
-          <a href="https://thomasaugot.com/" target="_blank" rel="noreferrer">
+          &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand. Site Web développé par{" "}
+          <a
+            href="https://thomasaugot.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2"
+          >
             Thomas Augot
           </a>
           .

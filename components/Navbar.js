@@ -134,7 +134,7 @@ const Navbar = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  offset={0}
+                  offset={-60}
                   onClick={handleClick}
                 >
                   {item.text}

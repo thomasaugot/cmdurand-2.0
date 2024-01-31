@@ -94,7 +94,7 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
           <Link
             href={endPoint}
             passHref
-            className="backdrop-blur-md text-white text-xl px-5 py-3 rounded-lg shadow-md"
+            className="backdrop-blur-md text-white text-lg md:text-xl px-3 md:px-5 py-3 rounded-lg shadow-md text-center"
           >
             En savoir plus
           </Link>
