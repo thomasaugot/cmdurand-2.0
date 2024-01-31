@@ -39,10 +39,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer
-      id="footer"
-      className={`relative bg-darkGrey text-white py-8 ${isDesktop ? "visible" : ""}`}
-    >
+    <footer id="footer" className={`relative bg-darkGrey text-white py-12 md:py-8 `}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <div className="flex">
@@ -67,14 +64,14 @@ const Footer = () => {
         </div>
         <motion.div
           initial={{ x: "100%", opacity: 0 }}
-          animate={{ x: 20, opacity: 1 }}
+          animate={{ x: 5, opacity: 1 }}
           transition={{
             type: "spring",
             stiffness: 40,
             delay: 0.4,
             ease: "easeOut",
           }}
-          className="flex items-center image-shadow justify-center bg-primary p-4 absolute top-[30%] right-0"
+          className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-16 md:top-[30%] right-0"
         >
           <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous</h2>
           <a
@@ -84,17 +81,6 @@ const Footer = () => {
           >
             <FaFacebook size={40} className="w-[50px] transition hover:scale-90 text-white" />
           </a>
-          <div className="flex space-x-4">
-            <a href="#" className="text-xl">
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#" className="text-xl">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="text-xl">
-              <i className="fab fa-instagram"></i>
-            </a>
-          </div>
         </motion.div>
       </div>
       <div className="mt-8 text-center">

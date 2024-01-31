@@ -16,17 +16,17 @@ import preau from "/assets/img/préau.jpg";
 const Carousel = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  //   const handleResize = () => {
-  //     setIsMobile(window.innerWidth < 1023);
-  //   };
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 1023);
+  };
 
-  //   useEffect(() => {
-  //     handleResize();
-  //     window.addEventListener("resize", handleResize);
-  //     return () => {
-  //       window.removeEventListener("resize", handleResize);
-  //     };
-  //   }, []);
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const images = [
     {
@@ -51,11 +51,11 @@ const Carousel = () => {
     },
   ];
 
-  //   const slidesPerView = isMobile
-  //     ? 1
-  //     : window.innerWidth >= 768 && window.innerWidth <= 1024
-  //     ? 2
-  //     : 3;
+  const slidesPerView = isMobile
+    ? 1
+    : typeof window !== "undefined" && window.innerWidth >= 768 && window.innerWidth <= 1024
+    ? 2
+    : 3;
 
   return (
     <>
@@ -64,7 +64,7 @@ const Carousel = () => {
         initialSlide={1}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={3}
+        slidesPerView={slidesPerView}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -75,10 +75,10 @@ const Carousel = () => {
         navigation={true}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination]}
-        className=" absolute my-24"
+        className=" absolute my-12"
       >
         {images.map((item, index) => (
-          <SwiperSlide key={item.id} className="w-[22vw] my-20 relative">
+          <SwiperSlide key={item.id} className="w-[22vw] my-12 md:my-20 relative">
             <div
               style={{
                 width: "420px",

@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { motion, useAnimation } from "framer-motion";
 import PopupForm from "./PopupForm";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +30,10 @@ const Navbar = () => {
 
   const handleScroll = () => {
     setScrollY(window.scrollY);
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = "tel:+33676508551";
   };
 
   useEffect(() => {
@@ -76,11 +82,11 @@ const Navbar = () => {
     <div>
       {isMobile ? (
         // Mobile Navigation
-        <>
+        <div>
           {/* Mobile Navigation Icon */}
           <div
             onClick={handleClick}
-            className="flex flex-col justify-center items-center z-50 mr-2 absolute top-10 right-4"
+            className="fixed flex flex-col justify-center items-center z-50 mr-2 top-10 right-4"
           >
             <span
               className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 rounded-sm ${
@@ -102,8 +108,8 @@ const Navbar = () => {
           <ul
             className={
               isOpen
-                ? "fixed z-40 md:hidden left-0 top-0 w-[100%] h-full bg-white ease-in-out duration-500"
-                : "mt-24 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
+                ? "fixed z-40 md:hidden left-0 top-0 w-[100%] h-full brick-bg ease-in-out duration-500"
+                : "mt-24 z-40 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
             }
           >
             {/* Mobile Navigation Items */}
@@ -135,8 +141,22 @@ const Navbar = () => {
                 </ScrollLink>
               </li>
             ))}
+            <div className="flex flex-col gap-4 p-6 mt-12">
+              <div className="flex gap-2" onClick={handlePhoneClick} style={{ cursor: "pointer" }}>
+                <FaPhoneAlt size={25} color="#f37139" />
+                <p className="text-black text-base font-medium font-montserrat">
+                  +33 6 76 50 85 51
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <FaLocationDot size={25} color="#f37139" />
+                <p className="text-black text-base font-medium font-poppins">
+                  Z.A. la Pommeraie, Rue des Indes 44780 Missillac
+                </p>
+              </div>
+            </div>
           </ul>
-        </>
+        </div>
       ) : (
         // Desktop Navigation
         <div

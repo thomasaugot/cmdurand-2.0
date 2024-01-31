@@ -13,7 +13,7 @@ const OpeningHours = () => {
   };
 
   return (
-    <div className="bg-transparent w-[20vw] mx-24 mb-24">
+    <div className="bg-transparent w-[90vw] md:w-[20vw] mx-24 mb-24">
       <h2 className="text-lg font-semibold mb-8 text-black">Horaires</h2>
       <div className="grid grid-cols-1 gap-4">
         <div className="flex justify-between">
