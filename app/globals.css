@@ -9,6 +9,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
 * {
   box-sizing: border-box;
@@ -32,8 +33,6 @@ body {
     @apply text-darkGrey block text-sm font-medium;
   }
 }
-
-/* Some Buttons examples */
 
 .primary-button {
   padding: 10px 25px;
@@ -177,33 +176,35 @@ body {
 .polygon-home {
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   transform: rotate(90deg);
-  width: 150vw !important;
-  height: 21vh !important;
   position: absolute;
   overflow: hidden;
   z-index: 10;
-  top: 390px;
-  right: -1vw;
   border-radius: 10px;
   clip-path: circle(90% at 10% 10%);
   -webkit-box-shadow: -7px -7px 15px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -7px -7px 15px -4px rgba(0, 0, 0, 0.75);
   box-shadow: -7px -7px 15px -4px rgba(0, 0, 0, 0.75);
 
+  @media (max-width: 1024px) {
+    left: -8vw;
+    width: 40vw !important;
+    height: calc(90vh) !important;
+    transform: translateY(20%);
+    left: -12vw;
+  }
+
   @media (min-width: 768px) {
-    width: 100vw !important;
-    height: 27vh !important;
-    top: 68vw;
-    right: 210px;
+    left: -8vw;
   }
 
   @media (min-width: 1024px) {
-    width: 46vw !important;
-    height: 41vh !important;
-    top: unset;
-    right: unset;
-    bottom: -10px !important;
-    left: 30px;
+    transform: translateY(26%);
+    width: 18vw !important;
+    height: calc(110vh) !important;
+    left: 10vw;
+  }
+
+  @media (min-width: 1280px) {
   }
 }
 
@@ -211,5 +212,3 @@ body {
   background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 }
-
-/* Testimonial cards */

@@ -11,6 +11,7 @@ module.exports = {
         montserrat: ['"Montserrat", sans-serif'],
         poppins: ["'Poppins', sans-serif"],
         arial: ["'Arial', sans-serif"],
+        oswald: ["'Oswald', sans-serif"],
       },
       colors: {
         white: "#FFFFFF",

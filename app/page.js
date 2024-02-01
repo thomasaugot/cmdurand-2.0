@@ -41,17 +41,17 @@ export default function Home() {
           }}
         />
         <Navbar />
-        <div className="flex my-auto">
+        <div className="relative flex items-center justify-center">
           <div className="polygon-home bg-primary"></div>
-          <div className="flex flex-col left-8 z-20 mt-8  absolute top-[190px] md:top-[300px] md:left-[50px] lg:left-[220px] lg:ml-12 lg:top-[190px]">
-            <h1 className="font-semibold text-5xl leading-normal text-black md:text-7xl lg:text-5xl">
+          <div className="flex flex-col items-left z-20 mt-8 text-left -ml-8 lg:ml-36 xl:ml-[12vw]">
+            <h1 className="font-semibold text-5xl leading-normal text-black md:text-7xl lg:text-5xl font-poppins">
               <span className="text-white text-7xl md:text-9xl lg:text-7xl">C</span>harpente
               <br />
               <span className="text-white text-7xl md:text-9xl lg:text-7xl">M</span>enuiserie
               <br />
               <span className="text-white text-7xl md:text-9xl lg:text-7xl">D</span>urand
               <br />
-              <div className="text-black text-center lg:text-left text-2xl md:text-3xl mt-4 lg:mt-8 max-w-[80vw] lg:text-nowrap">
+              <div className="text-black text-left text-2xl md:text-3xl mt-4 lg:mt-8 max-w-[80vw] lg:text-nowrap">
                 <span className="text-white text-5xl">L&apos;</span>
                 expertise bois au service de vos projets
               </div>
@@ -94,7 +94,7 @@ export default function Home() {
             zIndex: -1,
           }}
         />
-        <h1 className="absolute top-6 lg:top-[9%] text-center lg:text-left lg:left-[5%] w-full lg:w-[30vw] font-bold text-2xl text-white">
+        <h1 className="absolute top-6 md:text-nowrap lg:top-[9%] text-center lg:text-left lg:left-[5%] w-full lg:w-[30vw] font-bold text-2xl text-white">
           <span className="text-primary text-5xl">I</span>ls nous ont fait confiance
         </h1>
         <div className="flex flex-col lg:flex-row mt-24 mb-12 lg:mt-[150px] lg:mb-[150px] gap-16 lg:gap-8 mx-auto items-center">

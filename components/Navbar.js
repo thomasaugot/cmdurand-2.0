@@ -114,12 +114,15 @@ const Navbar = () => {
           >
             {/* Mobile Navigation Items */}
             <button
-              onClick={handleToggleForm}
-              className="bg-primary m-8 rounded-lg	align-middle transition duration-200 hover:scale-90 p-4 text-white flex justify-center text-center md:text-2xl lg:text-lg
-              lg:text-nowrap"
+              onClick={handleRedirect}
+              className="bg-primary m-8 rounded-lg text-center	align-middle transition duration-200 hover:scale-90"
             >
-              {" "}
-              Demander un Devis
+              <span
+                className="p-4 text-white flex justify-center text-center md:text-2xl lg:text-lg lg:text-nowrap"
+                onClick={handleToggleForm}
+              >
+                Demander un Devis
+              </span>
             </button>
             {navItems.map((item) => (
               <li
@@ -181,7 +184,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <p
                   key={item.id}
-                  className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-montserrat"
+                  className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald"
                 >
                   <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={0}>
                     {item.text}
@@ -189,7 +192,10 @@ const Navbar = () => {
                 </p>
               ))}
             </div>
-            <button onClick={handleToggleForm} className="primary-button primary-button-bg">
+            <button
+              onClick={handleToggleForm}
+              className="primary-button primary-button-bg text-nowrap"
+            >
               Demander un Devis
             </button>
           </motion.div>

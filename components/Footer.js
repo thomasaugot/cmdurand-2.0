@@ -41,7 +41,7 @@ const Footer = () => {
   return (
     <footer id="footer" className={`relative bg-darkGrey text-white py-12 lg:pb-8 lg:pt-2 `}>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
-        <div className="mb-4 lg:mb-0 flex flex-col items-center lg:items-start">
+        <div className="mb-4 lg:mb-0 flex flex-col items-center lg:items-start lg:ml-8">
           <div className="flex mt-6">
             <FaLocationDot size={25} color="#f37139" className="mr-2" />
             <div className="flex flex-col text-center lg:text-left">
