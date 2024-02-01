@@ -39,12 +39,12 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer id="footer" className={`relative bg-darkGrey text-white py-12 md:py-8 `}>
+    <footer id="footer" className={`relative bg-darkGrey text-white py-12 md:pb-8 md:pt-2 `}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
           <div className="flex mt-6">
             <FaLocationDot size={25} color="#f37139" className="mr-2" />
-            <div className="flex flex-col text-center">
+            <div className="flex flex-col text-center md:text-left">
               <p>Sarl Charpente Menuiserie Durand</p>
               <p>Z.A. la Pommeraie, Rue des Indes</p>
               <p>44780 Missillac</p>

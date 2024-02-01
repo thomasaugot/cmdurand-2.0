@@ -134,8 +134,8 @@ body {
 /* Styles for the carousel and its pagination bullets */
 
 .swiper-pagination-bullet {
-  width: 40px !important;
-  height: 4px !important;
+  width: 10px !important;
+  height: 10px !important;
   background-color: #3b3b3b !important;
   opacity: 0.5 !important;
   border-radius: 50px !important;

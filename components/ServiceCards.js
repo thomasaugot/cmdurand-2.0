@@ -94,7 +94,7 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
           <Link
             href={endPoint}
             passHref
-            className="backdrop-blur-md text-white text-lg md:text-xl px-3 md:px-5 py-3 rounded-lg shadow-md text-center"
+            className="backdrop-blur-md text-black text-lg md:text-xl px-3 md:px-5 py-3 rounded-lg shadow-md text-center"
           >
             En savoir plus
           </Link>
@@ -102,7 +102,10 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
       ) : (
         <h1
           className="filter-none z-10 text-xl md:text-2xl justify-center text-center font-black capitalize"
-          style={{ WebkitTextStroke: "0.2px black" }}
+          style={{
+            WebkitTextStroke: "0.2px black",
+            textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
+          }}
         >
           {title}
         </h1>
