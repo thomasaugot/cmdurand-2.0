@@ -11,6 +11,7 @@ import Navbar from "@/components/Navbar";
 import OpeningHours from "@/components/OpeningHours";
 import StaticForm from "@/components/StaticForm";
 import charp2 from "/assets/img/charpente2.PNG";
+import ContactDetails from "@/components/ContactDetails";
 
 const avis = [
   {
@@ -26,6 +27,7 @@ const avis = [
 export default function Home() {
   return (
     <main className="flex flex-col">
+      <ContactDetails />
       <section id="home" className="relative w-[100%] h-[100vh] flex items-center px-24">
         <div
           className="absolute inset-0"

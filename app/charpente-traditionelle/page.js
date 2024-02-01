@@ -5,9 +5,8 @@ import React, { useState } from "react";
 import charpenteTraditionelle from "/assets/img/charp-trad.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
-import logobg from "/app/logo-bw.png";
-import Link from "next/link";
 import PopupForm from "@/components/PopupForm";
+import ContactDetailsService from "@/components/ContactDetailsService";
 
 function CharpenteTraditionelle() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -21,6 +20,7 @@ function CharpenteTraditionelle() {
   return (
     <div className="h-full px-6 md:px-48 py-[150px] flex flex-col gap-10 relative brick-bg">
       <BackToHomepageButton />
+      <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center md:flex-row">
         <svg
           width="300"

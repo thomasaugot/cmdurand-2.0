@@ -10,6 +10,7 @@ import Link from "next/link";
 import logo from "../app/logo.png";
 import Image from "next/image";
 import ContactDetails from "@/components/ContactDetails";
+import ContactDetailsService from "@/components/ContactDetailsService";
 
 library.add(fab);
 
@@ -39,7 +40,6 @@ export default function RootLayout({ children }) {
               className="fixed w-[230px] h-auto z-40 md:z-10 block md:absolute py-3 px-8"
             />
           </Link>
-          <ContactDetails />
         </div>
         {children}
         <Footer />
