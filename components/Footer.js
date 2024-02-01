@@ -39,12 +39,12 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer id="footer" className={`relative bg-darkGrey text-white py-12 md:pb-8 md:pt-2 `}>
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
+    <footer id="footer" className={`relative bg-darkGrey text-white py-12 lg:pb-8 lg:pt-2 `}>
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+        <div className="mb-4 lg:mb-0 flex flex-col items-center lg:items-start">
           <div className="flex mt-6">
             <FaLocationDot size={25} color="#f37139" className="mr-2" />
-            <div className="flex flex-col text-center md:text-left">
+            <div className="flex flex-col text-center lg:text-left">
               <p>Sarl Charpente Menuiserie Durand</p>
               <p>Z.A. la Pommeraie, Rue des Indes</p>
               <p>44780 Missillac</p>
@@ -70,7 +70,7 @@ const Footer = () => {
             delay: 0.4,
             ease: "easeOut",
           }}
-          className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] md:top-[30%] right-0"
+          className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] lg:top-[30%] right-0"
         >
           <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous !</h2>
           <a

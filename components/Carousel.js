@@ -27,7 +27,7 @@ const Carousel = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth < 1023);
+    setIsMobile(window.innerWidth < 1024); // Adjust the threshold as needed
   };
 
   useEffect(() => {
@@ -99,7 +99,7 @@ const Carousel = () => {
 
   const slidesPerView = isMobile
     ? 1
-    : typeof window !== "undefined" && window.innerWidth >= 768 && window.innerWidth <= 1024
+    : typeof window !== "undefined" && window.innerWidth >= 1024 && window.innerWidth <= 1280
     ? 2
     : 3;
 
@@ -121,10 +121,10 @@ const Carousel = () => {
         // navigation={true}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination]}
-        className=" absolute my-12"
+        className="absolute my-12"
       >
         {images.map((item, index) => (
-          <SwiperSlide key={item.id} className="w-[22vw] my-12 md:my-20 relative">
+          <SwiperSlide key={item.id} className="w-full my-12 lg:my-20 relative">
             <div
               style={{
                 width: "420px",

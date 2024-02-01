@@ -74,7 +74,7 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
 
   return (
     <div
-      className="image-shadow relative flex items-center justify-center w-[42vw] h-[150px] md:w-[180px] md:h-[180px] overflow-hidden m-2 transition-transform transform hover:scale-105 text-white z-30"
+      className="image-shadow relative flex items-center justify-center w-[42vw] h-[150px] lg:w-[180px] lg:h-[180px] overflow-hidden m-2 transition-transform transform hover:scale-105 text-white z-30"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -94,14 +94,14 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
           <Link
             href={endPoint}
             passHref
-            className="backdrop-blur-md text-black text-lg md:text-xl px-3 md:px-5 py-3 rounded-lg shadow-md text-center"
+            className="backdrop-blur-md text-black text-lg lg:text-xl px-3 lg:px-5 py-3 rounded-lg shadow-md text-center"
           >
             En savoir plus
           </Link>
         </div>
       ) : (
         <h1
-          className="filter-none z-10 text-xl md:text-2xl justify-center text-center font-black capitalize"
+          className="filter-none z-10 text-xl lg:text-2xl justify-center text-center font-black capitalize"
           style={{
             WebkitTextStroke: "0.2px black",
             textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
@@ -116,7 +116,7 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
 
 const ServiceCards = () => {
   return (
-    <div className="flex flex-wrap justify-center w-[98vw] z-30 md:mb-8">
+    <div className="flex flex-wrap justify-center w-[98vw] z-30 lg:mb-8">
       {services.map((service) => (
         <ServiceCard key={service.id} {...service} />
       ))}

@@ -10,7 +10,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
       style={{ zIndex: 100 }}
     >
       <div className="flex items-center justify-center min-h-full">
-        <div className="bg-white p-8 rounded-lg shadow-md relative w-[90vw] md:w-[50vw] brick-bg">
+        <div className="bg-white p-8 rounded-lg shadow-md relative w-[90vw] lg:w-[50vw] brick-bg">
           <Image
             src={logobg}
             width={190}

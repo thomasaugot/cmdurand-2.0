@@ -9,7 +9,7 @@ function ContactDetailsService() {
   };
 
   return (
-    <div className="hidden md:block absolute top-6 right-12 z-10">
+    <div className="hidden lg:block absolute top-6 right-12 z-10">
       <div className="flex gap-16">
         <div className="flex gap-2" onClick={handlePhoneClick} style={{ cursor: "pointer" }}>
           <FaPhoneAlt size={25} color="#f37139" />

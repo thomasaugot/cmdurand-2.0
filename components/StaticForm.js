@@ -1,6 +1,6 @@
 const StaticForm = () => {
   return (
-    <form className="bg-transparent relative w-[90vw] md:w-[40vw] p-0">
+    <form className="bg-transparent relative w-[90vw] lg:w-[40vw] p-0">
       <div className="mb-4">
         <label htmlFor="name">Nom</label>
         <input type="text" id="name" name="name" className="mt-1 p-2 w-full border rounded-md" />

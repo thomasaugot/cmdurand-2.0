@@ -50,7 +50,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust the threshold as needed
+      setIsMobile(window.innerWidth < 1024);
     };
 
     handleResize(); // Call once to set the initial value
@@ -86,20 +86,20 @@ const Navbar = () => {
           {/* Mobile Navigation Icon */}
           <div
             onClick={handleClick}
-            className="fixed flex flex-col justify-center items-center z-50 mr-2 top-10 right-4"
+            className="fixed flex flex-col justify-center items-center z-50 mr-2 top-10 right-4 lg:hidden"
           >
             <span
-              className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 rounded-sm ${
+              className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 md:w-12 lg:10 rounded-sm ${
                 isOpen ? "rotate-45 translate-y-2" : "-translate-y-1"
               }`}
             ></span>
             <span
-              className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 rounded-sm my-1 ${
+              className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 md:w-12 lg:10 rounded-sm my-1 ${
                 isOpen ? "opacity-0" : "opacity-100"
               }`}
             ></span>
             <span
-              className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 rounded-sm ${
+              className={`bg-primary block transition-all duration-300 ease-out h-1 w-10 md:w-12 lg:10 rounded-sm ${
                 isOpen ? "-rotate-45 -translate-y-2" : "translate-y-1"
               }`}
             ></span>
@@ -108,26 +108,23 @@ const Navbar = () => {
           <ul
             className={
               isOpen
-                ? "fixed z-40 md:hidden left-0 top-0 w-[100%] h-full brick-bg ease-in-out duration-500"
+                ? "fixed z-40 lg:hidden left-0 top-0 w-[100%] h-full brick-bg ease-in-out duration-500"
                 : "mt-24 z-40 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
             }
           >
             {/* Mobile Navigation Items */}
             <button
-              onClick={handleRedirect}
-              className="bg-primary m-8 rounded-lg text-center	align-middle transition duration-200 hover:scale-90"
+              onClick={handleToggleForm}
+              className="bg-primary m-8 rounded-lg	align-middle transition duration-200 hover:scale-90 p-4 text-white flex justify-center text-center md:text-2xl lg:text-lg
+              lg:text-nowrap"
             >
-              <span
-                className="p-4 text-white flex justify-center text-center"
-                onClick={handleToggleForm}
-              >
-                Demander un Devis
-              </span>
+              {" "}
+              Demander un Devis
             </button>
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className="p-4 rounded-xl ml-6 font-semibold hover:bg-white duration-300 hover:text-primary cursor-pointer"
+                className="p-4 md:p-6 rounded-xl ml-6 font-semibold hover:bg-white duration-300 hover:text-primary cursor-pointer md:text-2xl"
               >
                 <ScrollLink
                   to={item.target}
@@ -141,16 +138,16 @@ const Navbar = () => {
                 </ScrollLink>
               </li>
             ))}
-            <div className="flex flex-col gap-4 p-6 mt-12">
+            <div className="flex flex-col gap-4 md:gap:6 p-6 md:p-8 mt-12">
               <div className="flex gap-2" onClick={handlePhoneClick} style={{ cursor: "pointer" }}>
                 <FaPhoneAlt size={25} color="#f37139" />
-                <p className="text-black text-base font-medium font-montserrat">
+                <p className="text-black text-base md:text-2xl font-medium font-montserrat">
                   +33 6 76 50 85 51
                 </p>
               </div>
               <div className="flex gap-2">
                 <FaLocationDot size={25} color="#f37139" />
-                <p className="text-black text-base font-medium font-poppins">
+                <p className="text-black text-base md:text-2xl font-medium font-poppins">
                   Z.A. la Pommeraie, Rue des Indes 44780 Missillac
                 </p>
               </div>
@@ -160,9 +157,9 @@ const Navbar = () => {
       ) : (
         // Desktop Navigation
         <div
-          className={`z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 md:px-20 text-primary ${
+          className={`z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 lg:px-20 text-primary ${
             isMobile ? "relative" : "fixed"
-          } top-9 md:h-[20vh]`}
+          } top-9 lg:h-[20vh]`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -171,7 +168,7 @@ const Navbar = () => {
             whileInView={{ y: 0, opacity: 1 }}
             animate={controls}
             exit={{ opacity: 0 }}
-            className="dark-shadow hidden md:flex bg-white justify-between mx-auto rounded-xl w-[90%] border-2 border-primary"
+            className="dark-shadow hidden lg:flex bg-white justify-between mx-auto rounded-xl w-[90%] border-2 border-primary"
             transition={{
               type: "spring",
               stiffness: 40,
@@ -180,7 +177,7 @@ const Navbar = () => {
             }}
           >
             {/* Logo */}
-            <div className="hidden md:flex justify-evenly ml-8 gap-8">
+            <div className="hidden lg:flex justify-evenly ml-8 gap-8">
               {navItems.map((item) => (
                 <p
                   key={item.id}
