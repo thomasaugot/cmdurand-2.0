@@ -151,7 +151,7 @@ body {
 /* custom-shadow */
 
 .form-shadow {
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     border-radius: 27px;
     background: #ffffff;
     box-shadow: 18px 18px 48px #bdbdbd, -18px -18px 48px #ffffff;
@@ -191,6 +191,13 @@ body {
   box-shadow: -7px -7px 15px -4px rgba(0, 0, 0, 0.75);
 
   @media (min-width: 768px) {
+    width: 100vw !important;
+    height: 27vh !important;
+    top: 68vw;
+    right: 210px;
+  }
+
+  @media (min-width: 1024px) {
     width: 46vw !important;
     height: 41vh !important;
     top: unset;
