@@ -2,7 +2,7 @@
 
 // here is all the code found on the homepage
 
-import testimonialBgImg from "../assets/img/testimonial-bg.jpg";
+import testimonialBgImg from "/assets/img/testimonial-bg.jpg";
 import ServiceCards from "@/components/ServiceCards";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
@@ -10,6 +10,7 @@ import GoogleWidget from "@/components/GoogleWidget";
 import Navbar from "@/components/Navbar";
 import OpeningHours from "@/components/OpeningHours";
 import StaticForm from "@/components/StaticForm";
+import charp2 from "/assets/img/charpente2.PNG";
 
 const avis = [
   {
@@ -17,7 +18,7 @@ const avis = [
     author: "Arno Lesaint",
   },
   {
-    text: "Je suis pleinement satisfaite de la société CMD . La prestation rendue (changement d'une poutre et création d'un jambage de rendort) est très qualitative. Entreprise sérieuse, travail soigné et très professionnel. Je recommande les service de Monsieur Durand.",
+    text: "Je suis pleinement satisfaite de la société CMD. La prestation rendue (changement d'une poutre et création d'un jambage de rendort) est très qualitative. Entreprise sérieuse, travail soigné et très professionnel. Je recommande les service de Monsieur Durand.",
     author: "Sylvie Nouvellon",
   },
 ];
@@ -29,11 +30,11 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${testimonialBgImg.src})`,
+            backgroundImage: `url(${charp2.src})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            filter: "grayscale(50%)",
+            // filter: "grayscale(50%)",
             zIndex: -1,
           }}
         />
@@ -41,15 +42,15 @@ export default function Home() {
         <div className="flex my-auto">
           <div className="polygon-home bg-primary"></div>
           <div className="flex flex-col left-8 z-20 mt-8 md:ml-12 absolute top-[190px] md:left-[220px]">
-            <h1 className="font-semibold text-5xl leading-normal text-white">
-              <span className="text-black text-6xl">C</span>harpente
+            <h1 className="font-semibold text-5xl leading-normal text-black">
+              <span className="text-white text-7xl">C</span>harpente
               <br />
-              <span className="text-black text-6xl">M</span>enuiserie
+              <span className="text-white text-7xl">M</span>enuiserie
               <br />
-              <span className="text-black text-6xl">D</span>urand
+              <span className="text-white text-7xl">D</span>urand
               <br />
-              <div className="text-white text-center md:text-left text-2xl md:text-3xl mt-4 md:mt-8 max-w-[80vw] md:text-nowrap">
-                <span className="text-black text-5xl">L&apos;</span>
+              <div className="text-black text-center md:text-left text-2xl md:text-3xl mt-4 md:mt-8 max-w-[80vw] md:text-nowrap">
+                <span className="text-white text-5xl">L&apos;</span>
                 expertise bois au service de vos projets
               </div>
             </h1>
@@ -60,13 +61,14 @@ export default function Home() {
         id="about"
         className="flex flex-col px-2 py-8 md:px-12 md:py-12 relative h-auto bg-darkGrey"
       >
+        <div className="md:hidden polygon w-[110vw] md:w-[49vw] h-[45px] md:h-[55px] bg-primary overflow-hidden absolute transform -scale-y-100 top-0 -right-[120px] md:right-[-200px] z-20"></div>
         <h1 className="text-white max-w-[80vw] font-bold text-2xl md:ml-[5%] my-4 text-center md:text-left">
           <span className="text-primary text-5xl">N</span>os Services
         </h1>
         <div className="flex w-full md:my-12 z-30 mx-auto max-w-[1200px]">
           <ServiceCards />
         </div>
-        <div className="polygon w-[49vw] h-[55px] bg-primary overflow-hidden absolute bottom-0 -right-[200px] z-20"></div>
+        <div className="hidden md:block polygon w-[49vw] h-[55px] bg-primary overflow-hidden absolute bottom-0 -right-[200px] z-20"></div>
       </section>
 
       <section
@@ -77,7 +79,7 @@ export default function Home() {
           <span className="text-primary text-5xl">N</span>os réalisations en quelques photos
         </h1>
         <Carousel />
-        <div className="polygon w-[110vw] md:w-[49vw] h-[45px] md:h-[55px] bg-darkGrey overflow-hidden absolute bottom-0 -right-[120px] md:right-[-200px] z-20"></div>
+        <div className="polygon w-[120vw] md:w-[49vw] h-[45px] md:h-[55px] bg-darkGrey overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] md:left-[-200px] z-20"></div>
       </section>
       <section id="testimonials" className="relative flex flex-col md:items-center md:px-24 ">
         <div
@@ -107,7 +109,7 @@ export default function Home() {
         id="contact"
         className="flex flex-col items-center md:justify-around brick-bg h-full p-24 relative"
       >
-        <div className="polygon w-[120vw] md:w-[49vw] h-[55px] bg-primary overflow-hidden absolute top-0 right-[105px] md:left-[-200px] z-20"></div>
+        <div className="polygon w-[110vw] md:w-[49vw] h-[45px] md:h-[55px] bg-primary overflow-hidden absolute -scale-y-100 top-0 -right-[120px] md:right-[-200px] z-20"></div>
         <div className="flex flex-col md:flex-row md:gap-12 items-center">
           <OpeningHours />
           <div className="flex flex-col form-shadow p-8 mx-4 -mt-16 md:mt-0">
@@ -117,6 +119,7 @@ export default function Home() {
             <StaticForm />
           </div>
         </div>
+        <div className="polygon hidden md:block w-[120vw] md:w-[49vw] h-[55px] bg-primary overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] md:left-[-200px] z-20"></div>
       </section>
     </main>
   );
