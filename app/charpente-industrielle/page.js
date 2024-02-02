@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import charpenteTraditionelle from "/assets/img/charp-trad.jpg";
+import charpenteIndus from "/assets/img/charp-indus.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 
-function CharpenteTraditionelle() {
+function CharpenteIndustrielle() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRedirect = () => {};
@@ -24,18 +24,18 @@ function CharpenteTraditionelle() {
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <svg
           width="300"
-          height="400"
+          height="200"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-2 left-4 z-10 dark-shadow hidden lg:block "
+          className="absolute top-20 left-16 z-10 dark-shadow hidden lg:block "
         >
           <rect width="100%" height="100%" fill="#f37139" />
         </svg>
         <Image
-          src={charpenteTraditionelle}
-          width={200}
+          src={charpenteIndus}
+          width={220}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[290px] z-20"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[350px] z-20"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
@@ -50,19 +50,19 @@ function CharpenteTraditionelle() {
               ease: "easeOut",
             }}
           >
-            Charpente traditionelle
+            Charpente industrielle
           </motion.h1>
           <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
-            Chez nous, la Charpente Traditionnelle incarne l&apos;essence même du savoir-faire
-            artisanal. Chaque pièce de bois est choisie avec soin, travaillée avec précision, pour
-            créer des structures robustes et intemporelles. Notre équipe de charpentiers
-            expérimentés met tout son cœur et son expertise dans chaque projet, qu&apos;il
-            s&apos;agisse de la restauration d&apos;une vieille maison de campagne ou de la
-            construction d&apos;une nouvelle demeure. Nous comprenons l&apos;importance de préserver
-            les techniques traditionnelles tout en intégrant les innovations modernes pour garantir
-            des résultats à la fois authentiques et durables. Avec nous, votre charpente
-            traditionnelle est bien plus qu&apos;une simple structure : c&apos;est un témoignage de
-            notre engagement envers l&apos;excellence et notre passion pour le métier.
+            Chez nous, la charpente industrielle va bien au-delà de simples structures en bois.
+            C&apos;est notre art, notre passion et notre expertise. Nous nous engageons à fournir à
+            nos clients des solutions innovantes et durables pour leurs projets de construction. Que
+            vous construisiez un entrepôt, un complexe industriel ou tout autre bâtiment nécessitant
+            une charpente solide, nous sommes là pour vous accompagner à chaque étape. Notre équipe
+            hautement qualifiée travaille avec précision et efficacité pour concevoir et installer
+            des charpentes qui répondent aux normes les plus strictes en matière de qualité et de
+            sécurité. Avec notre expérience éprouvée et notre engagement envers l&apos;excellence,
+            vous pouvez avoir confiance que votre projet de charpente industrielle est entre de
+            bonnes mains avec nous.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6 lg:gap-0">
             <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
@@ -82,4 +82,4 @@ function CharpenteTraditionelle() {
   );
 }
 
-export default CharpenteTraditionelle;
+export default CharpenteIndustrielle;

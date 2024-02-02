@@ -26,7 +26,7 @@ const services = [
     id: 2,
     title: "Charpente industrielle",
     imageUrl: charpenteIndus,
-    endPoint: "/Charpente-industrielle",
+    endPoint: "/charpente-industrielle",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const services = [
     imageUrl: ossature,
     endPoint: "/extension-ou-maison-ossature",
   },
-  { id: 4, title: "Préau", imageUrl: preau, endPoint: "/préau" },
+  { id: 4, title: "Préau", imageUrl: preau, endPoint: "/preau" },
   { id: 5, title: "Carport", imageUrl: carport, endPoint: "/carport" },
   { id: 6, title: "Terrasse", imageUrl: terrasse, endPoint: "/terrasse" },
   {

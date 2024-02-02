@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import charpenteTraditionelle from "/assets/img/charp-trad.jpg";
+import ossature from "/assets/img/ossature.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 
-function CharpenteTraditionelle() {
+function ExtensionOssature() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRedirect = () => {};
@@ -18,31 +18,31 @@ function CharpenteTraditionelle() {
   };
 
   return (
-    <div className="h-full px-6 lg:px-36 py-[150px] flex flex-col gap-10 relative brick-bg min-h-[100vh]">
+    <div className="h-full px-6 md:px-36 lg:px-36 py-[150px] flex flex-col gap-10 relative brick-bg min-h-[100vh]">
       <BackToHomepageButton />
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <svg
           width="300"
-          height="400"
+          height="180"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-2 left-4 z-10 dark-shadow hidden lg:block "
+          className="absolute top-36 left-4 z-10 dark-shadow hidden lg:block "
         >
           <rect width="100%" height="100%" fill="#f37139" />
         </svg>
         <Image
-          src={charpenteTraditionelle}
-          width={200}
+          src={ossature}
+          width={300}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[290px] z-20"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[300px] z-20"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="capitalize text-black text-center text-4xl lg:text-5xl xl:text-nowrap font-semibold mt-16 lg:mt-0 mx-auto"
+            className="capitalize text-black text-center text-4xl lg:text-5xl font-semibold mt-16 lg:mt-0 mx-auto"
             transition={{
               type: "spring",
               stiffness: 40,
@@ -50,21 +50,24 @@ function CharpenteTraditionelle() {
               ease: "easeOut",
             }}
           >
-            Charpente traditionelle
+            Extension ou maison ossature
           </motion.h1>
           <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
-            Chez nous, la Charpente Traditionnelle incarne l&apos;essence même du savoir-faire
-            artisanal. Chaque pièce de bois est choisie avec soin, travaillée avec précision, pour
-            créer des structures robustes et intemporelles. Notre équipe de charpentiers
-            expérimentés met tout son cœur et son expertise dans chaque projet, qu&apos;il
-            s&apos;agisse de la restauration d&apos;une vieille maison de campagne ou de la
-            construction d&apos;une nouvelle demeure. Nous comprenons l&apos;importance de préserver
-            les techniques traditionnelles tout en intégrant les innovations modernes pour garantir
-            des résultats à la fois authentiques et durables. Avec nous, votre charpente
-            traditionnelle est bien plus qu&apos;une simple structure : c&apos;est un témoignage de
-            notre engagement envers l&apos;excellence et notre passion pour le métier.
+            Votre rêve de maison prend forme avec notre expertise en extension et construction à
+            ossature. Nous comprenons que votre maison est bien plus qu&apos;un simple bâtiment :
+            c&apos;est votre refuge, votre havre de paix. C&apos;est pourquoi nous mettons tout en
+            œuvre pour réaliser vos projets avec précision et dévouement. L&apos;ossature bois offre
+            une flexibilité de conception incomparable, permettant des espaces lumineux, aérés et
+            personnalisés selon vos besoins et vos goûts. Notre équipe qualifiée travaille en
+            étroite collaboration avec vous à chaque étape du processus, de la conception à la
+            réalisation, pour s&apos;assurer que votre nouvelle extension ou maison correspond
+            parfaitement à votre vision. Que vous souhaitiez agrandir votre espace de vie existant
+            ou construire une maison entièrement nouvelle, nous sommes là pour vous guider, vous
+            conseiller et vous offrir des solutions sur mesure. Avec notre engagement envers la
+            qualité, la durabilité et le service client, vous pouvez avoir l&apos;assurance que
+            votre projet sera entre de bonnes mains.
           </p>
-          <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6 lg:gap-0">
+          <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
             <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
               Des questions? Nous sommes là pour vous renseigner !
             </p>
@@ -82,4 +85,4 @@ function CharpenteTraditionelle() {
   );
 }
 
-export default CharpenteTraditionelle;
+export default ExtensionOssature;
