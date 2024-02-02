@@ -64,13 +64,13 @@ export default function Home() {
         className="flex flex-col px-2 py-8 lg:px-12 lg:py-12 relative h-auto bg-darkGrey"
       >
         <div className="lg:hidden polygon w-[110vw] h-[45px] bg-primary overflow-hidden absolute transform -scale-y-100 top-0 -right-[120px] md:right-[-320px] z-20"></div>
-        <h1 className="text-white max-w-[80vw] font-bold text-2xl ml-[5%] my-4 text-left">
+        <h1 className="text-white max-w-[80vw] font-bold text-2xl ml-[5%] my-4 text-center">
           <span className="text-primary text-5xl">N</span>os Services
         </h1>
         <div className="flex w-full lg:my-12 z-30 mx-auto max-w-[1200px]">
           <ServiceCards />
         </div>
-        <div className="hidden lg:block polygon w-[49vw] h-[55px] bg-primary overflow-hidden absolute bottom-0 -right-[200px] z-20"></div>
+        <div className="hidden lg:block polygon w-[49vw] h-[55px] bg-primary overflow-hidden absolute bottom-0 -right-[200px] z-20 xl:right-[-245px]"></div>
       </section>
 
       <section
@@ -81,7 +81,7 @@ export default function Home() {
           <span className="text-primary text-5xl">N</span>os réalisations en quelques photos
         </h1>
         <Carousel />
-        <div className="polygon w-[120vw] lg:w-[49vw] h-[45px] lg:h-[55px] bg-darkGrey overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] lg:left-[-200px] z-20"></div>
+        <div className="polygon w-[120vw] lg:w-[49vw] h-[45px] lg:h-[55px] bg-darkGrey overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] lg:left-[-200px] xl:left-[-240px] z-20"></div>
       </section>
       <section id="testimonials" className="relative flex flex-col lg:items-center lg:px-24 ">
         <div
@@ -110,7 +110,7 @@ export default function Home() {
         id="contact"
         className="flex flex-col items-center lg:justify-around brick-bg h-full p-24 relative"
       >
-        <div className="polygon w-[110vw] lg:w-[49vw] h-[45px] lg:h-[55px] bg-primary overflow-hidden absolute -scale-y-100 top-0 -right-[120px] md:right-[-240px] lg:right-[-200px] z-20"></div>
+        <div className="polygon w-[110vw] lg:w-[49vw] h-[45px] lg:h-[55px] bg-primary overflow-hidden absolute -scale-y-100 top-0 -right-[120px] md:right-[-240px] lg:right-[-200px] xl:right-[-240px] z-20"></div>
         <div className="flex flex-col-reverse lg:flex-row lg:gap-12 items-center">
           <OpeningHours />
           <div className="flex flex-col form-shadow p-8 mx-4 -mt-16 lg:mt-0">
@@ -120,7 +120,7 @@ export default function Home() {
             <StaticForm />
           </div>
         </div>
-        <div className="polygon hidden lg:block w-[120vw] lg:w-[49vw] h-[55px] bg-primary overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] lg:left-[-200px] z-20"></div>
+        <div className="polygon hidden lg:block w-[120vw] lg:w-[49vw] h-[55px] bg-primary overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] lg:left-[-200px] xl:left-[-240px] z-20"></div>
       </section>
     </main>
   );

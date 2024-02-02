@@ -162,7 +162,7 @@ const Navbar = () => {
         <div
           className={`z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 lg:px-20 text-primary ${
             isMobile ? "relative" : "fixed"
-          } top-9 lg:h-[20vh]`}
+          } top-9 2xl:top-6 lg:h-[20vh]`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -182,14 +182,17 @@ const Navbar = () => {
             {/* Logo */}
             <div className="hidden lg:flex justify-evenly ml-8 gap-8">
               {navItems.map((item) => (
-                <p
+                <ScrollLink
                   key={item.id}
+                  to={item.target}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  offset={0}
                   className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald"
                 >
-                  <ScrollLink to={item.target} spy={true} smooth={true} duration={500} offset={0}>
-                    {item.text}
-                  </ScrollLink>
-                </p>
+                  {item.text}
+                </ScrollLink>
               ))}
             </div>
             <button
