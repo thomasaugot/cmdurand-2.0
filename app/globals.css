@@ -150,11 +150,9 @@ body {
 /* custom-shadow */
 
 .form-shadow {
-  @media (min-width: 1024px) {
-    border-radius: 27px;
-    background: #ffffff;
-    box-shadow: 18px 18px 48px #bdbdbd, -18px -18px 48px #ffffff;
-  }
+  border-radius: 27px;
+  background: #ffffff;
+  box-shadow: 18px 18px 48px #bdbdbd, -18px -18px 48px #ffffff;
 }
 
 .image-shadow {

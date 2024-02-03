@@ -20,6 +20,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
       )
       .then(
         (result) => {
+          console.log("sending...");
           setStateMessage("Message envoyé!");
           setIsSubmitting(false);
           setTimeout(() => {
@@ -101,7 +102,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
             >
               Envoyer
             </button>
-            {stateMessage && <p>{stateMessage}</p>}
+            {stateMessage && <p className="text-black">{stateMessage}</p>}
           </form>
           <button
             onClick={closeModal}
