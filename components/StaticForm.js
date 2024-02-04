@@ -18,6 +18,7 @@ const StaticForm = () => {
       )
       .then(
         (result) => {
+          console.log("success!!!");
           setStateMessage("Message envoyé!");
           setIsSubmitting(false);
           setTimeout(() => {

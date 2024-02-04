@@ -11,7 +11,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:contact@cmdurand.fr";
+    window.location.href = "mailto:charpente.menuiserie.durand@gmail.com";
   };
 
   const handlePhoneClick = () => {
@@ -53,7 +53,7 @@ const Footer = () => {
           <br />
           <div onClick={handleEmailClick} className="flex" style={{ cursor: "pointer" }}>
             <MdEmail size={25} color="#f37139" className="mr-2" />
-            <p>contact@cmdurand.fr</p>
+            <p>charpente.menuiserie.durand@gmail.com</p>
           </div>
           <br />
           <div onClick={handlePhoneClick} className="flex" style={{ cursor: "pointer" }}>
