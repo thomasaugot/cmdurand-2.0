@@ -8,31 +8,35 @@ import { useRef, useState } from "react";
 const PopupForm = ({ isOpen, closeModal }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
-  const form = useRef();
+  const emailRef = useRef();
+  const phoneRef = useRef();
+  const nameRef = useRef();
+  const messageRef = useRef();
 
-  const sendEmail = (e) => {
-    e.persist();
+  const sendMessage = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const templateParams = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      phone: phoneRef.current.value,
+      message: messageRef.current.value,
+    };
     emailjs
-      .sendForm(
+      .send(
         process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-        }
+        templateParams,
+        "tJE4pvbpWA5LNecY3"
       )
       .then(
-        (result) => {
-          console.log("sending...");
+        function (response) {
           setStateMessage("Message envoyé!");
           setIsSubmitting(false);
           setTimeout(() => {
             setStateMessage(null);
           }, 5000); // hide message after 5 seconds
         },
-        (error) => {
+        function (error) {
           setStateMessage("Echec lors de l'envoi, veuillez réessayer");
           setIsSubmitting(false);
           setTimeout(() => {
@@ -40,9 +44,10 @@ const PopupForm = ({ isOpen, closeModal }) => {
           }, 5000); // hide message after 5 seconds
         }
       );
-
-    // Clears the form after sending the email
-    e.target.reset();
+    nameRef.current.value = "";
+    emailRef.current.value = "";
+    phoneRef.current.value = "";
+    messageRef.current.value = "";
   };
 
   return (
@@ -62,13 +67,14 @@ const PopupForm = ({ isOpen, closeModal }) => {
             className="w-[680px] opacity-5 absolute top-[27%] left-[5px]"
           />
           <h2 className="text-2xl font-semibold mb-4 text-black">Contactez-nous</h2>
-          <form onSubmit={sendEmail} ref={form}>
+          <form onSubmit={sendMessage} action="">
             <div className="mb-4 relative z-20">
               <label htmlFor="name">Nom</label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                ref={nameRef}
                 className="mt-1 p-2 w-full border rounded-md z-10"
               />
             </div>
@@ -78,6 +84,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
                 type="text"
                 id="phone"
                 name="phone"
+                ref={phoneRef}
                 className="mt-1 p-2 w-full border rounded-md z-10"
               />
             </div>
@@ -87,6 +94,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
                 type="text"
                 id="email"
                 name="email"
+                ref={emailRef}
                 className="mt-1 p-2 w-full border rounded-md z-10"
               />
             </div>
@@ -97,6 +105,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
                 name="message"
                 className="mt-1 p-2 w-full border rounded-md z-10"
                 rows="4"
+                ref={messageRef}
               ></textarea>
             </div>
             <button

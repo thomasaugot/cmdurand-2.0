@@ -10,9 +10,10 @@ import GoogleWidget from "@/components/GoogleWidget";
 import Navbar from "@/components/Navbar";
 import OpeningHours from "@/components/OpeningHours";
 import StaticForm from "@/components/StaticForm";
-import charp2 from "/assets/img/charpente2.PNG";
 import ContactDetails from "@/components/ContactDetails";
 import woodBg from "/assets/img/woodbg.jpg";
+import { useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 const avis = [
   {
@@ -26,6 +27,8 @@ const avis = [
 ];
 
 export default function Home() {
+  useEffect(() => emailjs.init(process.env.NEXT_PUBLIC_PUBLIC_KEY), []);
+
   return (
     <main className="flex flex-col">
       <ContactDetails />
