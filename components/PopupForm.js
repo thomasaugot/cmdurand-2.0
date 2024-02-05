@@ -1,11 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import logobg from "/app/logo-bw.png";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const PopupForm = ({ isOpen, closeModal }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
+  const form = useRef();
 
   const sendEmail = (e) => {
     e.persist();
@@ -13,10 +16,12 @@ const PopupForm = ({ isOpen, closeModal }) => {
     setIsSubmitting(true);
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+        }
       )
       .then(
         (result) => {
@@ -57,7 +62,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
             className="w-[680px] opacity-5 absolute top-[27%] left-[5px]"
           />
           <h2 className="text-2xl font-semibold mb-4 text-black">Contactez-nous</h2>
-          <form onSubmit={sendEmail}>
+          <form onSubmit={sendEmail} ref={form}>
             <div className="mb-4 relative z-20">
               <label htmlFor="name">Nom</label>
               <input
@@ -102,7 +107,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
             >
               Envoyer
             </button>
-            {stateMessage && <p className="text-black">{stateMessage}</p>}
+            <div className="h-6">
+              {stateMessage && <p className="text-black text-center">{stateMessage}</p>}
+            </div>
           </form>
           <button
             onClick={closeModal}
