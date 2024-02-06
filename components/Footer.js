@@ -65,7 +65,7 @@ const Footer = () => {
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 5, opacity: 1 }}
           transition={{
-            type: "spring",
+            type: "linear",
             stiffness: 40,
             delay: 0.4,
             ease: "easeOut",

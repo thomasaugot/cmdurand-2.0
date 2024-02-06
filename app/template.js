@@ -12,7 +12,7 @@ export default function Template({ children }) {
       variants={variants}
       initial="hidden"
       animate="enter"
-      transition={{ type: "linear" }}
+      transition={{ type: "tween", duration: 0.5 }}
     >
       {children}
     </motion.main>
