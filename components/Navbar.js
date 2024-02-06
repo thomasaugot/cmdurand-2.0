@@ -127,7 +127,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className="p-4 md:p-6 rounded-xl ml-6 font-semibold hover:bg-white duration-300 hover:text-primary cursor-pointer md:text-2xl"
+                className="p-4 md:p-6 rounded-xl ml-6 font-semibold duration-300 hover:text-primary cursor-pointer md:text-2xl"
               >
                 <ScrollLink
                   to={item.target}
@@ -189,7 +189,7 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   offset={0}
-                  className="p-2 text-black font-medium hover:bg-primary rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald"
+                  className="p-2 text-black font-medium hover:bg-primary hover:dark-shadow rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald"
                 >
                   {item.text}
                 </ScrollLink>
