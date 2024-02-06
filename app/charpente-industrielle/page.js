@@ -22,27 +22,19 @@ function CharpenteIndustrielle() {
       <BackToHomepageButton />
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
-        <svg
-          width="300"
-          height="200"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-20 left-16 z-10 dark-shadow hidden lg:block "
-        >
-          <rect width="100%" height="100%" fill="#f37139" />
-        </svg>
         <Image
           src={charpenteIndus}
           width={220}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[350px] z-20"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[350px] z-20 dark-shadow"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="capitalize text-black text-center text-4xl lg:text-5xl xl:text-nowrap font-semibold mt-16 lg:mt-0 mx-auto"
+            className="capitalize text-black text-center text-4xl lg:text-5xl xl:text-nowrap font-semibold mt-8 lg:mt-0 mx-auto"
             transition={{
               type: "spring",
               stiffness: 40,

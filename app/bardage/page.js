@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import ossature from "/assets/img/ossature.jpg";
+import preau from "/assets/img/bardage.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 
-function ExtensionOssature() {
+function Bardage() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRedirect = () => {};
@@ -23,11 +23,11 @@ function ExtensionOssature() {
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <Image
-          src={ossature}
-          width={330}
+          src={preau}
+          width={300}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[330px] z-20 dark-shadow"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[360px] z-20 dark-shadow"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
@@ -42,22 +42,25 @@ function ExtensionOssature() {
               ease: "easeOut",
             }}
           >
-            Extension ou maison ossature
+            Bardage (Différents types de revêtements extérieurs)
           </motion.h1>
           <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
-            Votre rêve de maison prend forme avec notre expertise en extension et construction à
-            ossature. Nous comprenons que votre maison est bien plus qu&apos;un simple bâtiment :
-            c&apos;est votre refuge, votre havre de paix. C&apos;est pourquoi nous mettons tout en
-            œuvre pour réaliser vos projets avec précision et dévouement. L&apos;ossature bois offre
-            une flexibilité de conception incomparable, permettant des espaces lumineux, aérés et
-            personnalisés selon vos besoins et vos goûts. Notre équipe qualifiée travaille en
-            étroite collaboration avec vous à chaque étape du processus, de la conception à la
-            réalisation, pour s&apos;assurer que votre nouvelle extension ou maison correspond
-            parfaitement à votre vision. Que vous souhaitiez agrandir votre espace de vie existant
-            ou construire une maison entièrement nouvelle, nous sommes là pour vous guider, vous
-            conseiller et vous offrir des solutions sur mesure. Avec notre engagement envers la
-            qualité, la durabilité et le service client, vous pouvez avoir l&apos;assurance que
-            votre projet sera entre de bonnes mains.
+            Chez Charpente Menuiserie Durand, nous comprenons l&apos;importance d&apos;un bardage de
+            qualité pour protéger et embellir votre maison. Avec notre service de bardage, nous vous
+            offrons une gamme complète de revêtements extérieurs pour répondre à vos besoins
+            spécifiques et mettre en valeur le caractère unique de votre propriété. Que vous
+            recherchiez un aspect traditionnel avec du bois naturel, une esthétique moderne avec des
+            matériaux composites, ou une solution pratique avec des revêtements en PVC, notre équipe
+            expérimentée est là pour vous conseiller et réaliser votre projet avec expertise. Le
+            bardage de votre maison ne se limite pas seulement à l&apos;esthétique ; il joue
+            également un rôle crucial dans la protection contre les intempéries et les dommages
+            causés par l&apos;exposition aux éléments extérieurs. C&apos;est pourquoi nous veillons
+            à choisir des matériaux durables et résistants, tout en vous offrant une variété de
+            styles et de finitions pour correspondre à vos préférences esthétiques. Avec notre
+            savoir-faire artisanal et notre souci du détail, nous nous engageons à vous fournir un
+            bardage de qualité supérieure qui ajoutera de la valeur et du caractère à votre maison.
+            Faites confiance à Charpente Menuiserie Durand pour transformer l&apos;apparence
+            extérieure de votre propriété et lui donner un nouveau souffle de vie.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
             <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
@@ -77,4 +80,4 @@ function ExtensionOssature() {
   );
 }
 
-export default ExtensionOssature;
+export default Bardage;

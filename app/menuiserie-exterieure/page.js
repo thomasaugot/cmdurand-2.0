@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import ossature from "/assets/img/ossature.jpg";
+import preau from "/assets/img/menuiserie-ext.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 
-function ExtensionOssature() {
+function MenuiserieExterieure() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRedirect = () => {};
@@ -23,11 +23,11 @@ function ExtensionOssature() {
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <Image
-          src={ossature}
-          width={330}
+          src={preau}
+          width={300}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[330px] z-20 dark-shadow"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[360px] z-20 dark-shadow"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
@@ -42,22 +42,27 @@ function ExtensionOssature() {
               ease: "easeOut",
             }}
           >
-            Extension ou maison ossature
+            Menuiserie Extérieure
           </motion.h1>
           <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
-            Votre rêve de maison prend forme avec notre expertise en extension et construction à
-            ossature. Nous comprenons que votre maison est bien plus qu&apos;un simple bâtiment :
-            c&apos;est votre refuge, votre havre de paix. C&apos;est pourquoi nous mettons tout en
-            œuvre pour réaliser vos projets avec précision et dévouement. L&apos;ossature bois offre
-            une flexibilité de conception incomparable, permettant des espaces lumineux, aérés et
-            personnalisés selon vos besoins et vos goûts. Notre équipe qualifiée travaille en
-            étroite collaboration avec vous à chaque étape du processus, de la conception à la
-            réalisation, pour s&apos;assurer que votre nouvelle extension ou maison correspond
-            parfaitement à votre vision. Que vous souhaitiez agrandir votre espace de vie existant
-            ou construire une maison entièrement nouvelle, nous sommes là pour vous guider, vous
-            conseiller et vous offrir des solutions sur mesure. Avec notre engagement envers la
-            qualité, la durabilité et le service client, vous pouvez avoir l&apos;assurance que
-            votre projet sera entre de bonnes mains.
+            Chez Charpente Menuiserie Durand, notre engagement envers la qualité et
+            l&apos;excellence se reflète dans chaque détail de notre travail, même à
+            l&apos;extérieur de votre maison. Avec notre service de menuiserie extérieure, nous
+            mettons notre expertise et notre savoir-faire au service de la beauté et de la
+            fonctionnalité de votre espace extérieur. Que vous souhaitiez installer une nouvelle
+            porte d&apos;entrée élégante, des fenêtres sur mesure pour illuminer votre maison, des
+            volets en bois traditionnels pour ajouter du caractère à votre façade, ou encore une
+            terrasse en bois pour créer un espace de vie extérieur chaleureux et accueillant, notre
+            équipe qualifiée est là pour réaliser votre vision. Nous comprenons l&apos;importance de
+            choisir les bons matériaux et les bonnes finitions pour résister aux éléments extérieurs
+            tout en ajoutant une touche d&apos;esthétique à votre maison. C&apos;est pourquoi nous
+            travaillons avec vous pour concevoir et fabriquer des produits sur mesure qui répondent
+            à vos besoins spécifiques et qui complètent le style architectural de votre maison. Que
+            vous recherchiez une menuiserie extérieure traditionnelle ou contemporaine, nous avons
+            les compétences et l&apos;expérience nécessaires pour réaliser votre projet avec
+            précision et professionnalisme. Faites confiance à Charpente Menuiserie Durand pour
+            transformer votre espace extérieur en un lieu de vie exceptionnel qui vous ravira
+            pendant des années à venir.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
             <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
@@ -77,4 +82,4 @@ function ExtensionOssature() {
   );
 }
 
-export default ExtensionOssature;
+export default MenuiserieExterieure;

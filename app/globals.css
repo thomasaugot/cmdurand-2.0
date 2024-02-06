@@ -175,6 +175,14 @@ body {
   box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.75);
 }
 
+.primary-filter {
+  background-color: rgb(243, 113, 57, 0.3);
+}
+
+.custom-pointer {
+  cursor: url("/assets/img/hammer-pointer.png"), auto;
+}
+
 .polygon {
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }

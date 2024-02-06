@@ -64,7 +64,7 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="flex flex-col px-2 py-8 lg:px-12 lg:py-12 relative h-auto bg-darkGrey"
+        className="flex flex-col px-2 py-8 lg:px-12 lg:py-12 relative h-auto bg-darkGrey custom-pointer"
       >
         <div className="lg:hidden polygon w-[110vw] h-[45px] bg-primary overflow-hidden absolute transform -scale-y-100 top-0 -right-[120px] md:right-[-320px] z-20"></div>
         <h1 className="text-white max-w-[80vw] font-bold text-2xl ml-[5%] my-4 text-center">

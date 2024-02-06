@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import ossature from "/assets/img/ossature.jpg";
+import preau from "/assets/img/terrasse.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 
-function ExtensionOssature() {
+function Terrasse() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRedirect = () => {};
@@ -23,11 +23,11 @@ function ExtensionOssature() {
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <Image
-          src={ossature}
-          width={330}
+          src={preau}
+          width={300}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[330px] z-20 dark-shadow"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[360px] z-20 dark-shadow"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
@@ -42,22 +42,24 @@ function ExtensionOssature() {
               ease: "easeOut",
             }}
           >
-            Extension ou maison ossature
+            Terrasse
           </motion.h1>
           <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
-            Votre rêve de maison prend forme avec notre expertise en extension et construction à
-            ossature. Nous comprenons que votre maison est bien plus qu&apos;un simple bâtiment :
-            c&apos;est votre refuge, votre havre de paix. C&apos;est pourquoi nous mettons tout en
-            œuvre pour réaliser vos projets avec précision et dévouement. L&apos;ossature bois offre
-            une flexibilité de conception incomparable, permettant des espaces lumineux, aérés et
-            personnalisés selon vos besoins et vos goûts. Notre équipe qualifiée travaille en
-            étroite collaboration avec vous à chaque étape du processus, de la conception à la
-            réalisation, pour s&apos;assurer que votre nouvelle extension ou maison correspond
-            parfaitement à votre vision. Que vous souhaitiez agrandir votre espace de vie existant
-            ou construire une maison entièrement nouvelle, nous sommes là pour vous guider, vous
-            conseiller et vous offrir des solutions sur mesure. Avec notre engagement envers la
-            qualité, la durabilité et le service client, vous pouvez avoir l&apos;assurance que
-            votre projet sera entre de bonnes mains.
+            Transformez votre espace extérieur en un havre de paix avec nos services de construction
+            de terrasses. Chez Charpente Menuiserie Durand, nous comprenons l&apos;importance
+            d&apos;avoir un espace extérieur fonctionnel et accueillant où vous pouvez vous
+            détendre, recevoir des amis et profiter de la beauté de la nature. Que vous rêviez
+            d&apos;une terrasse en bois chaleureuse et rustique ou d&apos;une terrasse en composite
+            moderne et facile d&apos;entretien, notre équipe d&apos;experts est là pour vous aider à
+            concrétiser votre vision. Nous travaillons en étroite collaboration avec vous pour
+            concevoir et construire une terrasse qui répond à vos besoins, à votre style de vie et à
+            votre budget. Nos terrasses sont construites avec des matériaux de haute qualité et des
+            techniques de construction robustes pour assurer leur durabilité et leur longévité. Que
+            vous souhaitiez une petite terrasse intime ou une grande terrasse pour accueillir des
+            réunions familiales, nous sommes là pour faire de votre rêve une réalité. Faites de
+            votre espace extérieur un lieu de rassemblement et de détente avec une magnifique
+            terrasse conçue et construite par Charpente Menuiserie Durand. Contactez-nous dès
+            aujourd&apos;hui pour commencer à planifier votre projet de terrasse.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
             <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
@@ -77,4 +79,4 @@ function ExtensionOssature() {
   );
 }
 
-export default ExtensionOssature;
+export default Terrasse;

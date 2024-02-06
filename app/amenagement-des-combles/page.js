@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import ossature from "/assets/img/ossature.jpg";
+import preau from "/assets/img/préau.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 
-function ExtensionOssature() {
+function AmenagementCombles() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRedirect = () => {};
@@ -23,11 +23,11 @@ function ExtensionOssature() {
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <Image
-          src={ossature}
-          width={330}
+          src={preau}
+          width={300}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[330px] z-20 dark-shadow"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[300px] z-20 dark-shadow"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
@@ -42,22 +42,23 @@ function ExtensionOssature() {
               ease: "easeOut",
             }}
           >
-            Extension ou maison ossature
+            Aménagement des Combles
           </motion.h1>
           <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
-            Votre rêve de maison prend forme avec notre expertise en extension et construction à
-            ossature. Nous comprenons que votre maison est bien plus qu&apos;un simple bâtiment :
-            c&apos;est votre refuge, votre havre de paix. C&apos;est pourquoi nous mettons tout en
-            œuvre pour réaliser vos projets avec précision et dévouement. L&apos;ossature bois offre
-            une flexibilité de conception incomparable, permettant des espaces lumineux, aérés et
-            personnalisés selon vos besoins et vos goûts. Notre équipe qualifiée travaille en
-            étroite collaboration avec vous à chaque étape du processus, de la conception à la
-            réalisation, pour s&apos;assurer que votre nouvelle extension ou maison correspond
-            parfaitement à votre vision. Que vous souhaitiez agrandir votre espace de vie existant
-            ou construire une maison entièrement nouvelle, nous sommes là pour vous guider, vous
-            conseiller et vous offrir des solutions sur mesure. Avec notre engagement envers la
-            qualité, la durabilité et le service client, vous pouvez avoir l&apos;assurance que
-            votre projet sera entre de bonnes mains.
+            Que vous cherchiez à créer une chambre supplémentaire, un bureau à domicile, une salle
+            de jeux pour les enfants ou tout autre espace fonctionnel, notre équipe expérimentée est
+            là pour vous aider à réaliser votre projet. Nous comprenons l&apos;importance de tirer
+            le meilleur parti de chaque mètre carré de votre maison, et nous travaillons en étroite
+            collaboration avec vous pour concevoir un aménagement des combles qui répond à vos
+            besoins, à votre style de vie et à votre budget. Avec notre expertise en charpente et en
+            menuiserie, nous pouvons transformer vos combles en un espace utilisable et confortable,
+            tout en préservant l&apos;intégrité structurelle de votre maison. Nous utilisons des
+            matériaux de haute qualité et des techniques de construction innovantes pour assurer la
+            solidité, la durabilité et la sécurité de chaque projet. Laissez-nous vous aider à
+            libérer le potentiel inexploité de vos combles et à créer un espace supplémentaire qui
+            répond à vos besoins et à ceux de votre famille. Contactez-nous dès aujourd&apos;hui
+            pour discuter de votre projet d&apos;aménagement des combles avec l&apos;équipe de
+            Charpente Menuiserie Durand.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
             <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
@@ -77,4 +78,4 @@ function ExtensionOssature() {
   );
 }
 
-export default ExtensionOssature;
+export default AmenagementCombles;

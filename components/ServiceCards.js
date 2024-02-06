@@ -41,13 +41,13 @@ const services = [
     id: 7,
     title: "Aménagement des combles",
     imageUrl: charpenteTrad,
-    endPoint: "/aménagement-des-combles",
+    endPoint: "/amenagement-des-combles",
   },
   {
     id: 8,
     title: "Menuiserie extérieure",
     imageUrl: menuiserieExt,
-    endPoint: "/menuiserie-extérieure",
+    endPoint: "/menuiserie-exterieure",
   },
   {
     id: 9,
@@ -65,7 +65,7 @@ const services = [
     id: 11,
     title: "Menuiserie Générale",
     imageUrl: menuiserieG,
-    endPoint: "/menuiserie-générale",
+    endPoint: "/menuiserie-generale",
   },
 ];
 
@@ -84,17 +84,15 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
           alt={title}
           layout="fill"
           objectFit="cover"
-          className={`transition-filter duration-500 rounded-lg ${
-            isHovered ? "filter-none" : "bg-darkGrey z-11"
-          }`}
+          className={`transition-filter duration-500 rounded-lg inset-0`}
         />
       </div>
       {isHovered ? (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="primary-filter absolute inset-0 flex items-center justify-center z-11 transition-filter duration-500 rounded-lg">
           <Link
             href={endPoint}
             passHref
-            className="backdrop-blur-md text-black text-lg lg:text-xl px-3 lg:px-5 py-3 rounded-lg shadow-md text-center"
+            className="bg-white text-black text-lg lg:text-xl px-2 lg:px-3 py-2 rounded-lg dark-shadow font-medium text-center"
           >
             En savoir plus
           </Link>

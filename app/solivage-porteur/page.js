@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import ossature from "/assets/img/ossature.jpg";
+import preau from "/assets/img/solivage.jpg";
 import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 
-function ExtensionOssature() {
+function Solivage() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleRedirect = () => {};
@@ -23,11 +23,11 @@ function ExtensionOssature() {
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <Image
-          src={ossature}
-          width={330}
+          src={preau}
+          width={300}
           height={"auto"}
           alt="yourImg"
-          className="w-[80vw] h-auto md:w-[60vw] lg:w-[330px] z-20 dark-shadow"
+          className="w-[80vw] h-auto md:w-[60vw] lg:w-[300px] z-20 dark-shadow"
         />
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
           <motion.h1
@@ -42,22 +42,25 @@ function ExtensionOssature() {
               ease: "easeOut",
             }}
           >
-            Extension ou maison ossature
+            Solivage Porteur (Plancher)
           </motion.h1>
           <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
-            Votre rêve de maison prend forme avec notre expertise en extension et construction à
-            ossature. Nous comprenons que votre maison est bien plus qu&apos;un simple bâtiment :
-            c&apos;est votre refuge, votre havre de paix. C&apos;est pourquoi nous mettons tout en
-            œuvre pour réaliser vos projets avec précision et dévouement. L&apos;ossature bois offre
-            une flexibilité de conception incomparable, permettant des espaces lumineux, aérés et
-            personnalisés selon vos besoins et vos goûts. Notre équipe qualifiée travaille en
-            étroite collaboration avec vous à chaque étape du processus, de la conception à la
-            réalisation, pour s&apos;assurer que votre nouvelle extension ou maison correspond
-            parfaitement à votre vision. Que vous souhaitiez agrandir votre espace de vie existant
-            ou construire une maison entièrement nouvelle, nous sommes là pour vous guider, vous
-            conseiller et vous offrir des solutions sur mesure. Avec notre engagement envers la
-            qualité, la durabilité et le service client, vous pouvez avoir l&apos;assurance que
-            votre projet sera entre de bonnes mains.
+            Que vous envisagiez de construire une nouvelle maison ou de rénover un espace existant,
+            nos experts en solivage porteur sont là pour vous accompagner à chaque étape du
+            processus. Nous commençons par une évaluation approfondie de vos besoins et de la
+            structure de votre bâtiment, afin de concevoir un plan de solivage qui garantit une
+            distribution uniforme de la charge et une solidité optimale. Grâce à notre expérience et
+            à notre expertise dans le domaine de la charpente et de la menuiserie, nous sommes en
+            mesure de vous proposer une variété de solutions de solivage porteur, allant des
+            méthodes traditionnelles aux techniques modernes. Nous utilisons des matériaux de haute
+            qualité et des techniques de construction éprouvées pour assurer la durabilité et la
+            longévité de votre plancher, tout en respectant les normes de sécurité et de
+            construction en vigueur. Chez Charpente Menuiserie Durand, nous sommes fiers de notre
+            engagement envers l&apos;excellence et la satisfaction client. Nous nous efforçons de
+            fournir des services de solivage porteur de haute qualité, réalisés avec précision et
+            souci du détail, pour garantir des résultats qui dépassent vos attentes. Faites
+            confiance à notre équipe qualifiée pour prendre en charge vos projets de solivage
+            porteur et bénéficiez d&apos;une solution fiable et durable pour votre maison.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
             <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
@@ -77,4 +80,4 @@ function ExtensionOssature() {
   );
 }
 
-export default ExtensionOssature;
+export default Solivage;
