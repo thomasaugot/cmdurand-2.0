@@ -15,6 +15,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const controls = useAnimation();
   const path = usePathname();
+  const [activeLink, setActiveLink] = useState("");
 
   const handleRedirect = () => {};
 
@@ -60,6 +61,44 @@ const Navbar = () => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 70;
+
+      if (isElementInViewport("home", scrollPosition)) {
+        setActiveLink("home");
+      } else if (isElementInViewport("about", scrollPosition)) {
+        setActiveLink("about");
+      } else if (isElementInViewport("gallery", scrollPosition)) {
+        setActiveLink("gallery");
+      } else if (isElementInViewport("testimonials", scrollPosition)) {
+        setActiveLink("testimonials");
+      } else if (isElementInViewport("contact", scrollPosition)) {
+        setActiveLink("contact");
+      } else {
+        setActiveLink("");
+      }
+    };
+
+    const isElementInViewport = (id, scrollPosition) => {
+      const element = document.getElementById(id);
+      if (!element) return false;
+
+      const rect = element.getBoundingClientRect();
+      const topOffset = rect.top + window.pageYOffset;
+      const bottomOffset = topOffset + rect.height;
+
+      return scrollPosition >= topOffset && scrollPosition < bottomOffset;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -129,7 +168,9 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className="p-4 md:p-6 rounded-xl ml-6 font-semibold duration-300 hover:text-primary cursor-pointer md:text-2xl"
+                className={`${
+                  activeLink === item.target ? "bg-primary dark-shadow rounded-lg text-white" : ""
+                } p-4 md:p-6 rounded-xl ml-6 font-semibold duration-300 hover:text-primary hover:dark-shadow cursor-pointer md:text-2xl`}
               >
                 <ScrollLink
                   to={item.target}
@@ -192,7 +233,7 @@ const Navbar = () => {
                   duration={500}
                   offset={0}
                   className={`p-2 text-black font-medium hover:bg-primary ${
-                    item.target === path ? "bg-primary dark-shadow rounded-lg text-white" : ""
+                    activeLink === item.target ? "bg-primary rounded-lg text-white" : ""
                   } hover:dark-shadow rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald`}
                 >
                   {item.text}

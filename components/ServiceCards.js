@@ -117,11 +117,7 @@ const ServiceCard = ({ title, imageUrl, endPoint, id }) => {
       </div>
       {isHovered ? (
         <div className="primary-filter absolute inset-0 flex items-center justify-center z-11 transition-filter duration-500 rounded-lg">
-          <Link
-            href={endPoint}
-            passHref
-            className="bg-white text-black text-lg lg:text-xl px-2 lg:px-3 py-2 rounded-lg dark-shadow font-medium text-center"
-          >
+          <Link href={endPoint} passHref className="primary-button primary-button-bg text-nowrap">
             En savoir plus
           </Link>
         </div>
