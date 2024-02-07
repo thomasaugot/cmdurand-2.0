@@ -76,7 +76,7 @@ const variants = {
     opacity: 1,
     delay: 1,
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
 };
