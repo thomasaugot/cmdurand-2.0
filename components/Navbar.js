@@ -231,11 +231,14 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   offset={0}
-                  className={`p-2 text-black font-medium hover:bg-primary ${
-                    activeLink === item.target ? "bg-primary rounded-lg text-white" : ""
-                  } hover:dark-shadow rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald`}
+                  className={`pt-2 pb-0 text-black font-medium relative m-1 cursor-pointer hover:scale-110`}
                 >
                   {item.text}
+                  <span
+                    className={`absolute inset-x-0 bottom-0 h-1 bg-primary transition-all duration-300 ease-in-out ${
+                      activeLink === item.target ? "w-full" : "w-0"
+                    }`}
+                  ></span>
                 </ScrollLink>
               ))}
             </div>
