@@ -84,7 +84,7 @@ const variants = {
 const images = {
   hidden: {
     opacity: 0,
-    y: 30,
+    y: 5,
   },
   show: {
     opacity: 1,

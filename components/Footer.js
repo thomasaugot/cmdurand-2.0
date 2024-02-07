@@ -90,7 +90,7 @@ const Footer = () => {
                 transition={{
                   type: "linear",
                   stiffness: 40,
-                  delay: 0.4,
+                  delay: 1,
                   ease: "easeOut",
                 }}
                 className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] lg:top-[30%] right-0"
