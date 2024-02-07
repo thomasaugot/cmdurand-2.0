@@ -6,6 +6,7 @@ import { motion, useAnimation } from "framer-motion";
 import PopupForm from "./PopupForm";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +14,9 @@ const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const controls = useAnimation();
+  const path = usePathname();
+
+  console.log("path ---> ", path);
 
   const handleRedirect = () => {};
 
@@ -189,7 +193,9 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   offset={0}
-                  className="p-2 text-black font-medium hover:bg-primary hover:dark-shadow rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald"
+                  className={`p-2 text-black font-medium hover:bg-primary ${
+                    item.target === path ? "bg-primary dark-shadow rounded-lg text-white" : ""
+                  } hover:dark-shadow rounded-lg m-1 cursor-pointer duration-300 hover:text-white font-oswald`}
                 >
                   {item.text}
                 </ScrollLink>

@@ -6,8 +6,20 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
+import { useInView } from "react-intersection-observer";
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.2, // set threshold to 20%
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+    }
+  }, [inView]);
+
   const currentYear = new Date().getFullYear();
 
   const handleEmailClick = () => {
@@ -39,63 +51,71 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer id="footer" className={`relative bg-darkGrey text-white py-12 lg:pb-8 lg:pt-2 `}>
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
-        <div className="mb-4 lg:mb-0 flex flex-col items-center lg:items-start lg:ml-8">
-          <div className="flex mt-6">
-            <FaLocationDot size={25} color="#f37139" className="mr-2" />
-            <div className="flex flex-col text-center lg:text-left">
-              <p>Sarl Charpente Menuiserie Durand</p>
-              <p>Z.A. la Pommeraie, Rue des Indes</p>
-              <p>44780 Missillac</p>
+    <footer
+      ref={ref}
+      id="footer"
+      className={`relative bg-darkGrey text-white py-12 lg:pb-8 lg:pt-2 `}
+    >
+      {isVisible && (
+        <>
+          <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+            <div className="mb-4 lg:mb-0 flex flex-col items-center lg:items-start lg:ml-8">
+              <div className="flex mt-6">
+                <FaLocationDot size={25} color="#f37139" className="mr-2" />
+                <div className="flex flex-col text-center lg:text-left">
+                  <p>Sarl Charpente Menuiserie Durand</p>
+                  <p>Z.A. la Pommeraie, Rue des Indes</p>
+                  <p>44780 Missillac</p>
+                </div>
+              </div>
+              <br />
+              <div onClick={handleEmailClick} className="flex" style={{ cursor: "pointer" }}>
+                <MdEmail size={25} color="#f37139" className="mr-2" />
+                <p>charpente.menuiserie.durand@gmail.com</p>
+              </div>
+              <br />
+              <div onClick={handlePhoneClick} className="flex" style={{ cursor: "pointer" }}>
+                <FaPhoneAlt size={23} color="#f37139" className="mr-2" />
+                <p>+33 6 76 50 85 51</p>
+              </div>
             </div>
+            <motion.div
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 5, opacity: 1 }}
+              transition={{
+                type: "linear",
+                stiffness: 40,
+                delay: 0.4,
+                ease: "easeOut",
+              }}
+              className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] lg:top-[30%] right-0"
+            >
+              <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous !</h2>
+              <a
+                href="https://www.facebook.com/profile.php?id=100063695462775"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebook size={40} className="w-[50px] transition hover:scale-90 text-white" />
+              </a>
+            </motion.div>
           </div>
-          <br />
-          <div onClick={handleEmailClick} className="flex" style={{ cursor: "pointer" }}>
-            <MdEmail size={25} color="#f37139" className="mr-2" />
-            <p>charpente.menuiserie.durand@gmail.com</p>
+          <div className="mt-8 text-center mx-auto max-w-[90vw]">
+            <p>
+              &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand. Site Web développé par{" "}
+              <a
+                href="https://thomasaugot.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-2"
+              >
+                Thomas Augot
+              </a>
+              .
+            </p>
           </div>
-          <br />
-          <div onClick={handlePhoneClick} className="flex" style={{ cursor: "pointer" }}>
-            <FaPhoneAlt size={23} color="#f37139" className="mr-2" />
-            <p>+33 6 76 50 85 51</p>
-          </div>
-        </div>
-        <motion.div
-          initial={{ x: "100%", opacity: 0 }}
-          animate={{ x: 5, opacity: 1 }}
-          transition={{
-            type: "linear",
-            stiffness: 40,
-            delay: 0.4,
-            ease: "easeOut",
-          }}
-          className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] lg:top-[30%] right-0"
-        >
-          <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous !</h2>
-          <a
-            href="https://www.facebook.com/profile.php?id=100063695462775"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaFacebook size={40} className="w-[50px] transition hover:scale-90 text-white" />
-          </a>
-        </motion.div>
-      </div>
-      <div className="mt-8 text-center mx-auto max-w-[90vw]">
-        <p>
-          &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand. Site Web développé par{" "}
-          <a
-            href="https://thomasaugot.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="underline underline-offset-2"
-          >
-            Thomas Augot
-          </a>
-          .
-        </p>
-      </div>
+        </>
+      )}
     </footer>
   );
 };

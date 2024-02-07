@@ -1,19 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import charpenteTrad from "/assets/img/charp-trad.jpg";
 import charpenteIndus from "/assets/img/charp-indus.jpg";
 import ossature from "/assets/img/ossature.jpg";
 import preau from "/assets/img/préau.jpg";
 import carport from "/assets/img/carport.jpg";
 import terrasse from "/assets/img/terrasse.jpg";
-// import combles from "/assets/img/";
+import { motion } from "framer-motion";
 import menuiserieExt from "/assets/img/menuiserie-ext.jpg";
 import bardage from "/assets/img/bardage.jpg";
 import solivage from "/assets/img/solivage.jpg";
 import menuiserieG from "/assets/img/menuiserie-g.jpg";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 
 const services = [
   {
@@ -69,11 +70,38 @@ const services = [
   },
 ];
 
-const ServiceCard = ({ title, imageUrl, endPoint }) => {
+const variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    delay: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const images = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 2,
+    },
+  },
+};
+
+const ServiceCard = ({ title, imageUrl, endPoint, id }) => {
   const [isHovered, setHovered] = React.useState(false);
 
   return (
-    <div
+    <motion.div
+      variants={images}
+      key={id}
       className="image-shadow relative flex items-center justify-center w-[42vw] h-[150px] lg:w-[180px] lg:h-[180px] overflow-hidden m-2 transition-transform transform hover:scale-105 text-white z-30"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -108,16 +136,36 @@ const ServiceCard = ({ title, imageUrl, endPoint }) => {
           {title}
         </h1>
       )}
-    </div>
+    </motion.div>
   );
 };
 
 const ServiceCards = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.2, // set threshold to 20%
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+    }
+  }, [inView]);
+
   return (
-    <div className="flex flex-wrap justify-center w-[98vw] z-30 lg:mb-8">
-      {services.map((service) => (
-        <ServiceCard key={service.id} {...service} />
-      ))}
+    <div ref={ref} className="flex flex-wrap justify-center">
+      {isVisible && (
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          animate="show"
+          className="flex flex-wrap justify-center w-full z-30 lg:mb-8"
+        >
+          {services.map((service) => (
+            <ServiceCard key={service.id} {...service} />
+          ))}
+        </motion.div>
+      )}
     </div>
   );
 };
