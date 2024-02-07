@@ -168,9 +168,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className={`${
-                  activeLink === item.target ? "bg-primary dark-shadow rounded-lg text-white" : ""
-                } p-4 md:p-6 rounded-xl ml-6 font-semibold duration-300 hover:text-primary hover:dark-shadow cursor-pointer md:text-2xl`}
+                className={` p-4 md:p-6 rounded-xl ml-6 font-semibold duration-300 hover:text-primary hover:dark-shadow cursor-pointer md:text-2xl`}
               >
                 <ScrollLink
                   to={item.target}
