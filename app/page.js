@@ -12,9 +12,11 @@ import OpeningHours from "@/components/OpeningHours";
 import StaticForm from "@/components/StaticForm";
 import ContactDetails from "@/components/ContactDetails";
 import woodBg from "/assets/img/woodbg.jpg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Template from "./template";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const avis = [
   {
@@ -29,6 +31,17 @@ const avis = [
 
 export default function Home() {
   useEffect(() => emailjs.init(process.env.NEXT_PUBLIC_PUBLIC_KEY), []);
+
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.2, // set threshold to 20%
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+    }
+  }, [inView]);
 
   return (
     <Template>
@@ -88,7 +101,11 @@ export default function Home() {
           <Carousel />
           <div className="polygon w-[120vw] lg:w-[49vw] h-[45px] lg:h-[55px] bg-darkGrey overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] lg:left-[-200px] xl:left-[-240px] z-20"></div>
         </section>
-        <section id="testimonials" className="relative flex flex-col lg:items-center lg:px-24 ">
+        <section
+          id="testimonials"
+          className="relative flex flex-col lg:items-center lg:px-24 "
+          ref={ref}
+        >
           <div
             className="absolute inset-0"
             style={{
@@ -108,7 +125,19 @@ export default function Home() {
                 <TestimonialItem key={index} text={item.text} author={item.author} />
               ))}
             </div>
-            <GoogleWidget />
+            <motion.div
+              whileInView={{ scale: 1, opacity: 1 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              viewport={{ once: true }}
+              animate={{ scale: -0.3 }}
+              transition={{
+                type: "spring",
+                stiffness: 60,
+                delay: 0.5,
+              }}
+            >
+              <GoogleWidget />
+            </motion.div>
           </div>
         </section>
         <section

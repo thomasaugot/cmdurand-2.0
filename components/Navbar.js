@@ -16,8 +16,6 @@ const Navbar = () => {
   const controls = useAnimation();
   const path = usePathname();
 
-  console.log("path ---> ", path);
-
   const handleRedirect = () => {};
 
   const handleClick = () => {

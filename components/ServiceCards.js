@@ -84,7 +84,7 @@ const variants = {
 const images = {
   hidden: {
     opacity: 0,
-    y: 5,
+    // y: 5,
   },
   show: {
     opacity: 1,
@@ -158,6 +158,7 @@ const ServiceCards = () => {
         <motion.div
           variants={variants}
           initial="hidden"
+          viewport={{ once: true }}
           animate="show"
           className="flex flex-wrap justify-center w-full z-30 lg:mb-8"
         >

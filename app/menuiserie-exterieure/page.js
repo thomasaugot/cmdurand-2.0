@@ -34,6 +34,7 @@ function MenuiserieExterieure() {
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
+            viewport={{ once: true }}
             className="capitalize text-black text-center text-4xl lg:text-5xl font-semibold mt-8 lg:mt-0 mx-auto"
             transition={{
               type: "spring",

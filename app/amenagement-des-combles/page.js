@@ -33,6 +33,7 @@ function AmenagementCombles() {
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             exit={{ opacity: 0 }}
             className="capitalize text-black text-center text-4xl lg:text-5xl font-semibold mt-8 lg:mt-0 mx-auto"
             transition={{
