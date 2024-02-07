@@ -78,27 +78,28 @@ const Footer = () => {
                 <FaPhoneAlt size={23} color="#f37139" className="mr-2" />
                 <p>+33 6 76 50 85 51</p>
               </div>
-            </div>
-            <motion.div
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: 5, opacity: 1 }}
-              transition={{
-                type: "linear",
-                stiffness: 40,
-                delay: 0.4,
-                ease: "easeOut",
-              }}
-              className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] lg:top-[30%] right-0"
+            </div>{" "}
+            <a
+              href="https://www.facebook.com/profile.php?id=100063695462775"
+              target="_blank"
+              rel="noreferrer"
             >
-              <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous !</h2>
-              <a
-                href="https://www.facebook.com/profile.php?id=100063695462775"
-                target="_blank"
-                rel="noreferrer"
+              <motion.div
+                initial={{ x: "100%", opacity: 0 }}
+                animate={{ x: 5, opacity: 1 }}
+                transition={{
+                  type: "linear",
+                  stiffness: 40,
+                  delay: 0.4,
+                  ease: "easeOut",
+                }}
+                className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] lg:top-[30%] right-0"
               >
+                <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous !</h2>
+
                 <FaFacebook size={40} className="w-[50px] transition hover:scale-90 text-white" />
-              </a>
-            </motion.div>
+              </motion.div>
+            </a>
           </div>
           <div className="mt-8 text-center mx-auto max-w-[90vw]">
             <p>
