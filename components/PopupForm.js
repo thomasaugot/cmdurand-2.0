@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import logobg from "/app/logo-bw.png";
 import emailjs from "@emailjs/browser";
@@ -15,6 +13,21 @@ const PopupForm = ({ isOpen, closeModal }) => {
 
   const sendMessage = (e) => {
     e.preventDefault();
+    // Check if all fields are filled
+    if (
+      !nameRef.current.value ||
+      !emailRef.current.value ||
+      !phoneRef.current.value ||
+      !messageRef.current.value
+    ) {
+      setStateMessage("Veuillez remplir tous les champs.");
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setStateMessage(null);
+      }, 5000); // hide message after 5 seconds
+      return;
+    }
+
     const templateParams = {
       name: nameRef.current.value,
       email: emailRef.current.value,
@@ -44,6 +57,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
           }, 5000); // hide message after 5 seconds
         }
       );
+    // Clear form fields after submission
     nameRef.current.value = "";
     emailRef.current.value = "";
     phoneRef.current.value = "";
@@ -116,7 +130,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
             >
               Envoyer
             </button>
-            <div className="h-6">
+            <div className="h-6 mt-3">
               {stateMessage && <p className="text-black text-center">{stateMessage}</p>}
             </div>
           </form>

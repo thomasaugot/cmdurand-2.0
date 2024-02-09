@@ -13,6 +13,21 @@ const StaticForm = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
+
+    if (
+      !nameRef.current.value ||
+      !emailRef.current.value ||
+      !phoneRef.current.value ||
+      !messageRef.current.value
+    ) {
+      setStateMessage("Veuillez remplir tous les champs.");
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setStateMessage(null);
+      }, 5000); // hide message after 5 seconds
+      return;
+    }
+
     const templateParams = {
       name: nameRef.current.value,
       email: emailRef.current.value,
@@ -102,7 +117,7 @@ const StaticForm = () => {
       >
         Envoyer
       </button>
-      <div className="h-4">
+      <div className="h-4 mt-3">
         {stateMessage && <p className="text-black text-center">{stateMessage}</p>}
       </div>
     </form>
