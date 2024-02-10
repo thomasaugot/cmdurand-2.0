@@ -202,7 +202,7 @@ const Navbar = () => {
       ) : (
         // Desktop Navigation
         <div
-          className={`z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw] px-4 lg:px-20 text-primary ${
+          className={`z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw]  text-primary ${
             isMobile ? "relative" : "fixed"
           } top-9 2xl:top-6 lg:h-[20vh]`}
           onMouseEnter={handleMouseEnter}
@@ -213,7 +213,7 @@ const Navbar = () => {
             whileInView={{ y: 0, opacity: 1 }}
             animate={controls}
             exit={{ opacity: 0 }}
-            className="dark-shadow hidden lg:flex bg-white justify-between mx-auto rounded-xl w-[90%] border-2 border-primary"
+            className="dark-shadow hidden lg:flex bg-white justify-between rounded-xl w-[80vw] border-2 border-primary -ml-48"
             transition={{
               type: "spring",
               stiffness: 40,

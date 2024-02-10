@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import charpenteTrad from "/assets/img/charp-trad.jpg";
+import charpenteTrad from "/assets/img/AKNE8751.PNG";
 import charpenteIndus from "/assets/img/charp-indus.jpg";
 import ossature from "/assets/img/ossature.jpg";
-import preau from "/assets/img/préau.jpg";
+import preau from "/assets/img/BYPV7724.PNG";
 import carport from "/assets/img/carport.jpg";
 import terrasse from "/assets/img/terrasse.jpg";
 import { motion } from "framer-motion";
@@ -15,6 +15,7 @@ import solivage from "/assets/img/solivage.jpg";
 import menuiserieG from "/assets/img/menuiserie-g.jpg";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import homeBg from "/assets/img/home.png";
 
 const services = [
   {
@@ -41,7 +42,7 @@ const services = [
   {
     id: 7,
     title: "Aménagement des combles",
-    imageUrl: charpenteTrad,
+    imageUrl: homeBg,
     endPoint: "/amenagement-des-combles",
   },
   {

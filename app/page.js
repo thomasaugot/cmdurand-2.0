@@ -2,7 +2,7 @@
 
 // here is all the code found on the homepage
 
-import testimonialBgImg from "/assets/img/testimonial-bg.jpg";
+// import testimonialBgImg from "/assets/img/testimonial-bg.jpg";
 import ServiceCards from "@/components/ServiceCards";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
@@ -17,6 +17,9 @@ import emailjs from "@emailjs/browser";
 import Template from "./template";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import homeBg from "/assets/img/home.png";
+import Image from "next/image";
+import logo from "/assets/img/logo-big.png";
 
 const avis = [
   {
@@ -24,7 +27,7 @@ const avis = [
     author: "Arno Lesaint",
   },
   {
-    text: "Je suis pleinement satisfaite de la société CMD. La prestation rendue (changement d'une poutre et création d'un jambage de rendort) est très qualitative. Entreprise sérieuse, travail soigné et très professionnel. Je recommande les service de Monsieur Durand.",
+    text: "Je suis pleinement satisfaite de la société CMD. La prestation rendue (changement d'une poutre et création d'un jambage de renfort) est très qualitative. Entreprise sérieuse, travail soigné et très professionnel. Je recommande les service de Monsieur Durand.",
     author: "Sylvie Nouvellon",
   },
 ];
@@ -47,11 +50,15 @@ export default function Home() {
     <Template>
       <main className="flex flex-col">
         <ContactDetails />
-        <section id="home" className="relative w-[100%] h-[100vh] flex items-center px-24">
+        <section
+          id="home"
+          className="relative w-full h-screen flex items-center justify-center px-4 lg:px-24"
+        >
+          <div className="filter-home bg-white h-[100vh] w-[200vw] absolute"></div>
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `url(${testimonialBgImg.src})`,
+              backgroundImage: `url(${homeBg.src})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -59,22 +66,8 @@ export default function Home() {
             }}
           />
           <Navbar />
-          <div className="relative flex items-center justify-center">
-            <div className="polygon-home bg-primary"></div>
-            <div className="flex flex-col items-left z-20 mt-8 text-left -ml-8 lg:ml-36 xl:ml-[12vw]">
-              <h1 className="font-semibold text-5xl leading-normal text-black md:text-7xl lg:text-5xl font-poppins">
-                <span className="text-white text-7xl md:text-9xl lg:text-7xl">C</span>harpente
-                <br />
-                <span className="text-white text-7xl md:text-9xl lg:text-7xl">M</span>enuiserie
-                <br />
-                <span className="text-white text-7xl md:text-9xl lg:text-7xl">D</span>urand
-                <br />
-                <div className="text-black text-left text-2xl md:text-3xl mt-4 lg:mt-8 max-w-[80vw] lg:text-nowrap">
-                  <span className="text-white text-5xl">L&apos;</span>
-                  expertise bois au service de vos projets
-                </div>
-              </h1>
-            </div>
+          <div className="relative">
+            <Image src={logo} alt="logo" className="h-auto w-[90vw] lg:w-[40vw] z-40 lg:z-10" />
           </div>
         </section>
         <section
@@ -117,7 +110,7 @@ export default function Home() {
             }}
           />
           <h1 className="absolute top-6 md:text-nowrap lg:top-[9%] text-center lg:text-left lg:left-[5%] w-full lg:w-[30vw] font-bold text-2xl text-white">
-            <span className="text-primary text-5xl">I</span>ls nous ont fait confiance
+            <span className="text-white text-3xl">Ils nous ont fait confiance</span>
           </h1>
           <div className="flex flex-col lg:flex-row mt-24 mb-12 lg:mt-[150px] lg:mb-[150px] gap-16 lg:gap-8 mx-auto items-center">
             <div className="flex flex-col md:flex-row relative gap-8">

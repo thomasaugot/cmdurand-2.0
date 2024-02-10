@@ -57,7 +57,7 @@ function MenuiserieGenerale() {
             laissez-nous transformer votre vision en réalité, avec passion et expertise.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
-            <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
+            <p className="text-darkGrey font-semibold w-[80vw] text-nowrap mx-auto text-center lg:text-left">
               Des questions? Nous sommes là pour vous renseigner !
             </p>
             <button

@@ -9,9 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: ['"Montserrat", sans-serif'],
-        poppins: ["'Poppins', sans-serif"],
-        arial: ["'Arial', sans-serif"],
-        oswald: ["'Oswald', sans-serif"],
+        dosis: ["'Dosis', sans-serif"],
       },
       colors: {
         white: "#FFFFFF",
