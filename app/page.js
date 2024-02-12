@@ -18,8 +18,9 @@ import Template from "./template";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import homeBg from "/assets/img/home.png";
-import Image from "next/image";
-import logo from "/assets/img/logo-big.png";
+import localFont from "next/font/local";
+
+const robotoFont = localFont({ src: "../assets/fonts/RobotoMono-Regular.ttf" });
 
 const avis = [
   {
@@ -68,10 +69,181 @@ export default function Home() {
           />
 
           <div className="flex flex-col z-10">
-            <h1 className="text-8xl gradient-text mt-12">Charpente Menuiserie Durand</h1>
-            <p className="text-4xl gradient-text text-end mt-12 leading-relaxed">
-              L&apos;expertise Bois au Service de vos Projets.
-            </p>
+            <h1 className="text-8xl gradient-text mt-12">
+              Charpente <span className={`${robotoFont.className}`}>M</span>enuiserie Durand
+            </h1>
+            <div class="overlay"></div>
+
+            <div class="text">
+              <div class="wrapper">
+                <div class="letter">L</div>
+                <div class="shadow">L</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">&apos;</div>
+                <div class="shadow">&apos;</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">e</div>
+                <div class="shadow">e</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">x</div>
+                <div class="shadow">x</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">p</div>
+                <div class="shadow">p</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">e</div>
+                <div class="shadow">e</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">r</div>
+                <div class="shadow">r</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">t</div>
+                <div class="shadow">t</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">i</div>
+                <div class="shadow">i</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">s</div>
+                <div class="shadow">s</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">e</div>
+                <div class="shadow">e</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">&nbsp;</div>
+                <div class="shadow">&nbsp;</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">B</div>
+                <div class="shadow">B</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">o</div>
+                <div class="shadow">o</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">i</div>
+                <div class="shadow">i</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">s</div>
+                <div class="shadow">s</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">&nbsp;</div>
+                <div class="shadow">&nbsp;</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">a</div>
+                <div class="shadow">a</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">u</div>
+                <div class="shadow">u</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">&nbsp;</div>
+                <div class="shadow">&nbsp;</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">S</div>
+                <div class="shadow">S</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">e</div>
+                <div class="shadow">e</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">r</div>
+                <div class="shadow">r</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">v</div>
+                <div class="shadow">v</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">i</div>
+                <div class="shadow">i</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">c</div>
+                <div class="shadow">c</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">e</div>
+                <div class="shadow">e</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">&nbsp;</div>
+                <div class="shadow">&nbsp;</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">d</div>
+                <div class="shadow">d</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">e</div>
+                <div class="shadow">e</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">&nbsp;</div>
+                <div class="shadow">&nbsp;</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">v</div>
+                <div class="shadow">v</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">o</div>
+                <div class="shadow">o</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">s</div>
+                <div class="shadow">s</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">&nbsp;</div>
+                <div class="shadow">&nbsp;</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">P</div>
+                <div class="shadow">P</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">r</div>
+                <div class="shadow">r</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">o</div>
+                <div class="shadow">o</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">j</div>
+                <div class="shadow">j</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">e</div>
+                <div class="shadow">e</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">t</div>
+                <div class="shadow">t</div>
+              </div>
+              <div class="wrapper">
+                <div class="letter">s</div>
+                <div class="shadow">s</div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -80,8 +252,8 @@ export default function Home() {
           className="flex flex-col px-2 py-8 lg:px-12 lg:py-12 relative h-auto bg-darkGrey custom-pointer"
         >
           <div className="lg:hidden polygon w-[110vw] h-[45px] bg-primary overflow-hidden absolute transform -scale-y-100 top-0 -right-[120px] md:right-[-320px] z-20"></div>
-          <h1 className="text-white max-w-[80vw] font-bold text-5xl ml-[5%] my-4 text-center">
-            <span className="text-primary text-6xl">N</span>os Services
+          <h1 className="text-white max-w-[80vw]  text-5xl ml-[5%] my-4 text-center tracking-wider font-medium">
+            <span className={`${robotoFont.className} text-primary text-6xl`}>N</span>os Services
           </h1>
           <div className="flex w-full lg:my-12 z-30 mx-auto max-w-[1200px]">
             <ServiceCards />
@@ -93,8 +265,9 @@ export default function Home() {
           id="gallery"
           className="h-auto relative flex items-center justify-around brick-bg px-2 py-8"
         >
-          <h1 className="absolute top-[5%] lg:top-[9%] lg:left-[5%] max-w-[85vw] font-bold text-2xl text-darkGrey mx-auto text-center lg:text-left">
-            <span className="text-primary text-5xl">N</span>os réalisations en quelques photos
+          <h1 className="absolute top-[5%] lg:top-[9%] lg:left-[5%] max-w-[85vw] tracking-wide font-semibold text-4xl text-darkGrey mx-auto text-center lg:text-left">
+            <span className={`${robotoFont.className} text-primary text-6xl`}>N</span>os
+            réalisations en quelques photos
           </h1>
           <Carousel />
           <div className="polygon w-[120vw] lg:w-[49vw] h-[45px] lg:h-[55px] bg-darkGrey overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] lg:left-[-200px] xl:left-[-240px] z-20"></div>
@@ -114,8 +287,10 @@ export default function Home() {
               zIndex: -1,
             }}
           />
-          <h1 className="absolute top-6 md:text-nowrap lg:top-[9%] text-center lg:text-left lg:left-[5%] w-full lg:w-[30vw] font-bold text-2xl text-white">
-            <span className="text-white text-3xl">Ils nous ont fait confiance</span>
+          <h1 className="absolute top-6 md:text-nowrap lg:top-[9%] text-center lg:text-left lg:left-[5%] w-full lg:w-[30vw] tracking-wider font-semibold text-5xl text-white">
+            <span className="text-white text-4xl">
+              <span className="text-darkGrey text-5xl">I</span>ls nous ont fait confiance
+            </span>
           </h1>
           <div className="flex flex-col lg:flex-row mt-24 mb-12 lg:mt-[150px] lg:mb-[150px] gap-16 lg:gap-8 mx-auto items-center">
             <div className="flex flex-col md:flex-row relative gap-8">

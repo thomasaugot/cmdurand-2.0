@@ -234,7 +234,7 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   offset={0}
-                  className={`py-1 text-black font-regular relative m-1 cursor-pointer hover:scale-110 text-xl ${dosisFont.className}`}
+                  className={`py-1 text-black font-regular relative m-1 cursor-pointer hover:scale-110 text-lg tracking-wide font-semibold ${dosisFont.className}`}
                 >
                   {item.text}
                   <span
@@ -247,7 +247,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={handleToggleForm}
-              className={`primary-button primary-button-bg text-md text-nowrap ${dosisFont.className}`}
+              className={`primary-button primary-button-bg text-md text-nowrap tracking-wide ${dosisFont.className}`}
             >
               Demander un Devis
             </button>

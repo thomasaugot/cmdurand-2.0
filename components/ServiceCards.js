@@ -16,6 +16,9 @@ import menuiserieG from "/assets/img/menuiserie-g.jpg";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import homeBg from "/assets/img/home.png";
+import localFont from "next/font/local";
+
+const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 const services = [
   {
@@ -53,7 +56,7 @@ const services = [
   },
   {
     id: 9,
-    title: "Bardage (différents types de revêtements extérieurs )",
+    title: "Bardage (différents types de revêtements extérieurs)",
     imageUrl: bardage,
     endPoint: "/bardage",
   },
@@ -107,7 +110,7 @@ const ServiceCard = ({ title, imageUrl, endPoint, id }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="absolute inset-0 rounded-lg">
+      <div className="absolute inset-0 rounded-lg ">
         <Image
           src={imageUrl}
           alt={title}
@@ -118,20 +121,22 @@ const ServiceCard = ({ title, imageUrl, endPoint, id }) => {
       </div>
       {isHovered ? (
         <div className="primary-filter absolute inset-0 flex items-center justify-center z-11 transition-filter duration-500 rounded-lg">
-          <Link href={endPoint} passHref className="primary-button primary-button-bg text-nowrap">
+          <Link
+            href={endPoint}
+            passHref
+            className={`${dosisFont.className} primary-button primary-button-bg text-nowrap text-lg`}
+          >
             En savoir plus
           </Link>
         </div>
       ) : (
-        <h1
-          className="filter-none z-10 text-xl lg:text-2xl justify-center text-center font-black capitalize"
-          style={{
-            WebkitTextStroke: "0.2px black",
-            textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
-          }}
-        >
-          {title}
-        </h1>
+        <div className="grey-filter flex justify-center text-center z-10">
+          <h1
+            className={`${dosisFont.className} text-xl lg:text-2xl  my-auto font-black capitalize tracking-wider`}
+          >
+            {title}
+          </h1>
+        </div>
       )}
     </motion.div>
   );
