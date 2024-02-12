@@ -7,6 +7,9 @@ import PopupForm from "./PopupForm";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import localFont from "next/font/local";
+
+const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +40,14 @@ const Navbar = () => {
 
   const handlePhoneClick = () => {
     window.location.href = "tel:+33676508551";
+  };
+
+  const handleMouseEnter = () => {
+    controls.start({ opacity: 1 });
+  };
+
+  const handleMouseLeave = () => {
+    controls.start({ opacity: Math.max(0, 1 - scrollY) });
   };
 
   useEffect(() => {
@@ -101,14 +112,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const handleMouseEnter = () => {
-    controls.start({ opacity: 1 });
-  };
-
-  const handleMouseLeave = () => {
-    controls.start({ opacity: Math.max(0, 1 - scrollY) });
-  };
 
   // Array containing navigation items
   const navItems = [
@@ -213,7 +216,7 @@ const Navbar = () => {
             whileInView={{ y: 0, opacity: 1 }}
             animate={controls}
             exit={{ opacity: 0 }}
-            className="dark-shadow hidden lg:flex bg-white justify-between rounded-xl w-[80vw] border-2 border-primary -ml-48"
+            className="absolute dark-shadow hidden lg:flex bg-white justify-between rounded-xl w-[75vw] border-2 border-primary ml-[16rem]"
             transition={{
               type: "spring",
               stiffness: 40,
@@ -231,11 +234,11 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   offset={0}
-                  className={`pt-2 pb-0 text-black font-medium relative m-1 cursor-pointer hover:scale-110`}
+                  className={`py-1 text-black font-regular relative m-1 cursor-pointer hover:scale-110 text-xl ${dosisFont.className}`}
                 >
                   {item.text}
                   <span
-                    className={`absolute inset-x-0 bottom-0 h-1 bg-primary transition-all duration-300 ease-in-out ${
+                    className={`absolute inset-x-0 inset-y-8 h-1 bg-primary transition-all duration-300 ease-in-out ${
                       activeLink === item.target ? "w-full" : "w-0"
                     }`}
                   ></span>
@@ -244,7 +247,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={handleToggleForm}
-              className="primary-button primary-button-bg text-nowrap"
+              className={`primary-button primary-button-bg text-md text-nowrap ${dosisFont.className}`}
             >
               Demander un Devis
             </button>

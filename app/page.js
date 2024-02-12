@@ -50,6 +50,7 @@ export default function Home() {
     <Template>
       <main className="flex flex-col">
         <ContactDetails />
+        <Navbar />
         <section
           id="home"
           className="relative w-full h-screen flex items-center justify-center px-4 lg:px-24"
@@ -65,18 +66,22 @@ export default function Home() {
               zIndex: -1,
             }}
           />
-          <Navbar />
-          <div className="relative">
-            <Image src={logo} alt="logo" className="h-auto w-[90vw] lg:w-[40vw] z-40 lg:z-10" />
+
+          <div className="flex flex-col z-10">
+            <h1 className="text-8xl gradient-text mt-12">Charpente Menuiserie Durand</h1>
+            <p className="text-4xl gradient-text text-end mt-12 leading-relaxed">
+              L&apos;expertise Bois au Service de vos Projets.
+            </p>
           </div>
         </section>
+
         <section
           id="about"
           className="flex flex-col px-2 py-8 lg:px-12 lg:py-12 relative h-auto bg-darkGrey custom-pointer"
         >
           <div className="lg:hidden polygon w-[110vw] h-[45px] bg-primary overflow-hidden absolute transform -scale-y-100 top-0 -right-[120px] md:right-[-320px] z-20"></div>
-          <h1 className="text-white max-w-[80vw] font-bold text-2xl ml-[5%] my-4 text-center">
-            <span className="text-primary text-5xl">N</span>os Services
+          <h1 className="text-white max-w-[80vw] font-bold text-5xl ml-[5%] my-4 text-center">
+            <span className="text-primary text-6xl">N</span>os Services
           </h1>
           <div className="flex w-full lg:my-12 z-30 mx-auto max-w-[1200px]">
             <ServiceCards />

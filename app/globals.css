@@ -5,26 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* import Google fonts here from Google fonts website */
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Dosis", sans-serif;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "Dosis", sans-serif;
 }
 
 @layer base {
@@ -38,10 +28,16 @@ body {
   }
 }
 
+.gradient-text {
+  background: #f37139;
+  background: linear-gradient(to right, #f37139 0%, #000000 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .primary-button {
-  padding: 10px 25px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  padding: 6px 20px;
   background: transparent;
   outline: none !important;
   cursor: pointer;
@@ -88,8 +84,6 @@ body {
 
 .secondary-button {
   padding: 10px 25px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
   background: transparent;
   outline: none !important;
   cursor: pointer;
@@ -192,7 +186,7 @@ body {
 }
 
 .filter-home {
-  opacity: 0.2;
+  opacity: 0.3;
   z-index: 0;
 }
 

@@ -9,12 +9,13 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import logo from "../app/logo.png";
 import Image from "next/image";
-import ContactDetails from "@/components/ContactDetails";
-import ContactDetailsService from "@/components/ContactDetailsService";
+import localFont from "next/font/local";
 
 library.add(fab);
 
 const inter = Inter({ subsets: ["latin"] });
+const gotamFont = localFont({ src: "../assets/fonts/Gotham Nights.otf" });
+const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 export const metadata = {
   title: "Charpente Menuiserie Durand",
@@ -32,7 +33,7 @@ export default function RootLayout({ children }) {
           content="charpente, menuiserie, missillac, construction, durand, loire-atlantique, pontchateau, donges, prinquiau, besné, crossac, maison, terrasse, solivage, carport, entreprise, extension, preau, aménagement, combles, bois, bardage, travaux, devis"
         />
       </Head>
-      <body className={`${inter.className} bg-white`}>
+      <body className={`${gotamFont.className} bg-white`}>
         <div className="relative">
           <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[100px] backdrop-blur-[7px] px-10"></div>
           <Link href={"/"}>
