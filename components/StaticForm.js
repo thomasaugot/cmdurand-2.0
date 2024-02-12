@@ -13,7 +13,7 @@ const StaticForm = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-
+    // Check if all fields are filled
     if (
       !nameRef.current.value ||
       !emailRef.current.value ||
@@ -29,10 +29,11 @@ const StaticForm = () => {
     }
 
     const templateParams = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
+      to_name: "Melvyn",
+      from_name: nameRef.current.value,
       phone: phoneRef.current.value,
       message: messageRef.current.value,
+      email: emailRef.current.value,
     };
     emailjs
       .send(
@@ -57,6 +58,7 @@ const StaticForm = () => {
           }, 5000); // hide message after 5 seconds
         }
       );
+    // Clear form fields after submission
     nameRef.current.value = "";
     emailRef.current.value = "";
     phoneRef.current.value = "";

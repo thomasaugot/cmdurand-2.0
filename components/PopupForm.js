@@ -29,10 +29,11 @@ const PopupForm = ({ isOpen, closeModal }) => {
     }
 
     const templateParams = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
+      to_name: "Melvyn",
+      from_name: nameRef.current.value,
       phone: phoneRef.current.value,
       message: messageRef.current.value,
+      email: emailRef.current.value,
     };
     emailjs
       .send(
