@@ -22,6 +22,20 @@ import carouselItem6 from "/assets/img/IMG_4882.jpg";
 import carouselItem7 from "/assets/img/IMG_4970.jpg";
 import carouselItem8 from "/assets/img/QTML4315.PNG";
 import carouselItem9 from "/assets/img/XTLI1839.PNG";
+import carouselItem11 from "/assets/img/solivage.jpg";
+import carouselItem12 from "/assets/img/carport.jpg";
+import carouselItem14 from "/assets/img/home.png";
+import carouselItem15 from "/assets/img/bardage2.jpg";
+import carouselItem16 from "/assets/img/IMG_4976.png";
+import carouselItem17 from "/assets/img/isqhf.png";
+import carouselItem18 from "/assets/img/menuiserie-ext.jpg";
+import carouselItem19 from "/assets/img/menuiserie-g.jpg";
+import carouselItem25 from "/assets/img/IMG_5272.jpg";
+import carouselItem20 from "/assets/img/IMG_5161.jpg";
+import carouselItem21 from "/assets/img/IMG_5110.jpg";
+import carouselItem22 from "/assets/img/EDZO9181.PNG";
+import carouselItem23 from "/assets/img/vjk.jpg";
+import carouselItem24 from "/assets/img/IMG_5528.jpg";
 
 const Carousel = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -94,6 +108,58 @@ const Carousel = () => {
     {
       id: 14,
       imageUrl: carouselItem9,
+    },
+    {
+      id: 15,
+      imageUrl: carouselItem11,
+    },
+    {
+      id: 16,
+      imageUrl: carouselItem12,
+    },
+    {
+      id: 17,
+      imageUrl: carouselItem15,
+    },
+    {
+      id: 18,
+      imageUrl: carouselItem14,
+    },
+    {
+      id: 20,
+      imageUrl: carouselItem16,
+    },
+    {
+      id: 21,
+      imageUrl: carouselItem17,
+    },
+    {
+      id: 22,
+      imageUrl: carouselItem18,
+    },
+    {
+      id: 23,
+      imageUrl: carouselItem19,
+    },
+    {
+      id: 24,
+      imageUrl: carouselItem20,
+    },
+    {
+      id: 25,
+      imageUrl: carouselItem21,
+    },
+    {
+      id: 26,
+      imageUrl: carouselItem22,
+    },
+    {
+      id: 27,
+      imageUrl: carouselItem23,
+    },
+    {
+      id: 28,
+      imageUrl: carouselItem24,
     },
   ];
 
