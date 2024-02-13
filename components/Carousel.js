@@ -161,10 +161,6 @@ const Carousel = () => {
       id: 28,
       imageUrl: carouselItem24,
     },
-    {
-      id: 29,
-      imageUrl: carouselItem25,
-    },
   ];
 
   const slidesPerView = isMobile ? 1 : 3;
