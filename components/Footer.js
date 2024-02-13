@@ -7,6 +7,9 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
 import { useInView } from "react-intersection-observer";
+import localFont from "next/font/local";
+
+const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,20 +66,26 @@ const Footer = () => {
               <div className="flex mt-6">
                 <FaLocationDot size={25} color="#f37139" className="mr-2" />
                 <div className="flex flex-col text-center lg:text-left">
-                  <p>Sarl Charpente Menuiserie Durand</p>
-                  <p>Z.A. la Pommeraie, Rue des Indes</p>
-                  <p>44780 Missillac</p>
+                  <p className={`${dosisFont.className} text-lg`}>
+                    Sarl Charpente Menuiserie Durand
+                  </p>
+                  <p className={`${dosisFont.className} text-lg`}>
+                    Z.A. la Pommeraie, Rue des Indes
+                  </p>
+                  <p className={`${dosisFont.className} text-lg`}>44780 Missillac</p>
                 </div>
               </div>
               <br />
               <div onClick={handleEmailClick} className="flex" style={{ cursor: "pointer" }}>
                 <MdEmail size={25} color="#f37139" className="mr-2" />
-                <p>charpente.menuiserie.durand@gmail.com</p>
+                <p className={`${dosisFont.className} text-lg`}>
+                  charpente.menuiserie.durand@gmail.com
+                </p>
               </div>
               <br />
               <div onClick={handlePhoneClick} className="flex" style={{ cursor: "pointer" }}>
                 <FaPhoneAlt size={23} color="#f37139" className="mr-2" />
-                <p>+33 6 76 50 85 51</p>
+                <p className={`${dosisFont.className} text-lg`}>+33 6 76 50 85 51</p>
               </div>
             </div>{" "}
             <a
@@ -95,14 +104,16 @@ const Footer = () => {
                 }}
                 className="flex items-center image-shadow justify-center bg-primary p-4 absolute -top-[50px] lg:top-[30%] right-0"
               >
-                <h2 className="text-xl font-medium mr-4 text-white">Suivez-nous !</h2>
+                <h2 className={`${dosisFont.className} text-xl font-medium mr-4 text-white`}>
+                  Suivez-nous !
+                </h2>
 
                 <FaFacebook size={40} className="w-[50px] transition hover:scale-90 text-white" />
               </motion.div>
             </a>
           </div>
           <div className="mt-8 text-center mx-auto max-w-[90vw]">
-            <p>
+            <p className={`${dosisFont.className} text-lg`}>
               &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand. Site Web développé par{" "}
               <a
                 href="https://thomasaugot.com/"

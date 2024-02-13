@@ -9,7 +9,9 @@ function TestimonialItem({ text, author }) {
       <RiDoubleQuotesL size={100} className="text-primary absolute -top-[65px] -left-8" />
       <RiDoubleQuotesL size={100} className="text-white absolute -top-[61px] -left-6" />
       <p className={`text-white italic text-[17px] ${dosisFont.className}`}>{text}</p>
-      <p className="text-primary absolute font-semibold -top-6 right-4 p-3 bg-white rounded-xl">
+      <p
+        className={`text-primary absolute font-semibold -top-6 right-4 p-3 bg-white rounded-xl ${dosisFont.className}`}
+      >
         {author}
       </p>
     </div>

@@ -211,19 +211,28 @@ body {
 }
 
 .text {
-  font-size: 40px;
+  font-size: 1.5rem;
   display: flex;
   position: absolute;
   bottom: 20vh;
-  left: 50%;
-  transform: translateX(-50%);
   user-select: none;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .wrapper {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 0px;
+  padding-right: 0px;
   padding-top: 2px;
+
+  @media (min-width: 768px) {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }
 
 .letter {

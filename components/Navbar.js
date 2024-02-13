@@ -162,7 +162,7 @@ const Navbar = () => {
               className="bg-primary m-8 rounded-lg text-center	align-middle transition duration-200 hover:scale-90"
             >
               <span
-                className="p-4 text-white flex justify-center text-center md:text-2xl lg:text-lg lg:text-nowrap"
+                className={`tracking-wide ${dosisFont.className} p-4 text-white flex justify-center text-center md:text-2xl lg:text-lg lg:text-nowrap`}
                 onClick={handleToggleForm}
               >
                 Demander un Devis
@@ -172,7 +172,7 @@ const Navbar = () => {
               <li
                 key={item.id}
                 style={{ userSelect: "none" }}
-                className={` p-4 md:p-6 rounded-xl ml-6 font-semibold duration-300 hover:text-primary hover:dark-shadow cursor-pointer md:text-2xl`}
+                className={`tracking-wider p-4 md:p-6 rounded-xl ml-6 font-medium duration-300 hover:text-primary hover:dark-shadow cursor-pointer text-3xl md:text-4xl`}
               >
                 <ScrollLink
                   to={item.target}
@@ -189,13 +189,17 @@ const Navbar = () => {
             <div className="flex flex-col gap-4 md:gap:6 p-6 md:p-8 mt-12">
               <div className="flex gap-2" onClick={handlePhoneClick} style={{ cursor: "pointer" }}>
                 <FaPhoneAlt size={25} color="#f37139" />
-                <p className="text-black text-base md:text-2xl font-medium font-montserrat">
+                <p
+                  className={`tracking-wide ${dosisFont.className} text-black text-xl md:text-2xl font-medium`}
+                >
                   +33 6 76 50 85 51
                 </p>
               </div>
               <div className="flex gap-2">
                 <FaLocationDot size={25} color="#f37139" />
-                <p className="text-black text-base md:text-2xl font-medium font-poppins">
+                <p
+                  className={`text-black tracking-wide ${dosisFont.className} text-xl md:text-2xl font-medium`}
+                >
                   Z.A. la Pommeraie, Rue des Indes 44780 Missillac
                 </p>
               </div>

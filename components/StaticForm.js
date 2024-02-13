@@ -2,6 +2,9 @@
 
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import localFont from "next/font/local";
+
+const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 const StaticForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -72,7 +75,9 @@ const StaticForm = () => {
       action=""
     >
       <div className="mb-4">
-        <label htmlFor="name">Nom</label>
+        <label htmlFor="name" className={`${dosisFont.className} text-base font-semibold`}>
+          Nom
+        </label>
         <input
           type="text"
           id="name"
@@ -82,7 +87,9 @@ const StaticForm = () => {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="name">Numéro de téléphone</label>
+        <label htmlFor="name" className={`${dosisFont.className} text-base font-semibold`}>
+          Numéro de téléphone
+        </label>
         <input
           type="text"
           id="name"
@@ -92,7 +99,9 @@ const StaticForm = () => {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="name">Email</label>
+        <label htmlFor="name" className={`${dosisFont.className} text-base font-semibold`}>
+          Email
+        </label>
         <input
           type="text"
           id="name"
@@ -102,7 +111,9 @@ const StaticForm = () => {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="name">Message</label>
+        <label htmlFor="name" className={`${dosisFont.className} text-base font-semibold`}>
+          Message
+        </label>
         <textarea
           id="message"
           name="message"
@@ -115,12 +126,16 @@ const StaticForm = () => {
         type="submit"
         value="Send"
         disabled={isSubmitting}
-        className="flex mx-auto primary-button primary-button-bg"
+        className={`${dosisFont.className} text-base font-medium tracking-wide flex mx-auto primary-button primary-button-bg`}
       >
         Envoyer
       </button>
       <div className="h-4 mt-3">
-        {stateMessage && <p className="text-black text-center">{stateMessage}</p>}
+        {stateMessage && (
+          <p className={`${dosisFont.className} text-black text-center text-base font-semibold`}>
+            {stateMessage}
+          </p>
+        )}
       </div>
     </form>
   );

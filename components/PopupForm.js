@@ -2,6 +2,9 @@ import Image from "next/image";
 import logobg from "/app/logo-bw.png";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import localFont from "next/font/local";
+
+const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 const PopupForm = ({ isOpen, closeModal }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,10 +84,14 @@ const PopupForm = ({ isOpen, closeModal }) => {
             alt="Background Image"
             className="w-[680px] opacity-5 absolute top-[27%] left-[5px]"
           />
-          <h2 className="text-2xl font-semibold mb-4 text-black">Contactez-nous</h2>
+          <h2 className={`text-2xl font-semibold mb-4 text-black tracking-wider`}>
+            Contactez-nous
+          </h2>
           <form onSubmit={sendMessage} action="">
             <div className="mb-4 relative z-20">
-              <label htmlFor="name">Nom</label>
+              <label htmlFor="name" className={`${dosisFont.className} text-base font-semibold`}>
+                Nom
+              </label>
               <input
                 type="text"
                 id="name"
@@ -94,7 +101,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
               />
             </div>
             <div className="mb-4 relative z-20">
-              <label htmlFor="phone">Numéro de téléphone</label>
+              <label htmlFor="phone" className={`${dosisFont.className} text-base font-semibold`}>
+                Numéro de téléphone
+              </label>
               <input
                 type="text"
                 id="phone"
@@ -104,7 +113,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
               />
             </div>
             <div className="mb-4 relative z-20">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email" className={`${dosisFont.className} text-base font-semibold`}>
+                Email
+              </label>
               <input
                 type="text"
                 id="email"
@@ -114,7 +125,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
               />
             </div>
             <div className="mb-4 relative z-20">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message" className={`${dosisFont.className} text-base font-semibold`}>
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -127,12 +140,18 @@ const PopupForm = ({ isOpen, closeModal }) => {
               type="submit"
               value="Send"
               disabled={isSubmitting}
-              className="flex mx-auto primary-button primary-button-bg"
+              className={`${dosisFont.className} flex mx-auto primary-button primary-button-bg text-base font-medium`}
             >
               Envoyer
             </button>
-            <div className="h-6 mt-3">
-              {stateMessage && <p className="text-black text-center">{stateMessage}</p>}
+            <div className="h-5 mt-2">
+              {stateMessage && (
+                <p
+                  className={`${dosisFont.className} text-black text-center text-base font-semibold`}
+                >
+                  {stateMessage}
+                </p>
+              )}
             </div>
           </form>
           <button

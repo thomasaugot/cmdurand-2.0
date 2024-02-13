@@ -7,6 +7,9 @@ import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
+import localFont from "next/font/local";
+
+const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Medium.ttf" });
 
 function ExtensionOssature() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -35,7 +38,7 @@ function ExtensionOssature() {
             whileInView={{ y: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
             viewport={{ once: true }}
-            className="capitalize text-black text-center text-4xl lg:text-5xl font-semibold mt-8 lg:mt-0 mx-auto"
+            className="capitalize text-black tracking-wider text-center text-4xl lg:text-5xl font-semibold mt-8 lg:mt-0 mx-auto"
             transition={{
               type: "spring",
               stiffness: 40,
@@ -45,7 +48,7 @@ function ExtensionOssature() {
           >
             Extension ou maison ossature
           </motion.h1>
-          <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
+          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10`}>
             Votre rêve de maison prend forme avec notre expertise en extension et construction à
             ossature. Nous comprenons que votre maison est bien plus qu&apos;un simple bâtiment :
             c&apos;est votre refuge, votre havre de paix. C&apos;est pourquoi nous mettons tout en
@@ -61,12 +64,14 @@ function ExtensionOssature() {
             votre projet sera entre de bonnes mains.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6">
-            <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
+            <p
+              className={`${dosisFont.className} text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left`}
+            >
               Des questions? Nous sommes là pour vous renseigner !
             </p>
             <button
               onClick={handleToggleForm}
-              className="primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto"
+              className={`${dosisFont.className} primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto`}
             >
               Nous Contacter
             </button>

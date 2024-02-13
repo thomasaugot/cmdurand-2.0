@@ -7,6 +7,9 @@ import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
+import localFont from "next/font/local";
+
+const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Medium.ttf" });
 
 function CharpenteTraditionelle() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -35,7 +38,7 @@ function CharpenteTraditionelle() {
             whileInView={{ y: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
             viewport={{ once: true }}
-            className="capitalize text-black text-center text-4xl lg:text-5xl xl:text-nowrap font-semibold mt-8 lg:mt-0 mx-auto"
+            className="capitalize text-black tracking-wider text-center text-4xl lg:text-5xl xl:text-nowrap font-semibold mt-8 lg:mt-0 mx-auto"
             transition={{
               type: "spring",
               stiffness: 40,
@@ -45,7 +48,7 @@ function CharpenteTraditionelle() {
           >
             Charpente traditionelle
           </motion.h1>
-          <p className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10">
+          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10`}>
             Chez nous, la Charpente Traditionnelle incarne l&apos;essence même du savoir-faire
             artisanal. Chaque pièce de bois est choisie avec soin, travaillée avec précision, pour
             créer des structures robustes et intemporelles. Notre équipe de charpentiers
@@ -58,12 +61,14 @@ function CharpenteTraditionelle() {
             notre engagement envers l&apos;excellence et notre passion pour le métier.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6 lg:gap-0">
-            <p className="text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left">
+            <p
+              className={`${dosisFont.className} text-darkGrey font-semibold w-[80vw] mx-auto text-center lg:text-left`}
+            >
               Des questions? Nous sommes là pour vous renseigner !
             </p>
             <button
               onClick={handleToggleForm}
-              className="primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto"
+              className={`${dosisFont.className} primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto`}
             >
               Nous Contacter
             </button>

@@ -68,180 +68,179 @@ export default function Home() {
             }}
           />
 
-          <div className="flex flex-col z-10">
-            <h1 className="text-8xl gradient-text mt-12">
-              Charpente <span className={`${robotoFont.className}`}>M</span>enuiserie Durand
+          <div className="flex flex-col z-10 justify-start md:justify-center">
+            <h1 className="max-w-[85vw] text-left md:text-center text-8xl md:text-9xl lg:text-8xl gradient-text">
+              Charpente <span className={`${robotoFont.className} -ml-1`}>M</span>enuiserie Durand
             </h1>
-            <div class="overlay"></div>
-
-            <div class="text">
-              <div class="wrapper">
-                <div class="letter">L</div>
-                <div class="shadow">L</div>
+            <div className="flex overlay flex-nowrap max-w-[90vw] mt-8"></div>
+            <div className="flex text flex-nowrap max-w-[90vw] mt-8">
+              <div className="wrapper block">
+                <div className="letter">L</div>
+                <div className="shadow">L</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">&apos;</div>
-                <div class="shadow">&apos;</div>
+              <div className="wrapper block">
+                <div className="letter">&apos;</div>
+                <div className="shadow">&apos;</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">e</div>
-                <div class="shadow">e</div>
+              <div className="wrapper block">
+                <div className="letter">e</div>
+                <div className="shadow">e</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">x</div>
-                <div class="shadow">x</div>
+              <div className="wrapper block">
+                <div className="letter">x</div>
+                <div className="shadow">x</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">p</div>
-                <div class="shadow">p</div>
+              <div className="wrapper block">
+                <div className="letter">p</div>
+                <div className="shadow">p</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">e</div>
-                <div class="shadow">e</div>
+              <div className="wrapper block">
+                <div className="letter">e</div>
+                <div className="shadow">e</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">r</div>
-                <div class="shadow">r</div>
+              <div className="wrapper block">
+                <div className="letter">r</div>
+                <div className="shadow">r</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">t</div>
-                <div class="shadow">t</div>
+              <div className="wrapper block">
+                <div className="letter">t</div>
+                <div className="shadow">t</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">i</div>
-                <div class="shadow">i</div>
+              <div className="wrapper block">
+                <div className="letter">i</div>
+                <div className="shadow">i</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">s</div>
-                <div class="shadow">s</div>
+              <div className="wrapper block">
+                <div className="letter">s</div>
+                <div className="shadow">s</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">e</div>
-                <div class="shadow">e</div>
+              <div className="wrapper block">
+                <div className="letter">e</div>
+                <div className="shadow">e</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">&nbsp;</div>
-                <div class="shadow">&nbsp;</div>
+              <div className="wrapper block">
+                <div className="letter">&nbsp;</div>
+                <div className="shadow">&nbsp;</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">B</div>
-                <div class="shadow">B</div>
+              <div className="wrapper block">
+                <div className="letter">B</div>
+                <div className="shadow">B</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">o</div>
-                <div class="shadow">o</div>
+              <div className="wrapper block">
+                <div className="letter">o</div>
+                <div className="shadow">o</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">i</div>
-                <div class="shadow">i</div>
+              <div className="wrapper block">
+                <div className="letter">i</div>
+                <div className="shadow">i</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">s</div>
-                <div class="shadow">s</div>
+              <div className="wrapper block">
+                <div className="letter">s</div>
+                <div className="shadow">s</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">&nbsp;</div>
-                <div class="shadow">&nbsp;</div>
+              <div className="wrapper block">
+                <div className="letter">&nbsp;</div>
+                <div className="shadow">&nbsp;</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">a</div>
-                <div class="shadow">a</div>
+              <div className="wrapper block">
+                <div className="letter">a</div>
+                <div className="shadow">a</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">u</div>
-                <div class="shadow">u</div>
+              <div className="wrapper block">
+                <div className="letter">u</div>
+                <div className="shadow">u</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">&nbsp;</div>
-                <div class="shadow">&nbsp;</div>
+              <div className="wrapper block">
+                <div className="letter">&nbsp;</div>
+                <div className="shadow">&nbsp;</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">S</div>
-                <div class="shadow">S</div>
+              <div className="wrapper block">
+                <div className="letter">S</div>
+                <div className="shadow">S</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">e</div>
-                <div class="shadow">e</div>
+              <div className="wrapper block">
+                <div className="letter">e</div>
+                <div className="shadow">e</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">r</div>
-                <div class="shadow">r</div>
+              <div className="wrapper block">
+                <div className="letter">r</div>
+                <div className="shadow">r</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">v</div>
-                <div class="shadow">v</div>
+              <div className="wrapper block">
+                <div className="letter">v</div>
+                <div className="shadow">v</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">i</div>
-                <div class="shadow">i</div>
+              <div className="wrapper block">
+                <div className="letter">i</div>
+                <div className="shadow">i</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">c</div>
-                <div class="shadow">c</div>
+              <div className="wrapper block">
+                <div className="letter">c</div>
+                <div className="shadow">c</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">e</div>
-                <div class="shadow">e</div>
+              <div className="wrapper block">
+                <div className="letter">e</div>
+                <div className="shadow">e</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">&nbsp;</div>
-                <div class="shadow">&nbsp;</div>
+              <div className="wrapper block">
+                <div className="letter">&nbsp;</div>
+                <div className="shadow">&nbsp;</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">d</div>
-                <div class="shadow">d</div>
+              <div className="wrapper block">
+                <div className="letter">d</div>
+                <div className="shadow">d</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">e</div>
-                <div class="shadow">e</div>
+              <div className="wrapper block">
+                <div className="letter">e</div>
+                <div className="shadow">e</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">&nbsp;</div>
-                <div class="shadow">&nbsp;</div>
+              <div className="wrapper block">
+                <div className="letter">&nbsp;</div>
+                <div className="shadow">&nbsp;</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">v</div>
-                <div class="shadow">v</div>
+              <div className="wrapper block">
+                <div className="letter">v</div>
+                <div className="shadow">v</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">o</div>
-                <div class="shadow">o</div>
+              <div className="wrapper block">
+                <div className="letter">o</div>
+                <div className="shadow">o</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">s</div>
-                <div class="shadow">s</div>
+              <div className="wrapper block">
+                <div className="letter">s</div>
+                <div className="shadow">s</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">&nbsp;</div>
-                <div class="shadow">&nbsp;</div>
+              <div className="wrapper block">
+                <div className="letter">&nbsp;</div>
+                <div className="shadow">&nbsp;</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">P</div>
-                <div class="shadow">P</div>
+              <div className="wrapper block">
+                <div className="letter">P</div>
+                <div className="shadow">P</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">r</div>
-                <div class="shadow">r</div>
+              <div className="wrapper block">
+                <div className="letter">r</div>
+                <div className="shadow">r</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">o</div>
-                <div class="shadow">o</div>
+              <div className="wrapper block">
+                <div className="letter">o</div>
+                <div className="shadow">o</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">j</div>
-                <div class="shadow">j</div>
+              <div className="wrapper block">
+                <div className="letter">j</div>
+                <div className="shadow">j</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">e</div>
-                <div class="shadow">e</div>
+              <div className="wrapper block">
+                <div className="letter">e</div>
+                <div className="shadow">e</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">t</div>
-                <div class="shadow">t</div>
+              <div className="wrapper block">
+                <div className="letter">t</div>
+                <div className="shadow">t</div>
               </div>
-              <div class="wrapper">
-                <div class="letter">s</div>
-                <div class="shadow">s</div>
+              <div className="wrapper block">
+                <div className="letter">s</div>
+                <div className="shadow">s</div>
               </div>
             </div>
           </div>
@@ -321,7 +320,7 @@ export default function Home() {
           <div className="flex flex-col-reverse lg:flex-row lg:gap-12 items-center">
             <OpeningHours />
             <div className="flex flex-col form-shadow p-8 mx-4 -mt-16 lg:mt-0">
-              <h1 className="text-black font-semibold mb-8 text-lg max-w-[90vw]">
+              <h1 className="text-black tracking-wider font-semibold text-2xl max-w-[90vw] mb-4">
                 Besoin d&apos;un renseignement? Laissez-nous un message !
               </h1>
               <StaticForm />

@@ -9,7 +9,7 @@ function GoogleWidget() {
   return (
     <div className="p-6 my-auto bg-white flex flex-col items-center justify-center rounded-lg gap-4 lg:ml-6 widget-glow">
       <h1
-        className={`${dosisFont.className} text-black text-3xl transition duration-200 hover:scale-125`}
+        className={`${dosisFont.className} font-semibold text-black text-3xl transition duration-200 hover:scale-125`}
       >
         Excellent
       </h1>
@@ -20,7 +20,9 @@ function GoogleWidget() {
         <IoMdStar size={25} />
         <IoMdStar size={25} />
       </div>
-      <h4 className={`${dosisFont.className} flex text-black text-xl items-center gap-2`}>
+      <h4
+        className={`${dosisFont.className} flex text-black text-xl items-center gap-2 font-semibold`}
+      >
         sur{" "}
         <span>
           <Image src={google} width={"auto"} height={"auto"} alt="logo" className="w-[150px]" />
@@ -30,7 +32,7 @@ function GoogleWidget() {
         href="https://www.google.com/search?sca_esv=601739216&rlz=1C1ONGR_frFR1029FR1030&tbm=lcl&sxsrf=ACQVn0-fWAj5KZ3_YMpjnAs56s2pPg6k0w:1706281887129&q=Charpente+Menuiserie+Durand+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NLSwsDC1NLIwszAzMTM0NDA12MDI-IpR2TkjsaggNa8kVcE3Na80szi1KDNVwaW0KDEvRSEotSwztbx4ESsxqgAd6xn9ZgAAAA&rldimm=1188859286864611050&hl=en-FR&sa=X&ved=2ahUKEwjahpOuq_uDAxVmbKQEHTqqAiEQ9fQKegQIRBAF&biw=1366&bih=607&dpr=1#lkt=LocalPoiReviews&lrd=0x480f89d613b78025:0x107fad38f97d46ea,3,,,,"
         target="_blank"
         rel="noreferrer"
-        className={`${dosisFont.className} secondary-button secondary-button-bg`}
+        className={`${dosisFont.className} secondary-button secondary-button-bg tracking-wide`}
       >
         Donnez votre avis!
       </a>
