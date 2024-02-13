@@ -161,6 +161,10 @@ const Carousel = () => {
       id: 28,
       imageUrl: carouselItem24,
     },
+    {
+      id: 29,
+      imageUrl: carouselItem25,
+    },
   ];
 
   const slidesPerView = isMobile ? 1 : 3;
@@ -183,7 +187,7 @@ const Carousel = () => {
         // navigation={true}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination]}
-        className="absolute my-12 max-w-[1400px]"
+        className="absolute my-24 lg:my-20 max-w-[1400px]"
       >
         {images.map((item, index) => (
           <SwiperSlide key={item.id} className="w-full my-12 lg:my-20 relative">

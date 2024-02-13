@@ -264,7 +264,7 @@ export default function Home() {
           id="gallery"
           className="h-auto relative flex items-center justify-around brick-bg px-2 py-8"
         >
-          <h1 className="absolute top-[5%] lg:top-[9%] lg:left-[5%] max-w-[85vw] tracking-wide font-semibold text-4xl text-darkGrey mx-auto text-center lg:text-left">
+          <h1 className="absolute top-[5%] lg:top-[9%] lg:left-[5%] max-w-[85vw] tracking-wide font-semibold text-4xl text-darkGrey mx-auto text-center lg:text-left mb-12">
             <span className={`${robotoFont.className} text-primary text-6xl`}>N</span>os
             réalisations en quelques photos
           </h1>
