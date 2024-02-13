@@ -112,7 +112,22 @@ const Footer = () => {
               </motion.div>
             </a>
           </div>
-          <div className="mt-8 text-center mx-auto max-w-[90vw]">
+          <div className="mt-8 text-center mx-auto max-w-[90vw] flex flex-col gap-3 justify-center">
+            <div className="flex flex-col md:flex-row justify-center gap-2 lg:gap-5">
+              <a
+                href="/politique-de-confidentialite"
+                className={`${dosisFont.className} text-lg hover:underline`}
+              >
+                Politique de Confidentialité
+              </a>
+              <a
+                href="/conditions-generales-dutilisation"
+                className={`${dosisFont.className} text-lg hover:underline`}
+              >
+                Conditions Générales d&apos;Utilisation
+              </a>
+            </div>
+
             <p className={`${dosisFont.className} text-lg`}>
               &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand. Site Web développé par{" "}
               <a
