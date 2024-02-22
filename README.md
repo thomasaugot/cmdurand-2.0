@@ -1,61 +1,43 @@
-# next-web-starter
+# Charpente Menuiserie Durand
 
-### Bootstrap your next web application and make your development process faster.
+![alt text](readme-assets/cmdurand.PNG)
 
-### Necessary knowledge to use this package
+Sur ce lien, vous trouverez tout le code lié au site web, au cas où.
+En cas de soucis et que je ne puisse plus m'occuper du site, il faudra alors savoir ceci:
 
-- React.js / Next.js
-- Tailwind CSS
+- Le site est entièrement développé en Next.js, Tailwind CSS
+- Seuls des développeurs React.js/Javascript qui connaissent et ont un compte sur Github.com sauront utiliser ce code, y'en a à revendre, une petite annonce sur Linkedin et le tour est joué. Sinon sur des sites de freelance comme upwork.com, tu cherches un développeur Next.js/Tailwind CSS. Pas besoin d'un francophone non plus, tout dans le code est en anglais à par le contenu.
+- Le nom de domaine est hébergé sur le compte O2switch de Melvyn pour 3 ans en date de Février 2024, voir avec lui pour les identifiants.
+- Le site/code est lui hébergé sur Vercel. Les variables d'envirronement (pour le formulaire emailjs entre autre), sont stockées là-bas également, pour protéger la sécurité du site.
+- Le formulaire de contact du site fonctionne grâce à emailJS. Je ne peux pas laisser les identifiants ici car ils sont personnels. En cas de soucis un jour, en modifiant le code il est assez simple de basculer le formulaire vers un autre projet/compte emailJS.
 
-This repo was created to accelerate web development by providing all the basic setup for a project built with Next.js and Tailwind CSS, including basic components (navbar, footer) and pages (homepage, contact), as well as basic styling. Take it as a skeleton for a basic website so you can save yourself hours of work setting up a project.
+Pourquoi Vercel, et pas un cpanel sur O2Switch par exemple?
 
-All you need to do is to clone the repo.
+- J'ai pensé que le site étant nouveau, et qu'il ne devrait pas (au moins dans un premier temps), générer beaucoup de trafic, il n'était pas nécessaire de le faire héberger sur des serveurs privés et que la solution gratuite de Vercel était suffisante pour le moment.
 
-It will clone an entire Next.js app with all the configuration done for you, including files and folders.
+### Pour les futurs développeurs travaillant sur ce site
 
-Navigate to the newly created app folder and then run:
+Vous devez simplement cloner ce repo.
+Ensuite, depuis votre terminal, naviguez jusqu'au dossier du projet puis faites:
 
 ```
 npm install
 ```
 
-You can then run the app using
+Lancez l'appli avec:
 
 ```
 npm run dev
 ```
 
-It will lauch the app on your local server (usually localhost:3000)
+L'app sera accessible une fois lancée sur votre serveur local (généralement localhost:3000) --> elle ne s'ouvre pas toute seule, il faut aller sur votre navigateur et vous même entrer le nom du port.
 
-## Content of the repo:
+### Structure du code
 
-The repo includes the whole setup for a basic app, all folders and mandatory files have been created for you. All you have to do is add your own content, modify styling and adjust the UI as you wish. The Navbar is fully responsive.
+Travaillant avec Next.js, j'ai choisi de développer le site sans utiliser de dossier /src. A la place, j'utilise un dossier /app dans lequel vous trouverez plusieurs dossiers, correspondant chacun à une page du site.
+Tout les styles sont en défini par des classes Tailwind directement dans le .jsx, à part quelques trucs un peu plus complexes comme des gradient/animations, que j'ai placé dans le fichier global.css.
+Le code commun à toutes les pages du site se trouve dans le fichier layout.js, et le code de la page principale dans le fichier page.js, situé dans le répertoire source (/app) du code.
 
-### Desktop view:
+### Contact
 
-![screenshot](readme-assets/desktop.png)
-
-### Tablet view:
-
-![tablet-screenshot](readme-assets/tablet.png)
-
-### Mobile view:
-
-![mobile-screenshot-1](readme-assets/mobile-1.png)
-![mobile-screenshot-2](readme-assets/mobile.png)
-
-Here is how the app is structured, note that I chose not to use a /src folder, pages go under sub-folders located directly in the /app folder:
-
-![folder-structure](readme-assets/tree.png)
-
-### Follow me!
-
-Github: https://github.com/thomasaugot/ <br/>
-Medium: https://medium.com/@thomasaugot <br/>
-Linkedin: https://www.linkedin.com/in/thomas-augot/
-
-### Visit my portfolio webpage:
-
-https://thomasaugot.com/
-
-Happy coding :)
+Des questions? Vous pouvez me contacter soit à thomas.augot@hotmail.fr ou par téléphone au +34 645 52 12 46
