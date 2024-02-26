@@ -15,7 +15,7 @@ import solivage from "/assets/img/solivage.jpg";
 import menuiserieG from "/assets/img/menuiserie-g.jpg";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import homeBg from "/assets/img/home.png";
+import homeBg from "/assets/img/home.webp";
 import localFont from "next/font/local";
 
 const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });

@@ -24,7 +24,7 @@ import carouselItem8 from "/assets/img/QTML4315.PNG";
 import carouselItem9 from "/assets/img/XTLI1839.PNG";
 import carouselItem11 from "/assets/img/solivage.jpg";
 import carouselItem12 from "/assets/img/carport.jpg";
-import carouselItem14 from "/assets/img/home.png";
+import carouselItem14 from "/assets/img/home.webp";
 import carouselItem15 from "/assets/img/bardage2.jpg";
 import carouselItem16 from "/assets/img/IMG_4976.png";
 import carouselItem17 from "/assets/img/isqhf.png";
