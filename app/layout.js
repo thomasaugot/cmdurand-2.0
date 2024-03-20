@@ -18,22 +18,24 @@ const gotamFont = localFont({ src: "../assets/fonts/Gotham Nights.otf" });
 const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 export const metadata = {
-  title: "Charpente Menuiserie Durand",
-  description: "Site Web officiel de Charpente Menuiserie Durand",
+  title: "Charpente Menuiserie Durand | Missillac (44)",
+  description:
+    "Spécialiste en charpente et menuiserie pour la construction et la rénovation, à Missillac (44) et sa région.",
+  author: "Melvyn Durand",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <Head>
         <link rel="icon" href="./icon.png" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
-          content="charpente, menuiserie, missillac, construction, durand, loire-atlantique, pontchateau, donges, prinquiau, besné, crossac, maison, terrasse, solivage, carport, entreprise, extension, preau, aménagement, combles, bois, bardage, travaux, devis"
+          content="charpente, ouest, bretagne, pme, 44, 56, menuiserie, missillac, construction, durand, loire-atlantique, pontchateau, donges, prinquiau, besné, crossac, la baule, pornichet, sur mesure, maison, terrasse, solivage, carport, entreprise, extension, preau, aménagement, combles, bois, bardage, travaux, devis"
         />
       </Head>
-      <body className={`${gotamFont.className} bg-white`}>
+      <body className={`${gotamFont.className} bg-white`} hrefLang="fr">
         <div className="relative">
           <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[100px] backdrop-blur-[7px] px-10"></div>
           <Link href={"/"}>
@@ -41,7 +43,7 @@ export default function RootLayout({ children }) {
               src={logo}
               width={"auto"}
               height={"auto"}
-              alt="logo"
+              alt="Logo Charpente Menuiserie Durand"
               className="fixed w-[230px] h-auto z-40 lg:z-10 block lg:absolute py-3 px-8"
             />
           </Link>
