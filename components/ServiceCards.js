@@ -10,7 +10,7 @@ import carport from "/assets/img/carport.jpg";
 import terrasse from "/assets/img/terrasse.jpg";
 import { motion } from "framer-motion";
 import menuiserieExt from "/assets/img/menuiserie-ext.jpg";
-import bardage from "/assets/img/bardage.jpg";
+import bardage from "/assets/img/bardage2.jpg";
 import solivage from "/assets/img/solivage.jpg";
 import menuiserieG from "/assets/img/menuiserie-g.jpg";
 import Link from "next/link";
