@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import charpenteTrad from "/assets/img/AKNE8751.PNG";
+import charpenteTrad from "/assets/img/AKNE8751.jpg";
 import charpenteIndus from "/assets/img/charp-indus.jpg";
 import ossature from "/assets/img/ossature.jpg";
-import preau from "/assets/img/BYPV7724.PNG";
+import preau from "/assets/img/BYPV7724.jpg";
 import carport from "/assets/img/carport.jpg";
 import terrasse from "/assets/img/terrasse.jpg";
 import { motion } from "framer-motion";
@@ -132,7 +132,7 @@ const ServiceCard = ({ title, imageUrl, endPoint, id }) => {
       ) : (
         <div className="grey-filter flex justify-center text-center z-10">
           <h1
-            className={`${dosisFont.className} text-xl lg:text-2xl  my-auto font-black capitalize tracking-wider`}
+            className={`${dosisFont.className} text-xl lg:text-2xl  my-auto font-black capitalize tracking-wider max-w-[90%]`}
           >
             {title}
           </h1>
