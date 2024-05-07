@@ -1,5 +1,3 @@
-// include all the code you want to see on every pages, such as a navbar or a footer, here:
-
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
@@ -28,6 +26,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="author" content={metadata.author} />
         <link rel="icon" href="./icon.png" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
