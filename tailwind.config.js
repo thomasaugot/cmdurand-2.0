@@ -17,7 +17,15 @@ module.exports = {
         lightGrey: "#d3d3d3",
         darkGrey: "#3b3b3b",
       },
+      boxShadow: {
+        "custom-light": "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "custom-medium": "0 4px 8px rgba(0, 0, 0, 0.2)",
+        "custom-dark": "0 8px 16px rgba(0, 0, 0, 0.4)",
+      },
     },
   },
   plugins: [],
+  paths: {
+    "@/*": ["./*"],
+  },
 };

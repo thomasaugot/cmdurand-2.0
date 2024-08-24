@@ -3,7 +3,7 @@
 // here is all the code found on the homepage
 
 // import testimonialBgImg from "/assets/img/testimonial-bg.jpg";
-import ServiceCards from "@/components/ServiceCards";
+import Services from "@/components/Services";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
 import GoogleWidget from "@/components/GoogleWidget";
@@ -253,15 +253,13 @@ export default function Home() {
           className="flex flex-col px-2 py-8 lg:px-10 lg:py-12 relative h-auto bg-darkGrey custom-pointer"
         >
           <div className="lg:hidden polygon w-[110vw] h-[45px] bg-primary overflow-hidden absolute transform -scale-y-100 top-0 -right-[120px] md:right-[-320px] z-20"></div>
-          <h1 className="text-white max-w-[80vw]  text-5xl ml-[5%] my-4 text-center tracking-wider font-medium">
+          <h1 className="text-white max-w-[80vw] text-5xl ml-[5%] my-8 lg:my-2 text-center tracking-wider font-medium">
             <span className={`${robotoFont.className} text-primary text-6xl`}>
               N
             </span>
             os Services
           </h1>
-          <div className="flex w-full lg:my-12 z-30 mx-auto max-w-[1250px]">
-            <ServiceCards />
-          </div>
+          <Services />
           <div className="hidden lg:block polygon w-[49vw] h-[55px] bg-primary overflow-hidden absolute bottom-0 -right-[200px] z-20 xl:right-[-245px]"></div>
         </section>
 

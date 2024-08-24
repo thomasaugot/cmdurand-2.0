@@ -97,8 +97,8 @@ body {
 .secondary-button-bg {
   border: 2px solid rgb(255, 255, 255);
   z-index: 1;
-  color: white;
-  @apply bg-darkGrey rounded-lg;
+  color: black;
+  @apply bg-white rounded-lg;
 }
 
 .secondary-button-bg:after {
