@@ -4,18 +4,19 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import localFont from "next/font/local";
-import charpenteTrad from "/assets/img/AKNE8751.jpg";
-import charpenteIndus from "/assets/img/charp-indus.jpg";
-import ossature from "/assets/img/ossature.jpg";
-import preau from "/assets/img/BYPV7724.jpg";
-import carport from "/assets/img/carport.jpg";
-import terrasse from "/assets/img/terrasse.jpg";
-import menuiserieExt from "/assets/img/menuiserie-ext.jpg";
-import bardage from "/assets/img/bardage2.jpg";
-import solivage from "/assets/img/solivage.jpg";
-import menuiserieG from "/assets/img/menuiserie-g.jpg";
-import homeBg from "/assets/img/home.webp";
 import Link from "next/link";
+
+import charpenteTrad from "@/assets/img/charpente-traditionelle/img2.webp";
+import charpenteIndus from "@/assets/img/charpente-industrielle/img1.webp";
+import ossature from "@/assets/img/extension-maison-ossature/img1.webp";
+import preau from "@/assets/img/préau/img1.webp";
+import carport from "@/assets/img/carport/img1.webp";
+import terrasse from "@/assets/img/terrasse/img3.webp";
+import menuiserieExt from "@/assets/img/menuiserie-extérieure/img1.webp";
+import bardage from "@/assets/img/bardage/img3.webp";
+import solivage from "@/assets/img/solivage-porteur/img3.webp";
+import menuiserieG from "@/assets/img/menuiserie-générale/img1.webp";
+import homeBg from "@/assets/img/home.webp";
 
 const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 

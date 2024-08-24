@@ -2,7 +2,6 @@
 
 // here is all the code found on the homepage
 
-// import testimonialBgImg from "/assets/img/testimonial-bg.jpg";
 import Services from "@/components/Services";
 import Carousel from "@/components/Carousel";
 import TestimonialItem from "@/components/TestimonialItem";
