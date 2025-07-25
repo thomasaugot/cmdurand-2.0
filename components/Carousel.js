@@ -75,7 +75,11 @@ const Carousel = () => {
     const preloadImages = async () => {
       try {
         await Promise.all(
-          images.map((item) => (new Image().src = item.imageUrl))
+          images.map((item) => {
+            const img = new window.Image();
+            img.src = item.imageUrl.src || item.imageUrl;
+            return img;
+          })
         );
       } catch (error) {
         console.error("Failed to preload images:", error);
