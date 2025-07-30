@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
-import PopupForm from "@/components/PopupForm";
+import PopupForm from "@/components/forms/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 import localFont from "next/font/local";
 
@@ -17,8 +16,7 @@ export default function ConditionsGeneralesUtilisation() {
   };
 
   return (
-    <div className="h-full px-6 lg:px-36 py-[150px] flex flex-col gap-10 relative brick-bg min-h-[100vh]">
-      <BackToHomepageButton />
+    <div className="h-full px-6 lg:px-36 py-[200px] flex flex-col gap-10 relative brick-bg min-h-[100vh]">
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8">
         <div className="flex flex-col lg:ml-20 relative w-[90vw] lg:w-[40vw]">
@@ -37,9 +35,12 @@ export default function ConditionsGeneralesUtilisation() {
           >
             Conditions Générales d&apos;Utilisation
           </motion.h1>
-          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10`}>
-            Bienvenue sur notre site web. En naviguant sur ce site, vous acceptez de vous conformer
-            aux conditions générales d&apos;utilisation suivantes. Si vous n&apos;acceptez pas ces
+          <p
+            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10`}
+          >
+            Bienvenue sur notre site web. En naviguant sur ce site, vous
+            acceptez de vous conformer aux conditions générales
+            d&apos;utilisation suivantes. Si vous n&apos;acceptez pas ces
             conditions, veuillez ne pas utiliser notre site.
           </p>
           <br />
@@ -47,48 +48,63 @@ export default function ConditionsGeneralesUtilisation() {
             Utilisation du site
           </h2>
           <br />
-          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}>
-            Vous êtes autorisé à utiliser notre site web à des fins légales et de manière conforme
-            aux présentes conditions générales. Vous acceptez de ne pas utiliser notre site à des
-            fins illégales ou interdites par la loi.
+          <p
+            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+          >
+            Vous êtes autorisé à utiliser notre site web à des fins légales et
+            de manière conforme aux présentes conditions générales. Vous
+            acceptez de ne pas utiliser notre site à des fins illégales ou
+            interdites par la loi.
           </p>
           <br />
           <h2 className="capitalize text-black tracking-wider text-center text-xl xl:text-nowrap font-semibold mx-auto">
             Propriété intellectuelle
           </h2>
           <br />
-          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}>
-            Tout le contenu présent sur notre site web, y compris mais sans s&apos;y limiter, les
-            textes, les images, les graphiques, les logos et les vidéos, est la propriété de
-            Charpente Menuiserie Durand et est protégé par les lois sur la propriété intellectuelle.
+          <p
+            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+          >
+            Tout le contenu présent sur notre site web, y compris mais sans
+            s&apos;y limiter, les textes, les images, les graphiques, les logos
+            et les vidéos, est la propriété de Charpente Menuiserie Durand et
+            est protégé par les lois sur la propriété intellectuelle.
           </p>
           <br />
           <h2 className="capitalize text-black tracking-wider text-center text-xl xl:text-nowrap font-semibold mx-auto">
             Limitation de responsabilité
           </h2>
           <br />
-          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}>
-            Nous nous efforçons de maintenir les informations présentes sur notre site web à jour et
-            exactes. Cependant, nous ne garantissons pas l&apos;exactitude, l&apos;exhaustivité ou
-            la pertinence des informations. En aucun cas, nous ne serons responsables des dommages
-            directs, indirects, accessoires, spéciaux ou consécutifs découlant de l&apos;utilisation
-            ou de l&apos;incapacité d&apos;utiliser notre site.
+          <p
+            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+          >
+            Nous nous efforçons de maintenir les informations présentes sur
+            notre site web à jour et exactes. Cependant, nous ne garantissons
+            pas l&apos;exactitude, l&apos;exhaustivité ou la pertinence des
+            informations. En aucun cas, nous ne serons responsables des dommages
+            directs, indirects, accessoires, spéciaux ou consécutifs découlant
+            de l&apos;utilisation ou de l&apos;incapacité d&apos;utiliser notre
+            site.
           </p>
           <br />
           <h2 className="capitalize text-black tracking-wider text-center text-xl xl:text-nowrap font-semibold mx-auto">
             Modification des conditions générales
           </h2>
           <br />
-          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}>
-            Nous nous réservons le droit de modifier ces conditions générales à tout moment et sans
-            préavis. Il est de votre responsabilité de consulter régulièrement cette page pour
-            prendre connaissance des modifications éventuelles.
+          <p
+            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+          >
+            Nous nous réservons le droit de modifier ces conditions générales à
+            tout moment et sans préavis. Il est de votre responsabilité de
+            consulter régulièrement cette page pour prendre connaissance des
+            modifications éventuelles.
           </p>
           <br />
-          <p className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}>
-            Merci d&apos;avoir pris connaissance de nos conditions générales d&apos;utilisation et
-            de notre politique de confidentialité. Si vous avez des questions, n&apos;hésitez pas à
-            nous contacter.
+          <p
+            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+          >
+            Merci d&apos;avoir pris connaissance de nos conditions générales
+            d&apos;utilisation et de notre politique de confidentialité. Si vous
+            avez des questions, n&apos;hésitez pas à nous contacter.
           </p>
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6 lg:gap-0">
             <button

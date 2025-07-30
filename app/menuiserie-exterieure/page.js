@@ -6,9 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import BackToHomepageButton from "@/components/BackButton";
 import { motion } from "framer-motion";
-import PopupForm from "@/components/PopupForm";
+import PopupForm from "@/components/forms/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
 import localFont from "next/font/local";
 
@@ -26,8 +25,7 @@ function MenuiserieExterieure() {
   };
 
   return (
-    <div className="h-full px-6 lg:px-36 py-[150px] flex flex-col gap-10 relative brick-bg min-h-[100vh]">
-      <BackToHomepageButton />
+    <div className="h-full px-6 lg:px-36 py-[200px] flex flex-col gap-10 relative brick-bg min-h-[100vh]">
       <ContactDetailsService />
       <div className="relative flex flex-col text-center items-center lg:flex-row justify-center gap-8 p-4">
         <div className="w-full lg:w-1/2">

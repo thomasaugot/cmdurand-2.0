@@ -24,80 +24,75 @@ const services = [
   {
     id: 1,
     title: "Charpente traditionnelle",
+    description: "Charpentes en bois massif assemblées selon les techniques ancestrales",
     imageUrl: charpenteTrad,
     endPoint: "/charpente-traditionelle",
-    className: "md:basis-[calc(50%-10px)]",
+    featured: true,
   },
   {
     id: 2,
-    title: "Charpente industrielle",
-    imageUrl: charpenteIndus,
-    endPoint: "/charpente-industrielle",
-    className: "md:basis-[calc(50%-10px)]",
+    title: "Extension ossature bois",
+    description: "Extensions performantes et maisons neuves en ossature bois",
+    imageUrl: ossature,
+    endPoint: "/extension-ou-maison-ossature",
+    featured: true,
   },
   {
     id: 3,
-    title: "Extension ou maison ossature",
-    imageUrl: ossature,
-    endPoint: "/extension-ou-maison-ossature",
-    className: "md:basis-[calc(33.33%-10px)]",
+    title: "Terrasses & Aménagements",
+    description: "Terrasses en bois exotique, composite et aménagements extérieurs",
+    imageUrl: terrasse,
+    endPoint: "/terrasse",
+    featured: true,
   },
   {
     id: 4,
-    title: "Préau",
-    imageUrl: preau,
-    endPoint: "/preau",
-    className: "md:basis-[calc(25%-10px)]",
+    title: "Charpente industrielle",
+    description: "Solutions industrielles et fermettes pour tous projets",
+    imageUrl: charpenteIndus,
+    endPoint: "/charpente-industrielle",
+    featured: false,
   },
   {
     id: 5,
-    title: "Carport",
-    imageUrl: carport,
-    endPoint: "/carport",
-    className: "md:basis-[calc(33.33%-10px)]",
+    title: "Menuiserie sur mesure",
+    description: "Escaliers, placards et aménagements intérieurs personnalisés",
+    imageUrl: menuiserieG,
+    endPoint: "/menuiserie-generale",
+    featured: false,
   },
   {
     id: 6,
-    title: "Terrasse",
-    imageUrl: terrasse,
-    endPoint: "/terrasse",
-    className: "md:basis-[calc(20%-10px)]",
+    title: "Bardage & Façades",
+    description: "Bardages bois pour protection et embellissement de façades",
+    imageUrl: bardage,
+    endPoint: "/bardage",
+    featured: false,
   },
   {
     id: 7,
-    title: "Aménagement des combles",
+    title: "Aménagement combles",
+    description: "Transformation de combles perdus en espaces habitables",
     imageUrl: homeBg,
     endPoint: "/amenagement-des-combles",
-    className: "md:basis-[calc(33.33%-10px)]",
+    featured: false,
   },
   {
     id: 8,
-    title: "Menuiserie extérieure",
-    imageUrl: menuiserieExt,
-    endPoint: "/menuiserie-exterieure",
-    className: "md:basis-[calc(25%-10px)]",
+    title: "Préaux & Carports",
+    description: "Structures de protection pour vos véhicules et espaces extérieurs",
+    imageUrl: preau,
+    endPoint: "/preau",
+    featured: false,
   },
   {
     id: 9,
-    title: "Bardages",
-    imageUrl: bardage,
-    endPoint: "/bardage",
-    className: "md:basis-[calc(30%-10px)]",
-  },
-  {
-    id: 10,
-    title: "Solivage porteur (plancher)",
-    imageUrl: solivage,
-    endPoint: "/solivage-porteur",
-    className: "md:basis-[calc(25%-10px)]",
-  },
-  {
-    id: 11,
-    title: "Menuiserie Générale",
-    imageUrl: menuiserieG,
-    endPoint: "/menuiserie-generale",
-    className: "md:basis-[calc(20%-10px)]",
-  },
+    title: "Menuiserie extérieure",
+    description: "Volets, portails et menuiseries extérieures sur mesure",
+    imageUrl: menuiserieExt,
+    endPoint: "/menuiserie-exterieure",
+    featured: false,
+  }
 ];
 
 const variants = {
@@ -105,21 +100,21 @@ const variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
 
-const images = {
+const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 5,
+    y: 30,
   },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
     },
   },
 };
@@ -127,10 +122,9 @@ const images = {
 const Services = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   const ref = React.useRef();
-  const inView = useInView(ref, { threshold: 0.3 });
+  const inView = useInView(ref, { threshold: 0.2 });
 
   useEffect(() => {
     if (inView) {
@@ -138,71 +132,61 @@ const Services = () => {
     }
   }, [inView]);
 
-  useEffect(() => {
-    const updateLayout = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
-    };
-
-    updateLayout(); // Initial check
-    window.addEventListener("resize", updateLayout);
-
-    return () => window.removeEventListener("resize", updateLayout);
-  }, []);
+  const featuredServices = services.filter(service => service.featured);
+  const regularServices = services.filter(service => !service.featured);
 
   return (
-    <div
-      ref={ref}
-      className={`flex ${
-        isMobile ? "flex-col" : "md:flex-row md:flex-wrap"
-      } w-[90vw] gap-4 px-2 py-4 mb-4 lg:mb-8 mx-auto`}
-    >
+    <div ref={ref} className="max-w-8xl mx-auto">
       {isVisible && (
         <motion.div
           variants={variants}
           initial="hidden"
           animate="show"
-          className={`flex flex-wrap gap-4 w-full`}
         >
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              variants={images}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className={`w-full ${
-                isMobile ? "basis-full" : service.className
-              } dark-shadow rounded-xl overflow-hidden relative flex-1 h-[30vh] md:h-[15vh] lg:h-[30vh] flex items-center justify-center`}
-            >
-              <Image
-                src={service.imageUrl}
-                alt={service.title}
-                layout="fill"
-                objectFit="cover"
-                priority
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center z-10 transition-all duration-500 rounded-lg">
-                <h1
-                  className={`${
-                    dosisFont.className
-                  } text-2xl font-black text-center capitalize tracking-wider ${
-                    hoveredIndex === index ? "opacity-0" : "opacity-100"
-                  } transition-opacity duration-300 bg-white/70 py-1 px-2 rounded-xl max-w-[90%]`}
-                >
-                  {service.title}
-                </h1>
-                {hoveredIndex === index && (
+          {/* TOUTES les cards à la même taille */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.id}
+                variants={cardVariants}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="group relative h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              >
+                <Image
+                  src={service.imageUrl}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                  <h3 className={`${dosisFont.className} text-xl font-bold mb-2 group-hover:text-primary transition-colors`}>
+                    {service.title}
+                  </h3>
+                  <p className={`${dosisFont.className} text-white/90 text-sm mb-4 leading-relaxed line-clamp-2`}>
+                    {service.description}
+                  </p>
                   <Link
                     href={service.endPoint}
-                    passHref
-                    className={`${dosisFont.className} underline absolute inset-0 flex items-center justify-center text-2xl font-bold text-white bg-black/50 rounded-lg transition-opacity duration-300`}
+                    className={`${dosisFont.className} inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all text-sm`}
                   >
-                    En savoir plus
+                    Découvrir
+                    <span>→</span>
                   </Link>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                </div>
+
+                {/* Hover overlay */}
+                <div className={`absolute inset-0 bg-primary/15 transition-opacity duration-300 ${
+                  hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+                }`} />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       )}
     </div>

@@ -30,10 +30,11 @@ body {
 
 .gradient-text {
   background: #f37139;
-  background: linear-gradient(to right, #f37139 0%, #000000 30%);
+  background: linear-gradient(to top, #f37139 0%, #f37139 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: #000 3px 0px 0px;
 }
 
 .primary-button {

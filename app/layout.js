@@ -1,13 +1,11 @@
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
-import logo from "../app/logo.png";
-import Image from "next/image";
 import localFont from "next/font/local";
+import Navbar from "@/components/layout/Navbar";
 
 library.add(fab);
 
@@ -216,18 +214,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body className={`${gotamFont.className} bg-white`} hrefLang="fr">
-        <div className="relative">
-          <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[100px] backdrop-blur-[7px] px-10"></div>
-          <Link href={"/"}>
-            <Image
-              src={logo}
-              width={"auto"}
-              height={"auto"}
-              alt="Logo Charpente Menuiserie Durand - Charpentier Missillac"
-              className="fixed w-[230px] h-auto z-40 lg:z-10 block lg:absolute py-3 px-8"
-            />
-          </Link>
-        </div>
+        <Navbar />
         {children}
         <Footer />
       </body>
