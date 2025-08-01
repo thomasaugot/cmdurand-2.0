@@ -7,7 +7,9 @@ import localFont from "next/font/local";
 import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 import { getFeaturedProjects } from "@/data/portfolio";
 
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
+const robotoFont = localFont({
+  src: "../../assets/fonts/RobotoMono-Regular.ttf",
+});
 const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 function ProjectsSection() {
@@ -23,15 +25,21 @@ function ProjectsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`${robotoFont.className} text-primary text-lg font-bold mb-4 uppercase tracking-wide`}>
+          <h2
+            className={`${robotoFont.className} text-primary text-lg font-bold mb-4 uppercase tracking-wide`}
+          >
             Nos dernières réalisations
           </h2>
-          <h3 className={`${dosisFont.className} text-4xl lg:text-5xl font-bold text-darkGrey mb-6`}>
+          <h3
+            className={`${dosisFont.className} text-4xl lg:text-5xl font-bold text-darkGrey mb-6`}
+          >
             Des projets qui témoignent de notre savoir-faire
           </h3>
-          <p className={`${dosisFont.className} text-xl text-darkGrey max-w-3xl mx-auto`}>
-            Découvrez quelques-unes de nos réalisations récentes qui
-            illustrent la diversité et la qualité de nos interventions.
+          <p
+            className={`${dosisFont.className} text-xl text-darkGrey max-w-3xl mx-auto`}
+          >
+            Découvrez quelques-unes de nos réalisations récentes qui illustrent
+            la diversité et la qualité de nos interventions.
           </p>
         </motion.div>
 
@@ -39,8 +47,8 @@ function ProjectsSection() {
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group cursor-pointer"
@@ -54,15 +62,21 @@ function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <span className={`${dosisFont.className} text-sm bg-primary px-3 py-1 rounded-full`}>
+                  <span
+                    className={`${dosisFont.className} text-sm bg-primary px-3 py-1 rounded-full`}
+                  >
                     {project.serviceType}
                   </span>
                 </div>
               </div>
-              <h4 className={`${dosisFont.className} font-bold text-xl text-darkGrey mb-2`}>
+              <h4
+                className={`${dosisFont.className} font-bold text-xl text-darkGrey mb-2`}
+              >
                 {project.title}
               </h4>
-              <p className={`${dosisFont.className} text-darkGrey flex items-center gap-2 mb-2`}>
+              <p
+                className={`${dosisFont.className} text-darkGrey flex items-center gap-2 mb-2`}
+              >
                 <FaMapMarkerAlt className="text-primary" size={14} />
                 {project.title.split(" - ")[1]}
               </p>

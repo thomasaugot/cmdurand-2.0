@@ -6,7 +6,9 @@ import localFont from "next/font/local";
 import { FaArrowRight } from "react-icons/fa";
 import Services from "@/components/Services";
 
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
+const robotoFont = localFont({
+  src: "../../assets/fonts/RobotoMono-Regular.ttf",
+});
 const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 function ServicesSection() {
@@ -20,24 +22,32 @@ function ServicesSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className={`${dosisFont.className} text-white max-w-[80vw] text-5xl lg:text-6xl mx-auto mb-6 tracking-wider font-bold`}>
-            <span className={`${dosisFont.className} text-primary text-6xl lg:text-7xl`}>
+          <h2
+            className={`${dosisFont.className} text-white max-w-[80vw] text-5xl lg:text-6xl mx-auto mb-6 tracking-wider font-bold`}
+          >
+            <span
+              className={`${dosisFont.className} text-primary text-6xl lg:text-7xl`}
+            >
               D
             </span>
             écouvrez nos services
           </h2>
-          <p className={`${dosisFont.className} text-white/90 text-xl lg:text-2xl max-w-4xl mx-auto mb-8`}>
+          <p
+            className={`${dosisFont.className} text-white/90 text-xl lg:text-2xl max-w-4xl mx-auto mb-8`}
+          >
             De la charpente traditionnelle aux finitions sur mesure, nous
             maîtrisons tous les métiers du bois
           </p>
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-          <p className={`${dosisFont.className} text-white/80 text-lg max-w-3xl mx-auto`}>
+          <p
+            className={`${dosisFont.className} text-white/80 text-lg max-w-3xl mx-auto`}
+          >
             Artisans passionnés depuis 2020, nous transformons vos idées en
             réalisations durables et esthétiques
           </p>
@@ -54,12 +64,16 @@ function ServicesSection() {
           className="mt-20 text-center"
         >
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-            <h3 className={`${dosisFont.className} text-2xl font-bold text-white mb-4`}>
+            <h3
+              className={`${dosisFont.className} text-2xl font-bold text-white mb-4`}
+            >
               Un projet sur mesure ? Parlons-en ensemble
             </h3>
-            <p className={`${dosisFont.className} text-white/90 mb-6 max-w-2xl mx-auto`}>
-              Chaque projet est unique. Découvrez l'ensemble de nos services
-              ou contactez-nous directement pour discuter de vos besoins
+            <p
+              className={`${dosisFont.className} text-white/90 mb-6 max-w-2xl mx-auto`}
+            >
+              Chaque projet est unique. Découvrez l'ensemble de nos services ou
+              contactez-nous directement pour discuter de vos besoins
               spécifiques.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

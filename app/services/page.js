@@ -10,6 +10,7 @@ import ServicesHero from "@/components/services-page/ServicesHero";
 import ServiceFilters from "@/components/services-page/ServiceFilters";
 import ServicesList from "@/components/services-page/ServicesList";
 import ServicesStats from "@/components/services-page/ServicesStats";
+import ServicesRecruitment from "@/components/services-page/ServicesRecruitment";
 import ServicesCTA from "@/components/services-page/ServicesCTA";
 
 function ServicesPage() {
@@ -23,7 +24,6 @@ function ServicesPage() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
       
       {/* Hero Section */}
       <ServicesHero />
@@ -40,6 +40,9 @@ function ServicesPage() {
 
       {/* Stats */}
       <ServicesStats />
+
+      {/* Recruitment Section */}
+      <ServicesRecruitment />
 
       {/* CTA */}
       <ServicesCTA setIsFormOpen={setIsFormOpen} />

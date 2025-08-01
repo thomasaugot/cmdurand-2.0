@@ -86,8 +86,8 @@ function AboutSection() {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-3xl p-8 shadow-custom-medium hover:shadow-custom-dark transition-all duration-300 border border-lightGrey/30 group"
