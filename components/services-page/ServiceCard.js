@@ -18,7 +18,7 @@ const ServiceCard = ({ service, index }) => (
     {/* Image */}
     <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
       <motion.div 
-        className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-lg"
+        className="relative h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
       >
@@ -74,7 +74,7 @@ const ServiceCard = ({ service, index }) => (
       </div>
 
       <Link
-        href={service.endPoint}
+        href={`/services/${service.endPoint}`}
         className={`${dosisFont.className} inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 transition-all hover:shadow-lg group`}
       >
         En savoir plus

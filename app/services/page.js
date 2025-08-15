@@ -1,16 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import { servicesData, serviceCategories } from "@/data/services";
-
-// Import des composants
 import ServicesHero from "@/components/services-page/ServicesHero";
 import ServiceFilters from "@/components/services-page/ServiceFilters";
 import ServicesList from "@/components/services-page/ServicesList";
 import ServicesStats from "@/components/services-page/ServicesStats";
-import ServicesRecruitment from "@/components/services-page/ServicesRecruitment";
 import ServicesCTA from "@/components/services-page/ServicesCTA";
 
 function ServicesPage() {
@@ -24,34 +20,21 @@ function ServicesPage() {
 
   return (
     <div className="min-h-screen">
-      
-      {/* Hero Section */}
       <ServicesHero />
-      
-      {/* Filters */}
-      <ServiceFilters 
+
+      <ServiceFilters
         serviceCategories={serviceCategories}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
       />
 
-      {/* Services List */}
       <ServicesList filteredServices={filteredServices} />
 
-      {/* Stats */}
       <ServicesStats />
 
-      {/* Recruitment Section */}
-      <ServicesRecruitment />
-
-      {/* CTA */}
       <ServicesCTA setIsFormOpen={setIsFormOpen} />
 
-      {/* Popup Form */}
-      <PopupForm 
-        isOpen={isFormOpen} 
-        closeModal={() => setIsFormOpen(false)} 
-      />
+      <PopupForm isOpen={isFormOpen} closeModal={() => setIsFormOpen(false)} />
     </div>
   );
 }

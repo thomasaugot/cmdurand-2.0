@@ -9,7 +9,9 @@ import { useInView } from "react-intersection-observer";
 import localFont from "next/font/local";
 import RecruitmentModal from "@/components/RecruitmentModal";
 
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
+const robotoFont = localFont({
+  src: "../../assets/fonts/RobotoMono-Regular.ttf",
+});
 const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 const Footer = () => {
@@ -44,48 +46,64 @@ const Footer = () => {
       >
         {isVisible && (
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            
             {/* Main Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-8 lg:mb-12">
-              
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-8 lg:mb-12">
               {/* Contact Info */}
               <div className="space-y-6">
-                <h2 className={`${dosisFont.className} text-xl sm:text-2xl font-bold text-primary`}>
+                <h2
+                  className={`${dosisFont.className} text-xl sm:text-2xl font-bold text-primary`}
+                >
                   Charpente Menuiserie Durand
                 </h2>
-                
+
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <FaLocationDot size={20} className="text-primary mt-1 flex-shrink-0" />
+                    <FaLocationDot
+                      size={20}
+                      className="text-primary mt-1 flex-shrink-0"
+                    />
                     <div className="min-w-0">
-                      <p className={`${dosisFont.className} text-base sm:text-lg`}>
+                      <p
+                        className={`${dosisFont.className} text-base sm:text-lg`}
+                      >
                         Sarl Charpente Menuiserie Durand
                       </p>
-                      <p className={`${dosisFont.className} text-base sm:text-lg`}>
+                      <p
+                        className={`${dosisFont.className} text-base sm:text-lg`}
+                      >
                         Z.A. la Pommeraie, Rue des Indes
                       </p>
-                      <p className={`${dosisFont.className} text-base sm:text-lg`}>
+                      <p
+                        className={`${dosisFont.className} text-base sm:text-lg`}
+                      >
                         44780 Missillac
                       </p>
                     </div>
                   </div>
 
-                  <div 
+                  <div
                     onClick={handlePhoneClick}
                     className="flex items-center gap-3 sm:gap-4 cursor-pointer hover:text-primary transition-colors duration-300"
                   >
                     <FaPhone size={18} className="text-primary flex-shrink-0" />
-                    <p className={`${dosisFont.className} text-base sm:text-lg`}>
+                    <p
+                      className={`${dosisFont.className} text-base sm:text-lg`}
+                    >
                       +33 6 76 50 85 51
                     </p>
                   </div>
 
-                  <div 
+                  <div
                     onClick={handleEmailClick}
                     className="flex items-start gap-3 sm:gap-4 cursor-pointer hover:text-primary transition-colors duration-300"
                   >
-                    <MdEmail size={20} className="text-primary mt-0.5 flex-shrink-0" />
-                    <p className={`${dosisFont.className} text-base sm:text-lg break-all sm:break-normal`}>
+                    <MdEmail
+                      size={20}
+                      className="text-primary mt-0.5 flex-shrink-0"
+                    />
+                    <p
+                      className={`${dosisFont.className} text-base sm:text-lg break-all sm:break-normal`}
+                    >
                       charpente.menuiserie.durand@gmail.com
                     </p>
                   </div>
@@ -93,41 +111,43 @@ const Footer = () => {
               </div>
 
               {/* Navigation & Hours */}
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {/* Navigation */}
                 <div>
-                  <h3 className={`${dosisFont.className} text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-white`}>
+                  <h3
+                    className={`${dosisFont.className} text-lg sm:text-xl font-bold mb-6 text-white`}
+                  >
                     Navigation
                   </h3>
-                  
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+
+                  <div className="space-y-3">
                     <Link
                       href="/"
-                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300`}
+                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block`}
                     >
                       Accueil
                     </Link>
                     <Link
                       href="/services"
-                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300`}
+                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block`}
                     >
                       Nos Services
                     </Link>
                     <Link
                       href="/realisations"
-                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300`}
+                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block`}
                     >
                       Nos Réalisations
                     </Link>
                     <Link
                       href="/contact"
-                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300`}
+                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block`}
                     >
                       Contactez-nous
                     </Link>
                     <button
                       onClick={() => setIsRecruitmentOpen(true)}
-                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg text-primary hover:text-white transition-colors duration-300 text-left`}
+                      className={`${dosisFont.className} text-sm sm:text-base lg:text-lg text-primary hover:text-white transition-colors duration-300 text-left block`}
                     >
                       Nous recrutons !
                     </button>
@@ -136,26 +156,52 @@ const Footer = () => {
 
                 {/* Hours */}
                 <div>
-                  <h3 className={`${dosisFont.className} text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-white`}>
+                  <h3
+                    className={`${dosisFont.className} text-lg sm:text-xl font-bold mb-6 text-white`}
+                  >
                     Horaires d'ouverture
                   </h3>
-                  
-                  <div className="space-y-2 sm:space-y-3">
+
+                  <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className={`${dosisFont.className} text-sm sm:text-base text-gray-300`}>
+                      <span
+                        className={`${dosisFont.className} text-sm sm:text-base lg:text-lg text-gray-300`}
+                      >
                         Lundi - Vendredi
                       </span>
-                      <span className={`${dosisFont.className} text-sm sm:text-base text-white font-semibold`}>
+                      <span
+                        className={`${dosisFont.className} text-sm sm:text-base lg:text-lg text-white font-semibold`}
+                      >
                         8h00 - 18h00
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className={`${dosisFont.className} text-sm sm:text-base text-gray-300`}>
+                      <span
+                        className={`${dosisFont.className} text-sm sm:text-base lg:text-lg text-gray-300`}
+                      >
                         Samedi - Dimanche
                       </span>
-                      <span className={`${dosisFont.className} text-sm sm:text-base text-gray-400`}>
+                      <span
+                        className={`${dosisFont.className} text-sm sm:text-base lg:text-lg text-gray-400`}
+                      >
                         Fermé
                       </span>
+                    </div>
+
+                    {/* Zone d'intervention */}
+                    <div className="pt-4 border-t border-gray-600">
+                      <h4
+                        className={`${dosisFont.className} text-white text-lg sm:text-xl font-bold mb-6`}
+                      >
+                        Zone d'intervention
+                      </h4>
+                      <div className="space-y-1">
+                        <p
+                          className={`${dosisFont.className} text-sm sm:text-base lg:text-lg text-gray-300`}
+                        >
+                          Loire-Atlantique / Bretagne-Sud
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -165,12 +211,15 @@ const Footer = () => {
             {/* Bottom Section */}
             <div className="border-t border-gray-600 pt-6 sm:pt-8">
               <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
-                
                 <div className="text-center lg:text-left">
-                  <p className={`${dosisFont.className} text-sm sm:text-base lg:text-lg mb-1 sm:mb-2`}>
+                  <p
+                    className={`${dosisFont.className} text-sm sm:text-base lg:text-lg mb-1 sm:mb-2`}
+                  >
                     &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand
                   </p>
-                  <p className={`${dosisFont.className} text-xs sm:text-sm text-gray-400`}>
+                  <p
+                    className={`${dosisFont.className} text-xs sm:text-sm text-gray-400`}
+                  >
                     Site Web développé par{" "}
                     <a
                       href="https://thomasaugot.com/"
@@ -202,7 +251,7 @@ const Footer = () => {
           </div>
         )}
 
-        {/* Facebook Button - Mobile First */}
+        {/* Facebook Button */}
         <a
           href="https://www.facebook.com/profile.php?id=100063695462775"
           target="_blank"
@@ -210,7 +259,9 @@ const Footer = () => {
           className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50"
         >
           <div className="bg-primary text-white px-3 sm:px-4 py-3 sm:py-4 rounded-l-lg sm:rounded-l-xl shadow-lg hover:bg-primary/90 transition-colors duration-300 flex items-center gap-2 sm:gap-3">
-            <span className={`${dosisFont.className} font-bold text-xs sm:text-sm hidden sm:block lg:block`}>
+            <span
+              className={`${dosisFont.className} font-bold text-xs sm:text-sm hidden sm:block lg:block`}
+            >
               Suivez-nous
             </span>
             <FaFacebook size={20} className="sm:w-6 sm:h-6" />
@@ -219,7 +270,7 @@ const Footer = () => {
       </footer>
 
       {/* Recruitment Modal */}
-      <RecruitmentModal 
+      <RecruitmentModal
         isOpen={isRecruitmentOpen}
         closeModal={() => setIsRecruitmentOpen(false)}
       />
