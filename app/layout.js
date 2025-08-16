@@ -1,17 +1,17 @@
-import { Inter } from "next/font/google";
+import { Inter, Dosis, Roboto_Mono } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import localFont from "next/font/local";
 import Navbar from "@/components/layout/Navbar";
+import CookieBanner from "@/components/CookieBanner";
 
 library.add(fab);
 
 const inter = Inter({ subsets: ["latin"] });
-const gotamFont = localFont({ src: "../assets/fonts/Gotham Nights.otf" });
-const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
+const dosis = Dosis({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const roboto = Roboto_Mono({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata = {
   metadataBase: new URL("https://www.cmdurand.fr/"),
@@ -19,16 +19,17 @@ export const metadata = {
     default: "Charpente Menuiserie Durand | Missillac (44)",
     template: "%s | Charpente Menuiserie Durand",
   },
-  description: "Spécialiste en charpente et menuiserie pour la construction et la rénovation, à Missillac (44) et sa région.",
+  description:
+    "Spécialiste en charpente et menuiserie pour la construction et la rénovation, à Missillac (44) et sa région.",
   keywords: [
     "charpente pontchateau",
-    "menuiserie 44", 
+    "menuiserie 44",
     "loire atlantique charpente",
     "charpentier missillac",
     "travaux btp 44",
     "toiture pontchateau",
     "charpente",
-    "ouest", 
+    "ouest",
     "bretagne",
     "pme",
     "44",
@@ -58,7 +59,7 @@ export const metadata = {
     "bois",
     "bardage",
     "travaux",
-    "devis"
+    "devis",
   ],
   authors: [{ name: "Melvyn Durand" }],
   creator: "Charpente Menuiserie Durand",
@@ -69,9 +70,9 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
@@ -79,7 +80,8 @@ export const metadata = {
     locale: "fr_FR",
     url: "https://www.cmdurand.fr",
     title: "Charpente Menuiserie Durand | Missillac (44)",
-    description: "Spécialiste en charpente et menuiserie pour la construction et la rénovation, à Missillac (44) et sa région.",
+    description:
+      "Spécialiste en charpente et menuiserie pour la construction et la rénovation, à Missillac (44) et sa région.",
     images: [
       {
         url: "/hero-image.jpg",
@@ -91,21 +93,22 @@ export const metadata = {
     siteName: "Charpente Menuiserie Durand",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Charpente Menuiserie Durand | Missillac (44)',
-    description: 'Spécialiste en charpente et menuiserie pour la construction et la rénovation',
-    images: ['/hero-image.jpg'],
+    card: "summary_large_image",
+    title: "Charpente Menuiserie Durand | Missillac (44)",
+    description:
+      "Spécialiste en charpente et menuiserie pour la construction et la rénovation",
+    images: ["/hero-image.jpg"],
   },
   alternates: {
     canonical: "https://www.cmdurand.fr",
   },
   other: {
-    'theme-color': '#e63322',
-    'msapplication-TileColor': '#e63322',
-    'geo.region': 'FR-44',
-    'geo.placename': 'Missillac, Loire-Atlantique',
-    'geo.position': '47.4167;-2.1500',
-    'ICBM': '47.4167, -2.1500',
+    "theme-color": "#e63322",
+    "msapplication-TileColor": "#e63322",
+    "geo.region": "FR-44",
+    "geo.placename": "Missillac, Loire-Atlantique",
+    "geo.position": "47.4167;-2.1500",
+    ICBM: "47.4167, -2.1500",
   },
 };
 
@@ -122,7 +125,7 @@ export default function RootLayout({ children }) {
           name="keywords"
           content="charpente, ouest, bretagne, pme, 44, 56, menuiserie, missillac, construction, durand, loire-atlantique, pontchateau, donges, prinquiau, besné, crossac, la baule, pornichet, sur mesure, maison, terrasse, solivage, carport, entreprise, extension, preau, aménagement, combles, bois, bardage, travaux, devis"
         />
-        
+
         {/* Structured Data - Organisation */}
         <script
           type="application/ld+json"
@@ -131,60 +134,61 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "@id": "https://www.cmdurand.fr/#organization",
-              "name": "Charpente Menuiserie Durand",
-              "url": "https://www.cmdurand.fr",
-              "logo": {
+              name: "Charpente Menuiserie Durand",
+              url: "https://www.cmdurand.fr",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://www.cmdurand.fr/logo.png",
-                "width": 230,
-                "height": 80
+                url: "https://www.cmdurand.fr/logo.png",
+                width: 230,
+                height: 80,
               },
-              "description": "Spécialiste en charpente et menuiserie pour la construction et la rénovation, à Missillac (44) et sa région.",
-              "foundingDate": "2004",
-              "address": {
+              description:
+                "Spécialiste en charpente et menuiserie pour la construction et la rénovation, à Missillac (44) et sa région.",
+              foundingDate: "2004",
+              address: {
                 "@type": "PostalAddress",
-                "addressLocality": "Missillac",
-                "addressRegion": "Loire-Atlantique",
-                "postalCode": "44780",
-                "addressCountry": "FR"
+                addressLocality: "Missillac",
+                addressRegion: "Loire-Atlantique",
+                postalCode: "44780",
+                addressCountry: "FR",
               },
-              "geo": {
+              geo: {
                 "@type": "GeoCoordinates",
-                "latitude": 47.4167,
-                "longitude": -2.1500
+                latitude: 47.4167,
+                longitude: -2.15,
               },
-              "telephone": "+33676508551",
-              "areaServed": [
+              telephone: "+33676508551",
+              areaServed: [
                 {
                   "@type": "Place",
-                  "name": "Missillac"
-                },
-                {
-                  "@type": "Place", 
-                  "name": "Pontchâteau"
+                  name: "Missillac",
                 },
                 {
                   "@type": "Place",
-                  "name": "Loire-Atlantique"
+                  name: "Pontchâteau",
                 },
                 {
                   "@type": "Place",
-                  "name": "Besné"
+                  name: "Loire-Atlantique",
                 },
                 {
                   "@type": "Place",
-                  "name": "Crossac"
+                  name: "Besné",
                 },
                 {
                   "@type": "Place",
-                  "name": "Donges"
+                  name: "Crossac",
                 },
                 {
                   "@type": "Place",
-                  "name": "Prinquiau"
-                }
+                  name: "Donges",
+                },
+                {
+                  "@type": "Place",
+                  name: "Prinquiau",
+                },
               ],
-              "serviceType": [
+              serviceType: [
                 "Charpente traditionnelle",
                 "Menuiserie générale",
                 "Extension ossature bois",
@@ -193,29 +197,30 @@ export default function RootLayout({ children }) {
                 "Aménagement combles",
                 "Carport",
                 "Préau",
-                "Solivage porteur"
+                "Solivage porteur",
               ],
-              "openingHoursSpecification": [
+              openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": [
+                  dayOfWeek: [
                     "Monday",
-                    "Tuesday", 
+                    "Tuesday",
                     "Wednesday",
                     "Thursday",
-                    "Friday"
+                    "Friday",
                   ],
-                  "opens": "08:00",
-                  "closes": "18:30"
-                }
-              ]
-            })
+                  opens: "08:00",
+                  closes: "18:30",
+                },
+              ],
+            }),
           }}
         />
       </Head>
-      <body className={`${gotamFont.className} bg-white`} hrefLang="fr">
+      <body className={`${dosis.className} bg-white`} hrefLang="fr">
         <Navbar />
         {children}
+        <CookieBanner />
         <Footer />
       </body>
     </html>

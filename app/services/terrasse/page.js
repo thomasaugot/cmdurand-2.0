@@ -9,14 +9,14 @@ import TerrasseGallery from "@/components/services-pages/terrasse-page/TerrasseG
 import TerrasseMaterials from "@/components/services-pages/terrasse-page/TerrasseMaterials";
 import TerrasseCTA from "@/components/services-pages/terrasse-page/TerrasseCTA";
 
-import img1 from "@/assets/img/terrasse/img1.webp";
-import img2 from "@/assets/img/terrasse/img2.webp";
-import img3 from "@/assets/img/terrasse/img3.webp";
-
 function Terrasse() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1, img2, img3];
+  const images = [
+    "/assets/img/terrasse/img1.webp",
+    "/assets/img/terrasse/img2.webp",
+    "/assets/img/terrasse/img3.webp"
+  ];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

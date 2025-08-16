@@ -3,9 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../assets/fonts/Dosis-Medium.ttf" });
 
 const ImageModal = ({ selectedImage, closeImageModal, navigateImage }) => {
   if (!selectedImage) return null;
@@ -30,24 +27,24 @@ const ImageModal = ({ selectedImage, closeImageModal, navigateImage }) => {
         </button>
 
         <button
-          onClick={() => navigateImage("prev")}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white hover:text-lightGrey transition-colors bg-black/50 rounded-full p-2"
+          onClick={() => navigateImage("previous")}
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white hover:text-lightGrey transition-colors bg-black/50 rounded-full p-3 z-20"
         >
-          <GrFormPrevious size={32} />
+          <GrFormPrevious size={24} />
         </button>
 
         <button
           onClick={() => navigateImage("next")}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white hover:text-lightGrey transition-colors bg-black/50 rounded-full p-2"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white hover:text-lightGrey transition-colors bg-black/50 rounded-full p-3 z-20"
         >
-          <GrFormNext size={32} />
+          <GrFormNext size={24} />
         </button>
 
         <div className="absolute bottom-4 left-4 bg-black/70 text-white p-4 rounded-lg max-w-md backdrop-blur-sm">
-          <h3 className={`${dosisFont.className} font-bold text-lg mb-2`}>
+          <h3 className="font-bold text-lg mb-2">
             {selectedImage.title}
           </h3>
-          <p className={`${dosisFont.className} text-sm opacity-90`}>
+          <p className="text-sm opacity-90">
             {selectedImage.description}
           </p>
         </div>

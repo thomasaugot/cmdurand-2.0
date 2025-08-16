@@ -3,7 +3,6 @@
 import { useInView } from "react-intersection-observer";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import GoogleWidget from "@/components/GoogleWidget";
-import woodBg from "/assets/img/woodbg.jpg";
 
 function TestimonialsSection() {
   const { ref, inView } = useInView({
@@ -16,7 +15,7 @@ function TestimonialsSection() {
       className="py-20 px-6 lg:px-12 relative"
       ref={ref}
       style={{
-        backgroundImage: `url(${woodBg.src})`,
+        backgroundImage: `url(/assets/img/woodbg.jpg)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

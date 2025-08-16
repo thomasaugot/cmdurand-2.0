@@ -1,57 +1,61 @@
 import React from "react";
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../../assets/fonts/Dosis-Medium.ttf" });
-const robotoFont = localFont({
-  src: "../../../assets/fonts/RobotoMono-Regular.ttf",
-});
 
 const BardageTypes = () => {
   const bardageTypes = [
     {
       title: "Bois Naturel",
       description: "Charme authentique et performances naturelles",
-      features: ["Pin, mélèze, cèdre", "Traitement autoclave", "Finitions variées"],
-      icon: "🌲"
+      features: [
+        "Pin, mélèze, cèdre",
+        "Traitement autoclave",
+        "Finitions variées",
+      ],
+      icon: "🌲",
     },
     {
       title: "Composite",
       description: "Innovation et durabilité sans compromis",
       features: ["Sans entretien", "Résistant aux UV", "Aspect bois garanti"],
-      icon: "🔬"
+      icon: "🔬",
     },
     {
       title: "Fibrociment",
       description: "Robustesse et esthétique contemporaine",
-      features: ["Incombustible", "Résistant intempéries", "Large gamme couleurs"],
-      icon: "🏗️"
+      features: [
+        "Incombustible",
+        "Résistant intempéries",
+        "Large gamme couleurs",
+      ],
+      icon: "🏗️",
     },
     {
       title: "Métallique",
       description: "Modernité et performance industrielle",
       features: ["Longévité maximale", "Étanchéité parfaite", "Design épuré"],
-      icon: "⚡"
-    }
+      icon: "⚡",
+    },
   ];
 
   const techniques = [
     {
       title: "Pose horizontale",
-      description: "Classique et intemporelle, elle élargit visuellement la façade"
+      description:
+        "Classique et intemporelle, elle élargit visuellement la façade",
     },
     {
-      title: "Pose verticale", 
-      description: "Moderne et élégante, elle élance la structure vers le haut"
+      title: "Pose verticale",
+      description: "Moderne et élégante, elle élance la structure vers le haut",
     },
     {
       title: "Pose en diagonale",
-      description: "Originale et dynamique, pour un effet architectural unique"
+      description: "Originale et dynamique, pour un effet architectural unique",
     },
     {
       title: "Pose à claire-voie",
-      description: "Aérée et contemporaine, parfaite pour les jeux d'ombre et lumière"
-    }
+      description:
+        "Aérée et contemporaine, parfaite pour les jeux d'ombre et lumière",
+    },
   ];
 
   return (
@@ -64,15 +68,21 @@ const BardageTypes = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`${robotoFont.className} text-primary text-sm font-bold mb-4 uppercase tracking-wider`}>
+          <h2
+            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+          >
             Types de bardage
           </h2>
-          <h3 className={`${dosisFont.className} text-3xl lg:text-4xl font-bold text-darkGrey mb-6`}>
+          <h3
+            className="text-3xl lg:text-4xl font-bold text-darkGrey mb-6"
+          >
             Une solution pour chaque projet
           </h3>
-          <p className={`${dosisFont.className} text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed`}>
-            Du bois traditionnel aux matériaux les plus innovants, découvrez notre gamme 
-            complète de bardages pour habiller votre façade.
+          <p
+            className="text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed"
+          >
+            Du bois traditionnel aux matériaux les plus innovants, découvrez
+            notre gamme complète de bardages pour habiller votre façade.
           </p>
         </motion.div>
 
@@ -92,18 +102,25 @@ const BardageTypes = () => {
               className="bg-white rounded-xl shadow-custom-medium p-6 border-2 border-lightGrey/30 hover:border-primary hover:shadow-custom-heavy transition-all duration-300"
             >
               <div className="text-4xl mb-4 text-center">{type.icon}</div>
-              
-              <h4 className={`${dosisFont.className} font-bold text-darkGrey text-lg mb-3 text-center`}>
+
+              <h4
+                className="font-bold text-darkGrey text-lg mb-3 text-center"
+              >
                 {type.title}
               </h4>
-              
-              <p className={`${dosisFont.className} text-darkGrey text-sm mb-4 text-center leading-relaxed`}>
+
+              <p
+                className="text-darkGrey text-sm mb-4 text-center leading-relaxed"
+              >
                 {type.description}
               </p>
 
               <ul className="space-y-2">
                 {type.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className={`${dosisFont.className} text-darkGrey text-xs flex items-center`}>
+                  <li
+                    key={featureIndex}
+                    className="text-darkGrey text-xs flex items-center"
+                  >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
                     {feature}
                   </li>
@@ -121,10 +138,12 @@ const BardageTypes = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="bg-lightGrey/20 rounded-xl p-8"
         >
-          <h4 className={`${dosisFont.className} font-bold text-darkGrey text-2xl mb-8 text-center`}>
+          <h4
+            className="font-bold text-darkGrey text-2xl mb-8 text-center"
+          >
             Techniques de pose
           </h4>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
             {techniques.map((technique, index) => (
               <motion.div
@@ -139,10 +158,14 @@ const BardageTypes = () => {
                 }}
                 className="bg-white rounded-lg p-6 shadow-custom-light"
               >
-                <h5 className={`${dosisFont.className} font-bold text-primary text-lg mb-3`}>
+                <h5
+                  className="font-bold text-primary text-lg mb-3"
+                >
                   {technique.title}
                 </h5>
-                <p className={`${dosisFont.className} text-darkGrey text-sm leading-relaxed`}>
+                <p
+                  className="text-darkGrey text-sm leading-relaxed"
+                >
                   {technique.description}
                 </p>
               </motion.div>
@@ -158,28 +181,42 @@ const BardageTypes = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <h4 className={`${dosisFont.className} font-bold text-darkGrey text-xl mb-8`}>
+          <h4
+            className="font-bold text-darkGrey text-xl mb-8"
+          >
             Les bénéfices du bardage
           </h4>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
               <div className="text-primary text-3xl mb-4">🛡️</div>
-              <h5 className={`${dosisFont.className} font-bold text-darkGrey mb-2`}>Protection</h5>
-              <p className={`${dosisFont.className} text-darkGrey text-sm`}>
+              <h5
+                className="font-bold text-darkGrey mb-2"
+              >
+                Protection
+              </h5>
+              <p className="text-darkGrey text-sm">
                 Bouclier efficace contre intempéries et UV
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
               <div className="text-primary text-3xl mb-4">🌡️</div>
-              <h5 className={`${dosisFont.className} font-bold text-darkGrey mb-2`}>Isolation</h5>
-              <p className={`${dosisFont.className} text-darkGrey text-sm`}>
+              <h5
+                className="font-bold text-darkGrey mb-2"
+              >
+                Isolation
+              </h5>
+              <p className="text-darkGrey text-sm">
                 Amélioration des performances thermiques
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
               <div className="text-primary text-3xl mb-4">✨</div>
-              <h5 className={`${dosisFont.className} font-bold text-darkGrey mb-2`}>Esthétique</h5>
-              <p className={`${dosisFont.className} text-darkGrey text-sm`}>
+              <h5
+                className="font-bold text-darkGrey mb-2"
+              >
+                Esthétique
+              </h5>
+              <p className="text-darkGrey text-sm">
                 Modernisation et valorisation de la façade
               </p>
             </div>

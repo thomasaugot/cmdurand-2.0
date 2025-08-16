@@ -3,12 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../../assets/fonts/Dosis-Medium.ttf" });
-const robotoFont = localFont({
-  src: "../../../assets/fonts/RobotoMono-Regular.ttf",
-});
 
 const CharpenteGallery = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -45,15 +39,22 @@ const CharpenteGallery = ({ images }) => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`${robotoFont.className} text-primary text-sm font-bold mb-4 uppercase tracking-wider`}>
+            <h2
+              className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            >
               Galerie
             </h2>
-            <h3 className={`${dosisFont.className} text-3xl lg:text-4xl font-bold text-darkGrey mb-6`}>
+            <h3
+              className="text-3xl lg:text-4xl font-bold text-darkGrey mb-6"
+            >
               Nos réalisations en charpente traditionnelle
             </h3>
-            <p className={`${dosisFont.className} text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed`}>
-              Découvrez quelques-unes de nos créations, témoignages de notre savoir-faire 
-              et de notre passion pour l'art de la charpente traditionnelle.
+            <p
+              className="text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed"
+            >
+              Découvrez quelques-unes de nos créations, témoignages de notre
+              savoir-faire et de notre passion pour l'art de la charpente
+              traditionnelle.
             </p>
           </motion.div>
 
@@ -83,7 +84,7 @@ const CharpenteGallery = ({ images }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className={`${dosisFont.className} text-sm font-medium`}>
+                    <p className="text-sm font-medium">
                       Cliquer pour agrandir
                     </p>
                   </div>
@@ -129,7 +130,7 @@ const CharpenteGallery = ({ images }) => {
             </button>
 
             <div className="absolute bottom-4 left-4 bg-black/70 text-white p-4 rounded-lg backdrop-blur-sm">
-              <p className={`${dosisFont.className} text-sm`}>
+              <p className="text-sm">
                 Image {currentIndex + 1} sur {images.length}
               </p>
             </div>
@@ -141,7 +142,7 @@ const CharpenteGallery = ({ images }) => {
                 width={0}
                 height={0}
                 sizes="100vw"
-                style={{ width: 'auto', height: 'auto' }}
+                style={{ width: "auto", height: "auto" }}
                 className="max-w-full max-h-[90vh] object-contain rounded-lg"
                 priority
                 quality={95}

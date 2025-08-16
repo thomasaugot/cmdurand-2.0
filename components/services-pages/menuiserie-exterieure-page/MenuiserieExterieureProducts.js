@@ -1,79 +1,94 @@
 import React from "react";
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../../assets/fonts/Dosis-Medium.ttf" });
-const robotoFont = localFont({
-  src: "../../../assets/fonts/RobotoMono-Regular.ttf",
-});
 
 const MenuiserieExterieureProducts = () => {
   const products = [
     {
       title: "Portes d'entrée",
       description: "Première impression et sécurité de votre maison",
-      features: ["Design personnalisé", "Isolation renforcée", "Serrures haute sécurité", "Finitions durables"],
-      icon: "🚪"
+      features: [
+        "Design personnalisé",
+        "Isolation renforcée",
+        "Serrures haute sécurité",
+        "Finitions durables",
+      ],
+      icon: "🚪",
     },
     {
       title: "Fenêtres sur mesure",
       description: "Lumière naturelle et performance énergétique",
-      features: ["Double ou triple vitrage", "Ouvrants sur mesure", "Isolation thermique", "Entretien facilité"],
-      icon: "🪟"
+      features: [
+        "Double ou triple vitrage",
+        "Ouvrants sur mesure",
+        "Isolation thermique",
+        "Entretien facilité",
+      ],
+      icon: "🪟",
     },
     {
       title: "Volets bois",
       description: "Charme traditionnel et protection optimale",
-      features: ["Battants ou coulissants", "Essences nobles", "Traitement longue durée", "Quincaillerie de qualité"],
-      icon: "🪟"
+      features: [
+        "Battants ou coulissants",
+        "Essences nobles",
+        "Traitement longue durée",
+        "Quincaillerie de qualité",
+      ],
+      icon: "🪟",
     },
     {
       title: "Terrasses & Aménagements",
       description: "Espaces de vie extérieure en harmonie",
-      features: ["Lames de terrasse", "Garde-corps assortis", "Pergolas intégrées", "Mobilier fixe"],
-      icon: "🏡"
-    }
+      features: [
+        "Lames de terrasse",
+        "Garde-corps assortis",
+        "Pergolas intégrées",
+        "Mobilier fixe",
+      ],
+      icon: "🏡",
+    },
   ];
 
   const woodTypes = [
     {
       name: "Chêne",
       characteristics: "Noble et durable",
-      usage: "Portes d'entrée haut de gamme"
+      usage: "Portes d'entrée haut de gamme",
     },
     {
       name: "Pin autoclave",
-      characteristics: "Résistant et économique", 
-      usage: "Volets et aménagements"
+      characteristics: "Résistant et économique",
+      usage: "Volets et aménagements",
     },
     {
       name: "Mélèze",
       characteristics: "Naturellement imputrescible",
-      usage: "Terrasses et façades"
+      usage: "Terrasses et façades",
     },
     {
       name: "Iroko",
       characteristics: "Exotique et stable",
-      usage: "Menuiseries haut de gamme"
-    }
+      usage: "Menuiseries haut de gamme",
+    },
   ];
 
   const finishes = [
     {
       type: "Lasure",
-      description: "Protection transparente qui laisse apparaître le veinage du bois",
-      maintenance: "Entretien tous les 3-5 ans"
+      description:
+        "Protection transparente qui laisse apparaître le veinage du bois",
+      maintenance: "Entretien tous les 3-5 ans",
     },
     {
-      type: "Peinture microporeuse", 
+      type: "Peinture microporeuse",
       description: "Protection opaque en couleur, respirante pour le bois",
-      maintenance: "Entretien tous les 8-10 ans"
+      maintenance: "Entretien tous les 8-10 ans",
     },
     {
       type: "Huile naturelle",
       description: "Finition écologique qui nourrit et protège le bois",
-      maintenance: "Entretien annuel"
-    }
+      maintenance: "Entretien annuel",
+    },
   ];
 
   return (
@@ -87,15 +102,21 @@ const MenuiserieExterieureProducts = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`${robotoFont.className} text-primary text-sm font-bold mb-4 uppercase tracking-wider`}>
+          <h2
+            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+          >
             Nos produits
           </h2>
-          <h3 className={`${dosisFont.className} text-3xl lg:text-4xl font-bold text-darkGrey mb-6`}>
+          <h3
+            className="text-3xl lg:text-4xl font-bold text-darkGrey mb-6"
+          >
             Gamme complète de menuiserie extérieure
           </h3>
-          <p className={`${dosisFont.className} text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed`}>
-            De la porte d'entrée à la terrasse, nous concevons et réalisons tous vos 
-            équipements extérieurs en bois sur mesure.
+          <p
+            className="text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed"
+          >
+            De la porte d'entrée à la terrasse, nous concevons et réalisons tous
+            vos équipements extérieurs en bois sur mesure.
           </p>
         </motion.div>
 
@@ -114,18 +135,25 @@ const MenuiserieExterieureProducts = () => {
               className="bg-white rounded-xl shadow-custom-medium p-6 border-2 border-lightGrey/30 hover:border-primary transition-colors duration-300"
             >
               <div className="text-4xl mb-4 text-center">{product.icon}</div>
-              
-              <h4 className={`${dosisFont.className} font-bold text-darkGrey text-lg mb-3 text-center`}>
+
+              <h4
+                className="font-bold text-darkGrey text-lg mb-3 text-center"
+              >
                 {product.title}
               </h4>
-              
-              <p className={`${dosisFont.className} text-darkGrey text-sm mb-4 text-center leading-relaxed`}>
+
+              <p
+                className="text-darkGrey text-sm mb-4 text-center leading-relaxed"
+              >
                 {product.description}
               </p>
 
               <ul className="space-y-2">
                 {product.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className={`${dosisFont.className} text-darkGrey text-xs flex items-center`}>
+                  <li
+                    key={featureIndex}
+                    className="text-darkGrey text-xs flex items-center"
+                  >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
                     {feature}
                   </li>
@@ -143,10 +171,12 @@ const MenuiserieExterieureProducts = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="bg-lightGrey/20 rounded-xl p-8 mb-16"
         >
-          <h4 className={`${dosisFont.className} font-bold text-darkGrey text-2xl mb-8 text-center`}>
+          <h4
+            className="font-bold text-darkGrey text-2xl mb-8 text-center"
+          >
             Essences de bois sélectionnées
           </h4>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {woodTypes.map((wood, index) => (
               <motion.div
@@ -161,13 +191,17 @@ const MenuiserieExterieureProducts = () => {
                 }}
                 className="bg-white rounded-xl p-6 shadow-custom-light text-center"
               >
-                <h5 className={`${dosisFont.className} font-bold text-primary text-lg mb-2`}>
+                <h5
+                  className="font-bold text-primary text-lg mb-2"
+                >
                   {wood.name}
                 </h5>
-                <p className={`${dosisFont.className} text-darkGrey text-sm mb-3 italic`}>
+                <p
+                  className="text-darkGrey text-sm mb-3 italic"
+                >
                   {wood.characteristics}
                 </p>
-                <p className={`${dosisFont.className} text-darkGrey text-xs`}>
+                <p className="text-darkGrey text-xs">
                   {wood.usage}
                 </p>
               </motion.div>
@@ -183,10 +217,12 @@ const MenuiserieExterieureProducts = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center"
         >
-          <h4 className={`${dosisFont.className} font-bold text-darkGrey text-2xl mb-8`}>
+          <h4
+            className="font-bold text-darkGrey text-2xl mb-8"
+          >
             Finitions et traitements
           </h4>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {finishes.map((finish, index) => (
               <motion.div
@@ -203,15 +239,21 @@ const MenuiserieExterieureProducts = () => {
               >
                 <div className="h-full flex flex-col justify-between">
                   <div>
-                    <h5 className={`${dosisFont.className} font-bold text-primary text-lg mb-3`}>
+                    <h5
+                      className="font-bold text-primary text-lg mb-3"
+                    >
                       {finish.type}
                     </h5>
-                    <p className={`${dosisFont.className} text-darkGrey text-sm leading-relaxed`}>
+                    <p
+                      className="text-darkGrey text-sm leading-relaxed"
+                    >
                       {finish.description}
                     </p>
                   </div>
                   <div className="bg-lightGrey/30 rounded-lg p-3 mt-4">
-                    <p className={`${dosisFont.className} text-darkGrey text-xs font-medium`}>
+                    <p
+                      className="text-darkGrey text-xs font-medium"
+                    >
                       {finish.maintenance}
                     </p>
                   </div>

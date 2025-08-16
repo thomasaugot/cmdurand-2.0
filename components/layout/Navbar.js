@@ -8,11 +8,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import PopupForm from "@/components/forms/PopupForm";
-import localFont from "next/font/local";
 import logo from "../../app/logo.png";
-
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,20 +20,25 @@ const Navbar = () => {
   const navItems = [
     { id: 1, text: "Accueil", href: "/", target: "home" },
     { id: 2, text: "Nos Services", href: "/services", target: "about" },
-    { id: 3, text: "Nos Réalisations", href: "/nos-realisations", target: "gallery" },
+    {
+      id: 3,
+      text: "Nos Réalisations",
+      href: "/nos-realisations",
+      target: "gallery",
+    },
     { id: 4, text: "Contactez-nous", href: "/contact", target: "contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY < lastScrollY) {
         setVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setVisible(false);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -52,31 +53,39 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar Container */}
-      <div 
+      <div
         className={`fixed top-0 left-0 right-0 z-50 transform transition-transform duration-500 ease-in-out ${
-          visible ? 'translate-y-0' : '-translate-y-full'
+          visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         {/* Top Bar - Hidden on mobile */}
         <div className="hidden md:block bg-darkGrey text-white py-3">
           <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div className="flex items-center gap-8">
-              <div 
+              <div
                 className="flex items-center gap-3 hover:text-primary transition-colors cursor-pointer"
                 onClick={handlePhoneClick}
               >
                 <FaPhoneAlt className="text-primary" size={16} />
-                <span className={`${dosisFont.className} text-base`}>+33 6 76 50 85 51</span>
+                <span className="text-base">
+                  +33 6 76 50 85 51
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaLocationDot className="text-primary" size={16} />
-                <span className={`${dosisFont.className} text-base`}>Missillac, Loire-Atlantique</span>
+                <span className="text-base">
+                  Missillac, Loire-Atlantique
+                </span>
               </div>
             </div>
             <div className="flex items-center gap-6">
-              <span className={`${dosisFont.className} text-base`}>Lun-Ven: 8h-18h30</span>
+              <span className="text-base">
+                Lun-Ven: 8h-18h30
+              </span>
               <div className="flex items-center gap-3">
-                <span className={`${dosisFont.className} text-base`}>Suivez-nous</span>
+                <span className="text-base">
+                  Suivez-nous
+                </span>
                 <div className="w-8 h-8 bg-primary rounded flex items-center justify-center hover:bg-primary/90 transition-colors cursor-pointer">
                   <span className="text-white font-semibold">f</span>
                 </div>
@@ -89,7 +98,6 @@ const Navbar = () => {
         <nav className="bg-white/15 backdrop-blur-md border-b border-white/30">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex justify-between items-center py-4">
-              
               {/* Logo */}
               <Link href="/" className="flex-shrink-0">
                 <Image
@@ -107,14 +115,18 @@ const Navbar = () => {
                   <div key={item.id} className="relative">
                     <Link
                       href={item.href}
-                      className={`${dosisFont.className} font-semibold transition-colors py-2 text-lg px-3 ${
-                        pathname === item.href 
-                          ? 'text-primary border-b-2 border-primary' 
-                          : 'text-darkGrey hover:text-primary'
+                      className={`font-semibold transition-colors py-2 text-lg px-3 ${
+                        pathname === item.href
+                          ? "text-primary border-b-2 border-primary"
+                          : "text-darkGrey hover:text-primary"
                       }`}
-                      style={pathname === item.href ? {
-                        textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'
-                      } : {}}
+                      style={
+                        pathname === item.href
+                          ? {
+                              textShadow: "1px 1px 1px rgba(0, 0, 0, 0.3)",
+                            }
+                          : {}
+                      }
                     >
                       {item.text}
                     </Link>
@@ -125,7 +137,7 @@ const Navbar = () => {
               {/* CTA Button */}
               <button
                 onClick={() => setIsFormOpen(true)}
-                className={`hidden lg:block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 text-lg shadow-lg ${dosisFont.className}`}
+                className="hidden lg:block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 text-lg shadow-lg"
               >
                 Devis Gratuit →
               </button>
@@ -135,9 +147,21 @@ const Navbar = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="lg:hidden flex flex-col gap-1 p-2"
               >
-                <span className={`w-6 h-0.5 bg-darkGrey transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-darkGrey transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-darkGrey transition-all ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+                <span
+                  className={`w-6 h-0.5 bg-darkGrey transition-all ${
+                    isOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`w-6 h-0.5 bg-darkGrey transition-all ${
+                    isOpen ? "opacity-0" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`w-6 h-0.5 bg-darkGrey transition-all ${
+                    isOpen ? "-rotate-45 -translate-y-1.5" : ""
+                  }`}
+                ></span>
               </button>
             </div>
           </div>
@@ -152,7 +176,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="lg:hidden fixed inset-0 bg-darkGrey z-40"
-            style={{ paddingTop: '72px' }}
+            style={{ paddingTop: "72px" }}
           >
             <div className="h-full flex flex-col justify-center px-6">
               {/* Navigation */}
@@ -167,10 +191,10 @@ const Navbar = () => {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`${dosisFont.className} block font-bold text-3xl py-3 transition-all ${
-                        pathname === item.href 
-                          ? 'text-primary' 
-                          : 'text-white hover:text-primary'
+                      className={`block font-bold text-3xl py-3 transition-all ${
+                        pathname === item.href
+                          ? "text-primary"
+                          : "text-white hover:text-primary"
                       }`}
                     >
                       {item.text}
@@ -178,10 +202,10 @@ const Navbar = () => {
                   </motion.div>
                 ))}
               </div>
-              
+
               {/* Contact info */}
               <div className="space-y-6 mb-12">
-                <motion.div 
+                <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.5 }}
@@ -189,24 +213,36 @@ const Navbar = () => {
                   onClick={handlePhoneClick}
                 >
                   <FaPhoneAlt className="text-primary" size={24} />
-                  <span className={`${dosisFont.className} text-white text-xl font-medium`}>+33 6 76 50 85 51</span>
+                  <span
+                    className="text-white text-xl font-medium"
+                  >
+                    +33 6 76 50 85 51
+                  </span>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
                   className="flex items-center gap-4"
                 >
                   <FaLocationDot className="text-primary" size={24} />
-                  <span className={`${dosisFont.className} text-white text-xl font-medium`}>Missillac, Loire-Atlantique</span>
+                  <span
+                    className="text-white text-xl font-medium"
+                  >
+                    Missillac, Loire-Atlantique
+                  </span>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.7 }}
                   className="flex items-center gap-4"
                 >
-                  <span className={`${dosisFont.className} text-white text-xl font-medium`}>Lun-Ven: 8h-18h30</span>
+                  <span
+                    className="text-white text-xl font-medium"
+                  >
+                    Lun-Ven: 8h-18h30
+                  </span>
                 </motion.div>
               </div>
 
@@ -219,7 +255,7 @@ const Navbar = () => {
                   setIsFormOpen(true);
                   setIsOpen(false);
                 }}
-                className={`w-full bg-primary text-white py-4 rounded-lg font-bold text-xl hover:bg-primary/90 transition-colors shadow-lg ${dosisFont.className}`}
+                className="w-full bg-primary text-white py-4 rounded-lg font-bold text-xl hover:bg-primary/90 transition-colors shadow-lg"
               >
                 Demander un Devis →
               </motion.button>

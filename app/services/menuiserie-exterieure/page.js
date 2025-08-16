@@ -9,12 +9,10 @@ import MenuiserieExterieureGallery from "@/components/services-pages/menuiserie-
 import MenuiserieExterieureProducts from "@/components/services-pages/menuiserie-exterieure-page/MenuiserieExterieureProducts";
 import MenuiserieExterieureCTA from "@/components/services-pages/menuiserie-exterieure-page/MenuiserieExterieureCTA";
 
-import img1 from "@/assets/img/menuiserie-extérieure/img1.webp";
-
 function MenuiserieExterieure() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1];
+  const images = ["/assets/img/menuiserie-extérieure/img1.webp"];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

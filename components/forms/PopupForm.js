@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
-import { FaUser, FaPhone, FaEnvelope, FaComment, FaPaperPlane } from "react-icons/fa";
+import {
+  FaUser,
+  FaPhone,
+  FaEnvelope,
+  FaComment,
+  FaPaperPlane,
+} from "react-icons/fa";
 import logobg from "/app/logo-bw.png";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-import localFont from "next/font/local";
-
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 const PopupForm = ({ isOpen, closeModal }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,12 +61,12 @@ const PopupForm = ({ isOpen, closeModal }) => {
           setStateMessage("Message envoyé avec succès !");
           setMessageType("success");
           setIsSubmitting(false);
-          
+
           nameRef.current.value = "";
           emailRef.current.value = "";
           phoneRef.current.value = "";
           messageRef.current.value = "";
-          
+
           setTimeout(() => {
             setStateMessage(null);
             setMessageType(null);
@@ -104,10 +106,10 @@ const PopupForm = ({ isOpen, closeModal }) => {
             initial={{ scale: 0.9, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 30 }}
-            transition={{ 
+            transition={{
               type: "spring",
               damping: 20,
-              stiffness: 300
+              stiffness: 300,
             }}
             className="bg-white rounded-3xl shadow-2xl relative w-full max-w-2xl brick-bg"
             onClick={(e) => e.stopPropagation()}
@@ -121,12 +123,14 @@ const PopupForm = ({ isOpen, closeModal }) => {
               >
                 <IoMdClose size={28} />
               </button>
-              
+
               <div className="relative z-10">
-                <h2 className={`${robotoFont.className} text-2xl font-bold mb-3 leading-none uppercase`}>
+                <h2
+                  className={`font-roboto text-2xl font-bold mb-3 leading-none uppercase`}
+                >
                   Parlons de votre projet
                 </h2>
-                <p className={`${dosisFont.className} text-white/90 text-lg`}>
+                <p className="text-white/90 text-lg">
                   Nous vous répondons sous 24h
                 </p>
               </div>
@@ -138,7 +142,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
                 {/* Name & Phone */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className={`${dosisFont.className} text-darkGrey font-semibold text-base flex items-center gap-2 mb-2`}>
+                    <label
+                      className="text-darkGrey font-semibold text-base flex items-center gap-2 mb-2"
+                    >
                       <FaUser className="text-primary" />
                       Nom complet
                     </label>
@@ -150,7 +156,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
                     />
                   </div>
                   <div>
-                    <label className={`${dosisFont.className} text-darkGrey font-semibold text-base flex items-center gap-2 mb-2`}>
+                    <label
+                      className="text-darkGrey font-semibold text-base flex items-center gap-2 mb-2"
+                    >
                       <FaPhone className="text-primary" />
                       Téléphone
                     </label>
@@ -165,7 +173,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
 
                 {/* Email */}
                 <div>
-                  <label className={`${dosisFont.className} text-darkGrey font-semibold text-base flex items-center gap-2 mb-2`}>
+                  <label
+                    className="text-darkGrey font-semibold text-base flex items-center gap-2 mb-2"
+                  >
                     <FaEnvelope className="text-primary" />
                     Email
                   </label>
@@ -179,7 +189,9 @@ const PopupForm = ({ isOpen, closeModal }) => {
 
                 {/* Message */}
                 <div>
-                  <label className={`${dosisFont.className} text-darkGrey font-semibold text-base flex items-center gap-2 mb-2`}>
+                  <label
+                    className="text-darkGrey font-semibold text-base flex items-center gap-2 mb-2"
+                  >
                     <FaComment className="text-primary" />
                     Votre projet
                   </label>
@@ -213,7 +225,7 @@ const PopupForm = ({ isOpen, closeModal }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`${dosisFont.className} w-full bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3`}
+                  className="w-full bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
                 >
                   {isSubmitting ? (
                     <>
@@ -231,8 +243,13 @@ const PopupForm = ({ isOpen, closeModal }) => {
 
               {/* Footer Info */}
               <div className="mt-6 bg-primary/5 rounded-xl p-4 text-center">
-                <p className={`${dosisFont.className} text-darkGrey font-medium`}>
-                  <span className="text-primary font-bold">Réponse garantie sous 24h</span> • Devis gratuit et sans engagement
+                <p
+                  className="text-darkGrey font-medium"
+                >
+                  <span className="text-primary font-bold">
+                    Réponse garantie sous 24h
+                  </span>{" "}
+                  • Devis gratuit et sans engagement
                 </p>
               </div>
             </div>

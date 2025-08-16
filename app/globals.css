@@ -1,5 +1,4 @@
-/* The next 3 imports refer to Tailwind's default settings and classes, to modify them, refer to them using
-@layer... as shown below */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;

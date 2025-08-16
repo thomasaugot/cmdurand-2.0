@@ -9,12 +9,10 @@ import CarportGallery from "@/components/services-pages/carport-page/CarportGall
 import CarportAdvantages from "@/components/services-pages/carport-page/CarportAdvantages";
 import CarportCTA from "@/components/services-pages/carport-page/CarportCTA";
 
-import img1 from "@/assets/img/carport/img1.webp";
-
 function Carport() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1];
+  const images = ["/assets/img/carport/img1.webp"];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

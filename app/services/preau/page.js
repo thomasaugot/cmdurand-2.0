@@ -9,14 +9,14 @@ import PreauGallery from "@/components/services-pages/preau-page/PreauGallery";
 import PreauFeatures from "@/components/services-pages/preau-page/PreauFeatures";
 import PreauCTA from "@/components/services-pages/preau-page/PreauCTA";
 
-import img1 from "@/assets/img/préau/img1.webp";
-import img2 from "@/assets/img/préau/img2.webp";
-import img3 from "@/assets/img/préau/img3.webp";
-
 function Préau() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1, img2, img3];
+  const images = [
+    "/assets/img/préau/img1.webp",
+    "/assets/img/préau/img2.webp",
+    "/assets/img/préau/img3.webp"
+  ];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

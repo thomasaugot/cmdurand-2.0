@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
@@ -24,7 +23,16 @@ function NosRealisationsPage() {
   const openImageModal = (projectIndex, imageIndex) => {
     setCurrentProject(projectIndex);
     setCurrentImageIndex(imageIndex);
-    setSelectedImage(filteredProjects[projectIndex].images[imageIndex]);
+        
+    const project = filteredProjects[projectIndex];
+    const imageUrl = project.images[imageIndex];
+        
+    setSelectedImage({
+      src: imageUrl,
+      alt: `${project.title} - Photo ${imageIndex + 1}`,
+      title: project.title,
+      description: `Projet ${project.categories[0]} réalisé en ${project.year}`
+    });
   };
 
   const closeImageModal = () => {
@@ -48,14 +56,23 @@ function NosRealisationsPage() {
     }
 
     setCurrentImageIndex(newIndex);
-    setSelectedImage(currentProjectImages[newIndex]);
+        
+    const project = filteredProjects[currentProject];
+    const imageUrl = project.images[newIndex];
+        
+    setSelectedImage({
+      src: imageUrl,
+      alt: `${project.title} - Photo ${newIndex + 1}`,
+      title: project.title,
+      description: `Projet ${project.categories[0]} réalisé en ${project.year}`
+    });
   };
 
   const filteredProjects =
     activeFilter === "all"
       ? portfolioProjects
-      : portfolioProjects.filter(
-          (project) => project.category === activeFilter
+      : portfolioProjects.filter(project =>
+          project.categories.includes(activeFilter)
         );
 
   return (

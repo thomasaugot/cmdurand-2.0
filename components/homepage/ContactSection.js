@@ -1,12 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
 import OpeningHours from "@/components/OpeningHours";
 import StaticForm from "@/components/forms/StaticForm";
-
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 function ContactSection() {
   return (
@@ -24,13 +20,19 @@ function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`${robotoFont.className} text-primary text-lg font-bold mb-4 uppercase tracking-wide`}>
+          <h2
+            className={`font-roboto text-primary text-lg font-bold mb-4 uppercase tracking-wide`}
+          >
             Contactez-nous
           </h2>
-          <h3 className={`${dosisFont.className} text-4xl lg:text-5xl font-bold text-darkGrey mb-6`}>
+          <h3
+            className="text-4xl lg:text-5xl font-bold text-darkGrey mb-6"
+          >
             Un projet en tête ? Parlons-en !
           </h3>
-          <p className={`${dosisFont.className} text-xl text-darkGrey max-w-3xl mx-auto`}>
+          <p
+            className="text-xl text-darkGrey max-w-3xl mx-auto"
+          >
             Obtenez un devis gratuit et personnalisé pour votre projet
           </p>
         </motion.div>
@@ -51,14 +53,16 @@ function ContactSection() {
             transition={{ duration: 0.8 }}
             className="flex flex-col form-shadow p-8 mx-4 -mt-16 lg:mt-0 bg-white rounded-2xl"
           >
-            <h3 className={`${dosisFont.className} text-darkGrey tracking-wider font-bold text-2xl max-w-[90vw] mb-6`}>
+            <h3
+              className="text-darkGrey tracking-wider font-bold text-2xl max-w-[90vw] mb-6"
+            >
               Besoin d'un renseignement ? Laissez-nous un message !
             </h3>
             <StaticForm />
           </motion.div>
         </div>
       </div>
-      
+
       <div className="polygon hidden lg:block w-[120vw] lg:w-[49vw] h-[55px] bg-primary overflow-hidden absolute -scale-y-100 bottom-0 right-[105px] lg:left-[-200px] xl:left-[-240px] z-20"></div>
     </section>
   );

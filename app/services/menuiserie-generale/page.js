@@ -9,12 +9,10 @@ import MenuiserieGeneraleGallery from "@/components/services-pages/menuiserie-ge
 import MenuiserieGeneraleServices from "@/components/services-pages/menuiserie-generale-page/MenuiserieGeneraleServices";
 import MenuiserieGeneraleCTA from "@/components/services-pages/menuiserie-generale-page/MenuiserieGeneraleCTA";
 
-import img1 from "@/assets/img/menuiserie-générale/img1.webp";
-
 function MenuiserieGenerale() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1];
+  const images = ["/assets/img/menuiserie-générale/img1.webp"];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

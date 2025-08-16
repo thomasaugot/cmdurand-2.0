@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        dosis: ["'Dosis', sans-serif"],
+        sans: ["Dosis", "system-ui", "sans-serif"],
+        "roboto-mono": ["RobotoMono", "monospace"],
       },
       colors: {
         white: "#FFFFFF",

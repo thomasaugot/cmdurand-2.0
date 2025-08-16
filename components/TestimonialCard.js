@@ -1,9 +1,6 @@
 "use client";
 
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 function TestimonialCard({ testimonial }) {
   const { author, rating, date, text, type } = testimonial;
@@ -21,7 +18,9 @@ function TestimonialCard({ testimonial }) {
       </div>
 
       {/* Testimonial Text */}
-      <blockquote className={`${dosisFont.className} text-black leading-relaxed mb-6 text-base flex-grow`}>
+      <blockquote
+        className="text-black leading-relaxed mb-6 text-base flex-grow"
+      >
         "{text}"
       </blockquote>
 
@@ -29,21 +28,25 @@ function TestimonialCard({ testimonial }) {
       <div className="flex items-center justify-between pt-4 border-t border-gray-100">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-            <span className={`${dosisFont.className} text-white font-bold text-lg`}>
+            <span
+              className="text-white font-bold text-lg"
+            >
               {author.charAt(0)}
             </span>
           </div>
           <div>
-            <h4 className={`${dosisFont.className} font-bold text-black`}>
+            <h4 className="font-bold text-black">
               {author}
             </h4>
-            <p className={`${dosisFont.className} text-sm text-gray-500`}>
+            <p className="text-sm text-gray-500">
               {date}
             </p>
           </div>
         </div>
-        
-        <span className={`${dosisFont.className} text-xs text-primary bg-secondary px-3 py-1 rounded-full font-medium`}>
+
+        <span
+          className="text-xs text-primary bg-secondary px-3 py-1 rounded-full font-medium"
+        >
           {type}
         </span>
       </div>

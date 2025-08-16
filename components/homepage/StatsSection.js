@@ -1,11 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
 import { FaAward, FaHome, FaUsers, FaClock } from "react-icons/fa";
-
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 const stats = [
   {
@@ -20,11 +16,11 @@ const stats = [
     label: "Clients satisfaits",
     color: "text-primary",
   },
-  { 
-    icon: FaUsers, 
-    number: "5★", 
-    label: "Note moyenne", 
-    color: "text-primary" 
+  {
+    icon: FaUsers,
+    number: "5★",
+    label: "Note moyenne",
+    color: "text-primary",
   },
   {
     icon: FaClock,
@@ -45,11 +41,16 @@ function StatsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`${dosisFont.className} text-4xl lg:text-5xl font-bold mb-6`}>
+          <h2
+            className="text-4xl lg:text-5xl font-bold mb-6"
+          >
             Des chiffres qui parlent
           </h2>
-          <p className={`${dosisFont.className} text-xl opacity-90 max-w-3xl mx-auto`}>
-            Notre engagement et notre savoir-faire au service de votre satisfaction
+          <p
+            className="text-xl opacity-90 max-w-3xl mx-auto"
+          >
+            Notre engagement et notre savoir-faire au service de votre
+            satisfaction
           </p>
         </motion.div>
 
@@ -65,7 +66,7 @@ function StatsSection() {
             >
               <stat.icon size={48} className="mx-auto mb-4 text-white" />
               <div className="text-4xl font-bold mb-2">{stat.number}</div>
-              <div className={`${dosisFont.className} text-lg opacity-90`}>
+              <div className="text-lg opacity-90">
                 {stat.label}
               </div>
             </motion.div>

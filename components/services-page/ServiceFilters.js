@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
 
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Medium.ttf" });
-
-const ServiceFilters = ({ serviceCategories, activeCategory, setActiveCategory }) => (
+const ServiceFilters = ({
+  serviceCategories,
+  activeCategory,
+  setActiveCategory,
+}) => (
   <section className="pb-12 px-6 lg:px-12 bg-darkGrey">
     <div className="flex flex-wrap justify-center gap-4">
       {serviceCategories.map((category) => (
@@ -13,7 +14,7 @@ const ServiceFilters = ({ serviceCategories, activeCategory, setActiveCategory }
           onClick={() => setActiveCategory(category.key)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`${dosisFont.className} px-6 py-3 rounded-lg font-medium transition-all
+          className={`px-6 py-3 rounded-lg font-medium transition-all
             ${
               activeCategory === category.key
                 ? "bg-primary text-white shadow-lg"

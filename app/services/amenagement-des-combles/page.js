@@ -9,12 +9,10 @@ import AmenagementComblesGallery from "@/components/services-pages/amenagement-c
 import AmenagementComblesProcess from "@/components/services-pages/amenagement-combles-page/AmenagementComblesProcess";
 import AmenagementComblesCTA from "@/components/services-pages/amenagement-combles-page/AmenagementComblesCTA";
 
-import img1 from "@/assets/img/aménagement-combles/img1.webp";
-
 function AmenagementCombles() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1];
+  const images = ["/assets/img/aménagement-combles/img1.webp"];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

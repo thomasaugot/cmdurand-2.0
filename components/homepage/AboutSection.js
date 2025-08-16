@@ -2,22 +2,26 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import localFont from "next/font/local";
-import { FaHammer, FaLeaf, FaShieldAlt, FaClock, FaArrowRight } from "react-icons/fa";
-
-const robotoFont = localFont({ src: "../../assets/fonts/RobotoMono-Regular.ttf" });
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
+import {
+  FaHammer,
+  FaLeaf,
+  FaShieldAlt,
+  FaClock,
+  FaArrowRight,
+} from "react-icons/fa";
 
 const features = [
   {
     icon: FaHammer,
     title: "Savoir-faire Expert",
-    description: "Passion du bois et maîtrise technique pour des ouvrages d'exception",
+    description:
+      "Passion du bois et maîtrise technique pour des ouvrages d'exception",
   },
   {
     icon: FaLeaf,
     title: "Matériaux Durables",
-    description: "Sélection rigoureuse de bois locaux et matériaux éco-responsables",
+    description:
+      "Sélection rigoureuse de bois locaux et matériaux éco-responsables",
   },
   {
     icon: FaShieldAlt,
@@ -42,34 +46,42 @@ function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className={`${robotoFont.className} text-primary text-lg font-bold mb-4 uppercase tracking-wide`}>
+            <h2
+              className={`font-roboto text-primary text-lg font-bold mb-4 uppercase tracking-wide`}
+            >
               Qui sommes-nous ?
             </h2>
-            <h3 className={`${dosisFont.className} text-4xl lg:text-5xl font-bold text-darkGrey mb-6`}>
+            <h3
+              className="text-4xl lg:text-5xl font-bold text-darkGrey mb-6"
+            >
               L'expertise bois au service de vos projets depuis 2020
             </h3>
-            <p className={`${dosisFont.className} text-lg text-darkGrey leading-relaxed mb-6`}>
+            <p
+              className="text-lg text-darkGrey leading-relaxed mb-6"
+            >
               Basée à Missillac en Loire-Atlantique, la SARL Charpente
-              Menuiserie Durand met son savoir-faire artisanal au service de
-              vos projets de construction, rénovation et aménagement.
+              Menuiserie Durand met son savoir-faire artisanal au service de vos
+              projets de construction, rénovation et aménagement.
             </p>
-            <p className={`${dosisFont.className} text-lg text-darkGrey leading-relaxed mb-8`}>
-              De la charpente traditionnelle aux extensions ossature bois,
-              en passant par l'aménagement de combles et la menuiserie sur
-              mesure, nous accompagnons particuliers et professionnels dans
-              la concrétisation de leurs projets.
+            <p
+              className="text-lg text-darkGrey leading-relaxed mb-8"
+            >
+              De la charpente traditionnelle aux extensions ossature bois, en
+              passant par l'aménagement de combles et la menuiserie sur mesure,
+              nous accompagnons particuliers et professionnels dans la
+              concrétisation de leurs projets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/services"
-                className={`${dosisFont.className} bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all inline-flex items-center gap-3`}
+                className="bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all inline-flex items-center gap-3"
               >
                 Découvrir nos services
                 <FaArrowRight />
               </Link>
               <Link
                 href="/nos-realisations"
-                className={`${dosisFont.className} border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary hover:text-white transition-all text-center`}
+                className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary hover:text-white transition-all text-center"
               >
                 Voir nos réalisations
               </Link>
@@ -95,10 +107,14 @@ function AboutSection() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                   <feature.icon size={20} className="text-primary" />
                 </div>
-                <h4 className={`${dosisFont.className} font-bold text-lg text-darkGrey mb-4 leading-tight`}>
+                <h4
+                  className="font-bold text-lg text-darkGrey mb-4 leading-tight"
+                >
                   {feature.title}
                 </h4>
-                <p className={`${dosisFont.className} text-darkGrey/80 text-base leading-relaxed`}>
+                <p
+                  className="text-darkGrey/80 text-base leading-relaxed"
+                >
                   {feature.description}
                 </p>
               </motion.div>

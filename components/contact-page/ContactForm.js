@@ -1,12 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
 import StaticForm from "@/components/forms/StaticForm";
-
-const robotoFont = localFont({
-  src: "../../assets/fonts/RobotoMono-Regular.ttf",
-});
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Regular.ttf" });
 
 const ContactForm = () => (
   <section className="py-20 px-4 sm:px-6 lg:px-12 brick-bg">
@@ -23,7 +17,7 @@ const ContactForm = () => (
         >
           <div className="mb-8">
             <h3
-              className={`${dosisFont.className} text-darkGrey tracking-wider font-bold text-3xl mb-4`}
+              className="text-darkGrey tracking-wider font-bold text-3xl mb-4"
             >
               Parlez-nous de votre projet
             </h3>
@@ -45,7 +39,7 @@ const ContactForm = () => (
                   </svg>
                 </div>
                 <span
-                  className={`${dosisFont.className} text-darkGrey font-semibold text-sm`}
+                  className="text-darkGrey font-semibold text-sm"
                 >
                   Réponse rapide
                 </span>
@@ -66,7 +60,7 @@ const ContactForm = () => (
                   </svg>
                 </div>
                 <span
-                  className={`${dosisFont.className} text-darkGrey font-semibold text-sm`}
+                  className="text-darkGrey font-semibold text-sm"
                 >
                   Devis gratuit
                 </span>
@@ -74,7 +68,7 @@ const ContactForm = () => (
             </div>
 
             <p
-              className={`${dosisFont.className} text-darkGrey/70 text-lg leading-relaxed`}
+              className="text-darkGrey/70 text-lg leading-relaxed"
             >
               Nous étudions chaque demande avec attention pour vous proposer la
               solution la plus adaptée.
@@ -97,7 +91,7 @@ const ContactForm = () => (
           {/* Coordonnées */}
           <div className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100 flex-1">
             <h4
-              className={`${dosisFont.className} font-bold text-2xl text-darkGrey mb-6`}
+              className="font-bold text-2xl text-darkGrey mb-6"
             >
               Nos coordonnées
             </h4>
@@ -116,12 +110,12 @@ const ContactForm = () => (
                 </div>
                 <div>
                   <p
-                    className={`${dosisFont.className} text-lg font-medium text-darkGrey/70 mb-1`}
+                    className="text-lg font-medium text-darkGrey/70 mb-1"
                   >
                     Téléphone
                   </p>
                   <p
-                    className={`${dosisFont.className} text-darkGrey font-bold text-xl`}
+                    className="text-darkGrey font-bold text-xl"
                   >
                     +33 6 76 50 85 51
                   </p>
@@ -142,12 +136,12 @@ const ContactForm = () => (
                 </div>
                 <div className="min-w-0">
                   <p
-                    className={`${dosisFont.className} text-lg font-medium text-darkGrey/70 mb-1`}
+                    className="text-lg font-medium text-darkGrey/70 mb-1"
                   >
                     Email
                   </p>
                   <p
-                    className={`${dosisFont.className} text-darkGrey font-bold text-lg break-words`}
+                    className="text-darkGrey font-bold text-lg break-words"
                   >
                     charpente.menuiserie.durand@gmail.com
                   </p>
@@ -171,12 +165,12 @@ const ContactForm = () => (
                 </div>
                 <div>
                   <p
-                    className={`${dosisFont.className} text-lg font-medium text-darkGrey/70 mb-1`}
+                    className="text-lg font-medium text-darkGrey/70 mb-1"
                   >
                     Adresse
                   </p>
                   <p
-                    className={`${dosisFont.className} text-darkGrey font-bold text-lg leading-relaxed`}
+                    className="text-darkGrey font-bold text-lg leading-relaxed"
                   >
                     Z.A. la Pommeraie, Rue des Indes, 44780 Missillac
                   </p>
@@ -200,12 +194,12 @@ const ContactForm = () => (
                 </div>
                 <div>
                   <p
-                    className={`${dosisFont.className} text-lg font-medium text-darkGrey/70 mb-1`}
+                    className="text-lg font-medium text-darkGrey/70 mb-1"
                   >
                     Horaires
                   </p>
                   <p
-                    className={`${dosisFont.className} text-darkGrey font-bold text-lg`}
+                    className="text-darkGrey font-bold text-lg"
                   >
                     Lun - Ven : 08h00 - 18h30
                   </p>
@@ -217,7 +211,7 @@ const ContactForm = () => (
           {/* Process */}
           <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20 flex-1">
             <h5
-              className={`${dosisFont.className} font-bold text-2xl text-darkGrey mb-6`}
+              className="font-bold text-2xl text-darkGrey mb-6"
             >
               Comment ça marche ?
             </h5>
@@ -229,12 +223,12 @@ const ContactForm = () => (
                 </div>
                 <div>
                   <h6
-                    className={`${dosisFont.className} text-darkGrey font-bold text-xl mb-2`}
+                    className="text-darkGrey font-bold text-xl mb-2"
                   >
                     Contactez-nous
                   </h6>
                   <p
-                    className={`${dosisFont.className} text-darkGrey/70 text-lg leading-relaxed`}
+                    className="text-darkGrey/70 text-lg leading-relaxed"
                   >
                     Par téléphone, email ou via le formulaire
                   </p>
@@ -247,12 +241,12 @@ const ContactForm = () => (
                 </div>
                 <div>
                   <h6
-                    className={`${dosisFont.className} text-darkGrey font-bold text-xl mb-2`}
+                    className="text-darkGrey font-bold text-xl mb-2"
                   >
                     Étude personnalisée
                   </h6>
                   <p
-                    className={`${dosisFont.className} text-darkGrey/70 text-lg leading-relaxed`}
+                    className="text-darkGrey/70 text-lg leading-relaxed"
                   >
                     Nous analysons vos besoins et contraintes
                   </p>
@@ -265,12 +259,12 @@ const ContactForm = () => (
                 </div>
                 <div>
                   <h6
-                    className={`${dosisFont.className} text-darkGrey font-bold text-xl mb-2`}
+                    className="text-darkGrey font-bold text-xl mb-2"
                   >
                     Devis détaillé
                   </h6>
                   <p
-                    className={`${dosisFont.className} text-darkGrey/70 text-lg leading-relaxed`}
+                    className="text-darkGrey/70 text-lg leading-relaxed"
                   >
                     Proposition adaptée à votre budget
                   </p>
@@ -283,12 +277,12 @@ const ContactForm = () => (
                 </div>
                 <div>
                   <h6
-                    className={`${dosisFont.className} text-darkGrey font-bold text-xl mb-2`}
+                    className="text-darkGrey font-bold text-xl mb-2"
                   >
                     Réalisation
                   </h6>
                   <p
-                    className={`${dosisFont.className} text-darkGrey/70 text-lg leading-relaxed`}
+                    className="text-darkGrey/70 text-lg leading-relaxed"
                   >
                     Travaux de qualité dans les délais convenus
                   </p>

@@ -9,12 +9,10 @@ import CharpenteIndustrielleGallery from "@/components/services-pages/charpente-
 import CharpenteIndustrielleSpecs from "@/components/services-pages/charpente-industrielle-page/CharpenteIndustrielleSpecs";
 import CharpenteIndustrielleCTA from "@/components/services-pages/charpente-industrielle-page/CharpenteIndustrielleCTA";
 
-import img1 from "@/assets/img/charpente-industrielle/img1.webp";
-
 function CharpenteIndustrielle() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1];
+  const images = ["/assets/img/charpente-industrielle/img1.webp"];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

@@ -4,9 +4,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/forms/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Medium.ttf" });
 
 export default function ConditionsGeneralesUtilisation() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -36,7 +33,7 @@ export default function ConditionsGeneralesUtilisation() {
             Conditions Générales d&apos;Utilisation
           </motion.h1>
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10`}
+            className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10"
           >
             Bienvenue sur notre site web. En naviguant sur ce site, vous
             acceptez de vous conformer aux conditions générales
@@ -49,7 +46,7 @@ export default function ConditionsGeneralesUtilisation() {
           </h2>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Vous êtes autorisé à utiliser notre site web à des fins légales et
             de manière conforme aux présentes conditions générales. Vous
@@ -62,7 +59,7 @@ export default function ConditionsGeneralesUtilisation() {
           </h2>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Tout le contenu présent sur notre site web, y compris mais sans
             s&apos;y limiter, les textes, les images, les graphiques, les logos
@@ -75,7 +72,7 @@ export default function ConditionsGeneralesUtilisation() {
           </h2>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Nous nous efforçons de maintenir les informations présentes sur
             notre site web à jour et exactes. Cependant, nous ne garantissons
@@ -91,7 +88,7 @@ export default function ConditionsGeneralesUtilisation() {
           </h2>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Nous nous réservons le droit de modifier ces conditions générales à
             tout moment et sans préavis. Il est de votre responsabilité de
@@ -100,7 +97,7 @@ export default function ConditionsGeneralesUtilisation() {
           </p>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Merci d&apos;avoir pris connaissance de nos conditions générales
             d&apos;utilisation et de notre politique de confidentialité. Si vous
@@ -109,7 +106,7 @@ export default function ConditionsGeneralesUtilisation() {
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6 lg:gap-0">
             <button
               onClick={handleToggleForm}
-              className={`${dosisFont.className} primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto`}
+              className="primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto"
             >
               Nous Contacter
             </button>

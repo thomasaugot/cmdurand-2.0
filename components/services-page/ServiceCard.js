@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Medium.ttf" });
 
 const ServiceCard = ({ service, index }) => (
   <motion.div
@@ -17,7 +14,7 @@ const ServiceCard = ({ service, index }) => (
   >
     {/* Image */}
     <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-      <motion.div 
+      <motion.div
         className="relative h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
@@ -34,7 +31,7 @@ const ServiceCard = ({ service, index }) => (
 
     {/* Content */}
     <div className={`${index % 2 === 1 ? "lg:order-1" : ""} space-y-6`}>
-      <motion.div 
+      <motion.div
         className="text-4xl text-primary"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
@@ -44,29 +41,35 @@ const ServiceCard = ({ service, index }) => (
       </motion.div>
 
       <div>
-        <span className={`${dosisFont.className} text-primary font-bold text-sm uppercase tracking-wide`}>
+        <span
+          className="text-primary font-bold text-sm uppercase tracking-wide"
+        >
           {service.subtitle}
         </span>
-        <h2 className={`${dosisFont.className} text-darkGrey font-bold text-4xl lg:text-5xl mt-2`}>
+        <h2
+          className="text-darkGrey font-bold text-4xl lg:text-5xl mt-2"
+        >
           {service.title}
         </h2>
       </div>
 
-      <p className={`${dosisFont.className} text-darkGrey text-xl leading-relaxed`}>
+      <p
+        className="text-darkGrey text-xl leading-relaxed"
+      >
         {service.description}
       </p>
 
       <div className="grid grid-cols-2 gap-3">
         {service.features.map((feature, i) => (
-          <motion.div 
-            key={i} 
+          <motion.div
+            key={i}
             className="flex items-center gap-2"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
           >
             <div className="w-2 h-2 bg-primary rounded-full"></div>
-            <span className={`${dosisFont.className} text-darkGrey`}>
+            <span className="text-darkGrey">
               {feature}
             </span>
           </motion.div>
@@ -75,7 +78,7 @@ const ServiceCard = ({ service, index }) => (
 
       <Link
         href={`/services/${service.endPoint}`}
-        className={`${dosisFont.className} inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 transition-all hover:shadow-lg group`}
+        className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 transition-all hover:shadow-lg group"
       >
         En savoir plus
         <FaArrowRight className="group-hover:translate-x-1 transition-transform" />

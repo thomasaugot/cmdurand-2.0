@@ -4,9 +4,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PopupForm from "@/components/forms/PopupForm";
 import ContactDetailsService from "@/components/ContactDetailsService";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Medium.ttf" });
 
 export default function PolitiqueDeConfidentialite() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -36,7 +33,7 @@ export default function PolitiqueDeConfidentialite() {
             Politique de confidentialité
           </motion.h1>
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10`}
+            className="text-darkGrey w-[90vw] lg:w-full mt-6 lg:mt-10"
           >
             Nous attachons une grande importance à la protection de vos données
             personnelles. Cette politique de confidentialité explique comment
@@ -49,7 +46,7 @@ export default function PolitiqueDeConfidentialite() {
           </h2>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Lorsque vous utilisez notre site web et que vous soumettez le
             formulaire de contact, nous collectons les informations suivantes :
@@ -63,7 +60,7 @@ export default function PolitiqueDeConfidentialite() {
           </h2>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Nous ne partageons pas vos informations personnelles avec des tiers
             sans votre consentement explicite. Vos données ne seront pas
@@ -75,7 +72,7 @@ export default function PolitiqueDeConfidentialite() {
           </h2>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Nous prenons des mesures de sécurité appropriées pour protéger vos
             informations personnelles contre la perte, l&apos;accès non
@@ -88,7 +85,7 @@ export default function PolitiqueDeConfidentialite() {
           </p>
           <br />
           <p
-            className={`${dosisFont.className} text-darkGrey w-[90vw] lg:w-full`}
+            className="text-darkGrey w-[90vw] lg:w-full"
           >
             Si vous avez des questions concernant notre politique de
             confidentialité ou si vous souhaitez exercer vos droits en matière
@@ -99,7 +96,7 @@ export default function PolitiqueDeConfidentialite() {
           <div className="flex flex-col lg:flex-row mt-10 items-center justify-center gap-6 lg:gap-0">
             <button
               onClick={handleToggleForm}
-              className={`${dosisFont.className} primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto`}
+              className="primary-button flex primary-button-bg dark-shadow text-nowrap mx-auto"
             >
               Nous Contacter
             </button>

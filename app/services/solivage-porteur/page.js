@@ -9,14 +9,14 @@ import SolivageGallery from "@/components/services-pages/solivage-page/SolivageG
 import SolivageTechniques from "@/components/services-pages/solivage-page/SolivageTechniques";
 import SolivageCTA from "@/components/services-pages/solivage-page/SolivageCTA";
 
-import img1 from "@/assets/img/solivage-porteur/img1.webp";
-import img2 from "@/assets/img/solivage-porteur/img2.webp";
-import img3 from "@/assets/img/solivage-porteur/img3.webp";
-
 function Solivage() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = [img1, img2, img3];
+  const images = [
+    "/assets/img/solivage-porteur/img1.webp",
+    "/assets/img/solivage-porteur/img2.webp",
+    "/assets/img/solivage-porteur/img3.webp"
+  ];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);

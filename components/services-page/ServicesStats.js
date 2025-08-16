@@ -1,17 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../assets/fonts/Dosis-Medium.ttf" });
 
 const ServicesStats = () => (
   <section className="py-20 px-6 lg:px-12 bg-white">
     <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       {[
         { number: "11", label: "Services" },
-        { number: "15+", label: "Années" },
-        { number: "500+", label: "Projets" },
-        { number: "100%", label: "Français" }
+        { number: "5+", label: "Années" },
+        { number: "50+", label: "Projets" },
+        { number: "100%", label: "Français" },
       ].map((stat, index) => (
         <motion.div
           key={index}
@@ -20,7 +17,7 @@ const ServicesStats = () => (
           transition={{ duration: 0.6, delay: index * 0.1 }}
           viewport={{ once: true }}
         >
-          <motion.div 
+          <motion.div
             className="text-4xl font-bold text-primary mb-2"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -28,7 +25,7 @@ const ServicesStats = () => (
           >
             {stat.number}
           </motion.div>
-          <div className={`${dosisFont.className} text-darkGrey`}>
+          <div className="text-darkGrey">
             {stat.label}
           </div>
         </motion.div>

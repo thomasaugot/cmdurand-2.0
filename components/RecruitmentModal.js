@@ -2,12 +2,16 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import localFont from "next/font/local";
-import { FaTimes, FaMapPin, FaClock, FaEuroSign, FaTools, FaUser, FaStar } from "react-icons/fa";
+import {
+  FaTimes,
+  FaMapPin,
+  FaClock,
+  FaEuroSign,
+  FaTools,
+  FaUser,
+  FaStar,
+} from "react-icons/fa";
 import { jobOffer, applicationForm } from "@/data/recruitmentData";
-
-const robotoFont = localFont({ src: "../assets/fonts/RobotoMono-Regular.ttf" });
-const dosisFont = localFont({ src: "../assets/fonts/Dosis-Regular.ttf" });
 
 const RecruitmentModal = ({ isOpen, closeModal }) => {
   const [activeTab, setActiveTab] = useState("offer");
@@ -17,17 +21,21 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Validation simple  
-    const requiredFields = applicationForm.fields.filter(field => field.required);
-    const missingFields = requiredFields.filter(field => !formData[field.name]);
-    
+
+    // Validation simple
+    const requiredFields = applicationForm.fields.filter(
+      (field) => field.required
+    );
+    const missingFields = requiredFields.filter(
+      (field) => !formData[field.name]
+    );
+
     if (missingFields.length > 0) {
       setSubmitMessage("Veuillez remplir tous les champs obligatoires.");
       setIsSubmitting(false);
@@ -37,16 +45,20 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
 
     // Simulation envoi email
     try {
-      const mailtoLink = `mailto:${jobOffer.contact.email}?subject=${encodeURIComponent(jobOffer.contact.subject)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:${
+        jobOffer.contact.email
+      }?subject=${encodeURIComponent(
+        jobOffer.contact.subject
+      )}&body=${encodeURIComponent(
         `Candidature de ${formData.firstName} ${formData.lastName}\n\n` +
-        `Email: ${formData.email}\n` +
-        `Téléphone: ${formData.phone}\n` +
-        `Expérience: ${formData.experience}\n\n` +
-        `Lettre de motivation:\n${formData.motivation}`
+          `Email: ${formData.email}\n` +
+          `Téléphone: ${formData.phone}\n` +
+          `Expérience: ${formData.experience}\n\n` +
+          `Lettre de motivation:\n${formData.motivation}`
       )}`;
-      
+
       window.location.href = mailtoLink;
-      
+
       setSubmitMessage("Votre candidature va être envoyée !");
       setFormData({});
       setTimeout(() => {
@@ -56,7 +68,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
     } catch (error) {
       setSubmitMessage("Erreur lors de l'envoi. Veuillez réessayer.");
     }
-    
+
     setIsSubmitting(false);
   };
 
@@ -90,11 +102,13 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
             >
               <FaTimes size={24} />
             </button>
-            
-            <h2 className={`${dosisFont.className} text-2xl lg:text-3xl font-bold mb-2`}>
+
+            <h2
+              className="text-2xl lg:text-3xl font-bold mb-2"
+            >
               {jobOffer.title}
             </h2>
-            
+
             <div className="flex flex-wrap gap-4 text-sm">
               <span className="flex items-center gap-2">
                 <FaMapPin className="text-primary" />
@@ -115,7 +129,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
           <div className="flex border-b border-gray-200">
             <button
               onClick={() => setActiveTab("offer")}
-              className={`${dosisFont.className} flex-1 py-4 px-6 font-semibold transition-colors ${
+              className={`flex-1 py-4 px-6 font-semibold transition-colors ${
                 activeTab === "offer"
                   ? "text-primary border-b-2 border-primary bg-primary/5"
                   : "text-darkGrey hover:text-primary"
@@ -125,7 +139,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
             </button>
             <button
               onClick={() => setActiveTab("apply")}
-              className={`${dosisFont.className} flex-1 py-4 px-6 font-semibold transition-colors ${
+              className={`flex-1 py-4 px-6 font-semibold transition-colors ${
                 activeTab === "apply"
                   ? "text-primary border-b-2 border-primary bg-primary/5"
                   : "text-darkGrey hover:text-primary"
@@ -141,20 +155,27 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
               <div className="space-y-8">
                 {/* Description */}
                 <div>
-                  <p className={`${dosisFont.className} text-lg text-darkGrey leading-relaxed`}>
+                  <p
+                    className="text-lg text-darkGrey leading-relaxed"
+                  >
                     {jobOffer.description}
                   </p>
                 </div>
 
                 {/* Missions */}
                 <div>
-                  <h3 className={`${dosisFont.className} text-xl font-bold text-darkGrey mb-4 flex items-center gap-2`}>
+                  <h3
+                    className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2"
+                  >
                     <FaTools className="text-primary" />
                     Vos missions
                   </h3>
                   <ul className="space-y-2">
                     {jobOffer.missions.map((mission, index) => (
-                      <li key={index} className={`${dosisFont.className} text-darkGrey flex items-start gap-3`}>
+                      <li
+                        key={index}
+                        className="text-darkGrey flex items-start gap-3"
+                      >
                         <span className="text-primary mt-1">•</span>
                         {mission}
                       </li>
@@ -164,13 +185,18 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
 
                 {/* Profil */}
                 <div>
-                  <h3 className={`${dosisFont.className} text-xl font-bold text-darkGrey mb-4 flex items-center gap-2`}>
+                  <h3
+                    className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2"
+                  >
                     <FaUser className="text-primary" />
                     Profil recherché
                   </h3>
                   <ul className="space-y-2">
                     {jobOffer.profile.map((item, index) => (
-                      <li key={index} className={`${dosisFont.className} text-darkGrey flex items-start gap-3`}>
+                      <li
+                        key={index}
+                        className="text-darkGrey flex items-start gap-3"
+                      >
                         <span className="text-primary mt-1">•</span>
                         {item}
                       </li>
@@ -180,13 +206,18 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
 
                 {/* Avantages */}
                 <div>
-                  <h3 className={`${dosisFont.className} text-xl font-bold text-darkGrey mb-4 flex items-center gap-2`}>
+                  <h3
+                    className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2"
+                  >
                     <FaStar className="text-primary" />
                     Ce que nous offrons
                   </h3>
                   <ul className="space-y-2">
                     {jobOffer.advantages.map((advantage, index) => (
-                      <li key={index} className={`${dosisFont.className} text-darkGrey flex items-start gap-3`}>
+                      <li
+                        key={index}
+                        className="text-darkGrey flex items-start gap-3"
+                      >
                         <span className="text-primary mt-1">•</span>
                         {advantage}
                       </li>
@@ -196,12 +227,12 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
 
                 {/* CTA */}
                 <div className="bg-primary/5 p-6 rounded-xl text-center">
-                  <p className={`${dosisFont.className} text-darkGrey mb-4`}>
+                  <p className="text-darkGrey mb-4">
                     Intéressé(e) par cette opportunité ?
                   </p>
                   <button
                     onClick={() => setActiveTab("apply")}
-                    className={`${dosisFont.className} bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300`}
+                    className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300"
                   >
                     Postuler maintenant
                   </button>
@@ -211,18 +242,28 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {applicationForm.fields.map((field, index) => (
-                    <div key={field.name} className={field.type === "textarea" ? "md:col-span-2" : ""}>
-                      <label className={`${dosisFont.className} block text-sm font-semibold text-darkGrey mb-2`}>
-                        {field.label} {field.required && <span className="text-red-500">*</span>}
+                    <div
+                      key={field.name}
+                      className={
+                        field.type === "textarea" ? "md:col-span-2" : ""
+                      }
+                    >
+                      <label
+                        className="block text-sm font-semibold text-darkGrey mb-2"
+                      >
+                        {field.label}{" "}
+                        {field.required && (
+                          <span className="text-red-500">*</span>
+                        )}
                       </label>
-                      
+
                       {field.type === "select" ? (
                         <select
                           name={field.name}
                           value={formData[field.name] || ""}
                           onChange={handleInputChange}
                           required={field.required}
-                          className={`${dosisFont.className} w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors`}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                         >
                           {field.options.map((option) => (
                             <option key={option.value} value={option.value}>
@@ -238,7 +279,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
                           required={field.required}
                           rows={field.rows || 4}
                           placeholder={field.placeholder}
-                          className={`${dosisFont.className} w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none`}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none"
                         />
                       ) : (
                         <input
@@ -248,7 +289,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
                           onChange={handleInputChange}
                           required={field.required}
                           placeholder={field.placeholder}
-                          className={`${dosisFont.className} w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors`}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                         />
                       )}
                     </div>
@@ -260,17 +301,23 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`${dosisFont.className} w-full md:w-auto bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 ${
+                    className={`w-full md:w-auto bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 ${
                       isSubmitting ? "cursor-wait" : "hover:shadow-lg"
                     }`}
                   >
-                    {isSubmitting ? "Envoi en cours..." : "Envoyer ma candidature"}
+                    {isSubmitting
+                      ? "Envoi en cours..."
+                      : "Envoyer ma candidature"}
                   </button>
 
                   {submitMessage && (
-                    <p className={`${dosisFont.className} text-center font-semibold ${
-                      submitMessage.includes("Erreur") ? "text-red-600" : "text-green-600"
-                    }`}>
+                    <p
+                      className={`text-center font-semibold ${
+                        submitMessage.includes("Erreur")
+                          ? "text-red-600"
+                          : "text-green-600"
+                      }`}
+                    >
                       {submitMessage}
                     </p>
                   )}

@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
-import localFont from "next/font/local";
-
-const dosisFont = localFont({ src: "../../../assets/fonts/Dosis-Medium.ttf" });
-const robotoFont = localFont({
-  src: "../../../assets/fonts/RobotoMono-Regular.ttf",
-});
 
 const AmenagementComblesGallery = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -33,15 +27,22 @@ const AmenagementComblesGallery = ({ images }) => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className={`${robotoFont.className} text-primary text-sm font-bold mb-4 uppercase tracking-wider`}>
+              <h2
+                className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+              >
                 Réalisation
               </h2>
-              <h3 className={`${dosisFont.className} text-3xl lg:text-4xl font-bold text-darkGrey mb-6`}>
+              <h3
+                className="text-3xl lg:text-4xl font-bold text-darkGrey mb-6"
+              >
                 Exemple d'aménagement de combles
               </h3>
-              <p className={`${dosisFont.className} text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed`}>
-                Découvrez un exemple de transformation réussie. D'autres projets d'aménagement 
-                viendront enrichir cette galerie très prochainement.
+              <p
+                className="text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed"
+              >
+                Découvrez un exemple de transformation réussie. D'autres projets
+                d'aménagement viendront enrichir cette galerie très
+                prochainement.
               </p>
             </motion.div>
 
@@ -52,7 +53,7 @@ const AmenagementComblesGallery = ({ images }) => {
               transition={{ duration: 0.8 }}
               className="max-w-4xl mx-auto"
             >
-              <div 
+              <div
                 className="cursor-pointer rounded-xl overflow-hidden bg-white shadow-custom-medium group"
                 onClick={() => openModal(images[0])}
               >
@@ -66,10 +67,12 @@ const AmenagementComblesGallery = ({ images }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h4 className={`${dosisFont.className} font-bold text-xl mb-2`}>
+                    <h4
+                      className="font-bold text-xl mb-2"
+                    >
                       Aménagement de combles
                     </h4>
-                    <p className={`${dosisFont.className} text-sm`}>
+                    <p className="text-sm">
                       Cliquer pour agrandir et voir les détails
                     </p>
                   </div>
@@ -85,12 +88,17 @@ const AmenagementComblesGallery = ({ images }) => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mt-16 text-center bg-white rounded-xl p-8 shadow-custom-light"
             >
-              <h4 className={`${dosisFont.className} font-bold text-darkGrey text-xl mb-4`}>
+              <h4
+                className="font-bold text-darkGrey text-xl mb-4"
+              >
                 D'autres transformations en cours
               </h4>
-              <p className={`${dosisFont.className} text-darkGrey leading-relaxed max-w-2xl mx-auto`}>
-                Nous réalisons actuellement plusieurs projets d'aménagement de combles. 
-                Ces nouvelles réalisations viendront compléter notre galerie dans les semaines à venir.
+              <p
+                className="text-darkGrey leading-relaxed max-w-2xl mx-auto"
+              >
+                Nous réalisons actuellement plusieurs projets d'aménagement de
+                combles. Ces nouvelles réalisations viendront compléter notre
+                galerie dans les semaines à venir.
               </p>
             </motion.div>
           </div>
@@ -123,7 +131,7 @@ const AmenagementComblesGallery = ({ images }) => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  style={{ width: 'auto', height: 'auto' }}
+                  style={{ width: "auto", height: "auto" }}
                   className="max-w-full max-h-[90vh] object-contain rounded-lg"
                   priority
                   quality={95}
@@ -148,15 +156,21 @@ const AmenagementComblesGallery = ({ images }) => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`${robotoFont.className} text-primary text-sm font-bold mb-4 uppercase tracking-wider`}>
+            <h2
+              className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            >
               Galerie
             </h2>
-            <h3 className={`${dosisFont.className} text-3xl lg:text-4xl font-bold text-darkGrey mb-6`}>
+            <h3
+              className="text-3xl lg:text-4xl font-bold text-darkGrey mb-6"
+            >
               Nos aménagements de combles
             </h3>
-            <p className={`${dosisFont.className} text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed`}>
-              Découvrez nos transformations réussies d'espaces perdus en lieux de vie 
-              fonctionnels et chaleureux.
+            <p
+              className="text-darkGrey text-lg max-w-3xl mx-auto leading-relaxed"
+            >
+              Découvrez nos transformations réussies d'espaces perdus en lieux
+              de vie fonctionnels et chaleureux.
             </p>
           </motion.div>
 
@@ -185,7 +199,7 @@ const AmenagementComblesGallery = ({ images }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className={`${dosisFont.className} text-sm font-medium`}>
+                    <p className="text-sm font-medium">
                       Cliquer pour agrandir
                     </p>
                   </div>
@@ -223,7 +237,7 @@ const AmenagementComblesGallery = ({ images }) => {
                 width={0}
                 height={0}
                 sizes="100vw"
-                style={{ width: 'auto', height: 'auto' }}
+                style={{ width: "auto", height: "auto" }}
                 className="max-w-full max-h-[90vh] object-contain rounded-lg"
                 priority
                 quality={95}
