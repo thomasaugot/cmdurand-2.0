@@ -40,7 +40,7 @@ const ImageModal = ({ selectedImage, closeImageModal, navigateImage }) => {
           <GrFormNext size={24} />
         </button>
 
-        <div className="absolute bottom-4 left-4 bg-black/70 text-white p-4 rounded-lg max-w-md backdrop-blur-sm">
+        <div className="z-[999] absolute bottom-4 left-4 bg-black/70 text-white p-4 rounded-lg max-w-md backdrop-blur-sm">
           <h3 className="font-bold text-lg mb-2">
             {selectedImage.title}
           </h3>

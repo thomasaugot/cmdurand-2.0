@@ -24,6 +24,8 @@ export const portfolioProjects = [
       "/assets/img/extension-maison-ossature/Bardage_Maison_Ossature_Bois_2024/chantier-2.jpg",
       "/assets/img/extension-maison-ossature/Bardage_Maison_Ossature_Bois_2024/chantier-4.jpg",
       "/assets/img/extension-maison-ossature/Bardage_Maison_Ossature_Bois_2024/chantier-5.jpg",
+      "/assets/img/extension-maison-ossature/Bardage_Maison_Ossature_Bois_2024/chantier-6.jpg",
+      "/assets/img/extension-maison-ossature/Bardage_Maison_Ossature_Bois_2024/chantier-7.jpg",
     ],
   },
   {
@@ -37,6 +39,7 @@ export const portfolioProjects = [
       "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_2024/chantier-2.jpg",
       "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_2024/chantier-3.jpg",
       "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_2024/chantier-4.jpg",
+      "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_2024/chantier-5.jpg",
     ],
   },
   {
@@ -50,6 +53,8 @@ export const portfolioProjects = [
       "/assets/img/extension-maison-ossature/Maison_Ossature_Bois_Charpente_2024/chantier-2.jpg",
       "/assets/img/extension-maison-ossature/Maison_Ossature_Bois_Charpente_2024/chantier-3.jpg",
       "/assets/img/extension-maison-ossature/Maison_Ossature_Bois_Charpente_2024/chantier-4.jpg",
+      "/assets/img/extension-maison-ossature/Maison_Ossature_Bois_Charpente_2024/chantier-5.jpg",
+      "/assets/img/extension-maison-ossature/Maison_Ossature_Bois_Charpente_2024/chantier-6.jpg",
     ],
   },
   {
@@ -62,6 +67,9 @@ export const portfolioProjects = [
       "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_Plancher_Porteur_2024/chantier-1.jpg",
       "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_Plancher_Porteur_2024/chantier-2.jpg",
       "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_Plancher_Porteur_2024/chantier-3.jpg",
+      "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_Plancher_Porteur_2024/chantier-4.jpg",
+      "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_Plancher_Porteur_2024/chantier-5.jpg",
+      "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_Plancher_Porteur_2024/chantier-6.jpg",
     ],
   },
   {
