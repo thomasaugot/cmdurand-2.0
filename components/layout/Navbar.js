@@ -7,7 +7,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import PopupForm from "@/components/forms/PopupForm";
 import logo from "../../app/logo.png";
 
 const Navbar = () => {
@@ -187,12 +186,12 @@ const Navbar = () => {
               </div>
 
               {/* CTA Button */}
-              <button
-                onClick={() => setIsFormOpen(true)}
+              <Link
+                href="/contact"
                 className="hidden lg:block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 text-lg shadow-lg"
               >
                 Devis Gratuit →
-              </button>
+              </Link>
 
               {/* Mobile Menu Button */}
               <button
@@ -361,25 +360,24 @@ const Navbar = () => {
 
               {/* CTA Button */}
               <div className="px-6 pb-8">
-                <motion.button
+                <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.8 }}
-                  onClick={() => {
-                    setIsFormOpen(true);
-                    setIsOpen(false);
-                  }}
-                  className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg"
                 >
-                  Devis Gratuit →
-                </motion.button>
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsOpen(false)}
+                    className="block w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg text-center"
+                  >
+                    Devis Gratuit →
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <PopupForm isOpen={isFormOpen} closeModal={() => setIsFormOpen(false)} />
     </>
   );
 };

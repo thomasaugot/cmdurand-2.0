@@ -1,10 +1,8 @@
 "use client";
-
 import React, { useState } from "react";
 import PopupForm from "@/components/forms/PopupForm";
 import { servicesData, serviceCategories } from "@/data/services";
 import ServicesHero from "@/components/services-page/ServicesHero";
-import ServiceFilters from "@/components/services-page/ServiceFilters";
 import ServicesList from "@/components/services-page/ServicesList";
 import ServicesStats from "@/components/services-page/ServicesStats";
 import ServicesCTA from "@/components/services-page/ServicesCTA";
@@ -20,9 +18,7 @@ function ServicesPage() {
 
   return (
     <div className="min-h-screen">
-      <ServicesHero />
-
-      <ServiceFilters
+      <ServicesHero 
         serviceCategories={serviceCategories}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}

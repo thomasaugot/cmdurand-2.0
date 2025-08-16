@@ -39,7 +39,7 @@ const Footer = () => {
         className="relative bg-darkGrey text-white py-8 sm:py-12 lg:py-16"
       >
         {isVisible && (
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
             {/* Main Content */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-8 lg:mb-12">
               {/* Contact Info */}

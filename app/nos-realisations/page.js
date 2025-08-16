@@ -4,7 +4,6 @@ import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import { portfolioProjects } from "@/data/portfolio";
 import RealisationsHero from "@/components/portfolio-page/RealisationsHero";
-import FilterNavigation from "@/components/FilterNavigation";
 import ProjectsGallery from "@/components/portfolio-page/ProjectsGallery";
 import RealisationsCTA from "@/components/portfolio-page/RealisationsCTA";
 import ImageModal from "@/components/ImageModal";
@@ -77,11 +76,7 @@ function NosRealisationsPage() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
-
-      <RealisationsHero />
-
-      <FilterNavigation
+      <RealisationsHero 
         activeFilter={activeFilter}
         setActiveFilter={setActiveFilter}
       />

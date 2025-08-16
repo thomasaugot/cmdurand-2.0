@@ -5,7 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 const ProjectsGallery = ({ filteredProjects, openImageModal }) => {
   return (
-    <section className="py-12 px-6 lg:px-12 bg-white">
+    <section className="py-20 px-6 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid gap-16">
           {filteredProjects.map((project, projectIndex) => (
