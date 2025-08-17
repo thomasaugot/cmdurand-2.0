@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import PopupForm from "@/components/forms/PopupForm";
-import CharpenteHero from "@/components/services-pages/charpente-traditionelle-page/CharpenteHero";
-import CharpenteIntro from "@/components/services-pages/charpente-traditionelle-page/CharpenteIntro";
-import CharpenteGallery from "@/components/services-pages/charpente-traditionelle-page/CharpenteGallery";
-import CharpenteProcess from "@/components/services-pages/charpente-traditionelle-page/CharpenteProcess";
-import CharpenteCTA from "@/components/services-pages/charpente-traditionelle-page/CharpenteCTA";
+import CharpenteHero from "@/components/services-pages/charpente-traditionnelle-page/CharpenteHero";
+import CharpenteIntro from "@/components/services-pages/charpente-traditionnelle-page/CharpenteIntro";
+import CharpenteGallery from "@/components/services-pages/charpente-traditionnelle-page/CharpenteGallery";
+import CharpenteProcess from "@/components/services-pages/charpente-traditionnelle-page/CharpenteProcess";
+import CharpenteCTA from "@/components/services-pages/charpente-traditionnelle-page/CharpenteCTA";
 
 function CharpenteTraditionelle() {
   const [isFormOpen, setIsFormOpen] = useState(false);

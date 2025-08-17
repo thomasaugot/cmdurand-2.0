@@ -13,27 +13,27 @@ import { IoMdClose } from "react-icons/io";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 import carouselItem1 from "/assets/img/bardage/img3.webp";
-import carouselItem2 from "/assets/img/charpente-traditionelle/img2.webp";
+import carouselItem2 from "/assets/img/charpente-traditionnelle/img2.webp";
 import carouselItem3 from "/assets/img/charpente-industrielle/img1.webp";
 import carouselItem5 from "/assets/img/préau/img1.webp";
-import carouselItem6 from "/assets/img/charpente-traditionelle/img13.webp";
-import carouselItem7 from "/assets/img/charpente-traditionelle/img4.webp";
+import carouselItem6 from "/assets/img/charpente-traditionnelle/img13.webp";
+import carouselItem7 from "/assets/img/charpente-traditionnelle/img4.webp";
 import carouselItem8 from "/assets/img/extension-maison-ossature/img1.webp";
-import carouselItem10 from "/assets/img/charpente-traditionelle/img6.webp";
+import carouselItem10 from "/assets/img/charpente-traditionnelle/img6.webp";
 import carouselItem11 from "/assets/img/extension-maison-ossature/img3.webp";
-import carouselItem13 from "/assets/img/charpente-traditionelle/img9.webp";
+import carouselItem13 from "/assets/img/charpente-traditionnelle/img9.webp";
 import carouselItem14 from "/assets/img/extension-maison-ossature/img5.webp";
 import carouselItem15 from "/assets/img/terrasse/img1.webp";
-import carouselItem16 from "/assets/img/charpente-traditionelle/img15.webp";
-import carouselItem17 from "/assets/img/charpente-traditionelle/img22.webp";
+import carouselItem16 from "/assets/img/charpente-traditionnelle/img15.webp";
+import carouselItem17 from "/assets/img/charpente-traditionnelle/img22.webp";
 import carouselItem18 from "/assets/img/extension-maison-ossature/img7.webp";
-import carouselItem19 from "/assets/img/charpente-traditionelle/img19.webp";
-import carouselItem20 from "/assets/img/charpente-traditionelle/img14.webp";
+import carouselItem19 from "/assets/img/charpente-traditionnelle/img19.webp";
+import carouselItem20 from "/assets/img/charpente-traditionnelle/img14.webp";
 import carouselItem21 from "/assets/img/terrasse/img2.webp";
-import carouselItem22 from "/assets/img/charpente-traditionelle/img21.webp";
+import carouselItem22 from "/assets/img/charpente-traditionnelle/img21.webp";
 import carouselItem23 from "/assets/img/extension-maison-ossature/img2.webp";
 import carouselItem24 from "/assets/img/home.webp";
-import carouselItem25 from "/assets/img/charpente-traditionelle/img25.webp";
+import carouselItem25 from "/assets/img/charpente-traditionnelle/img25.webp";
 import carouselItem26 from "/assets/img/terrasse/img3.webp";
 
 const Carousel = () => {

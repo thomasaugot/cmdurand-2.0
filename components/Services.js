@@ -4,84 +4,8 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-
-const services = [
-  {
-    id: 1,
-    title: "Charpente traditionnelle",
-    description:
-      "Charpentes en bois massif assemblées selon les techniques ancestrales",
-    imageUrl: "/assets/img/charpente-traditionnelle/img2.webp",
-    endPoint: "/services/charpente-traditionelle",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Extension ossature bois",
-    description: "Extensions performantes et maisons neuves en ossature bois",
-    imageUrl: "/assets/img/extension-maison-ossature/img1.webp",
-    endPoint: "/services/extension-ou-maison-ossature",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Terrasses & Aménagements",
-    description:
-      "Terrasses en bois exotique, composite et aménagements extérieurs",
-    imageUrl: "/assets/img/terrasse/img3.webp",
-    endPoint: "/services/terrasse",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Charpente industrielle",
-    description: "Solutions industrielles et fermettes pour tous projets",
-    imageUrl: "/assets/img/charpente-industrielle/img1.webp",
-    endPoint: "/services/charpente-industrielle",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Menuiserie sur mesure",
-    description: "Escaliers, placards et aménagements intérieurs personnalisés",
-    imageUrl: "/assets/img/menuiserie-générale/img1.webp",
-    endPoint: "/services/menuiserie-generale",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Bardage & Façades",
-    description: "Bardages bois pour protection et embellissement de façades",
-    imageUrl: "/assets/img/bardage/img3.webp",
-    endPoint: "/services/bardage",
-    featured: false,
-  },
-  {
-    id: 7,
-    title: "Aménagement combles",
-    description: "Transformation de combles perdus en espaces habitables",
-    imageUrl: "/assets/img/home.webp",
-    endPoint: "/services/amenagement-des-combles",
-    featured: false,
-  },
-  {
-    id: 8,
-    title: "Préaux & Carports",
-    description:
-      "Structures de protection pour vos véhicules et espaces extérieurs",
-    imageUrl: "/assets/img/préau/img1.webp",
-    endPoint: "/services/preau",
-    featured: false,
-  },
-  {
-    id: 9,
-    title: "Menuiserie extérieure",
-    description: "Volets, portails et menuiseries extérieures sur mesure",
-    imageUrl: "/assets/img/menuiserie-extérieure/img1.webp",
-    endPoint: "/services/menuiserie-exterieure",
-    featured: false,
-  },
-];
+import { servicesData } from "@/data/services";
+import useDeviceDetect from "@/hooks/useDeviceDetect";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -108,6 +32,7 @@ const cardVariants = {
 const Services = ({ enableRedirect = false }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const { isMobile, isMobileLandscape, isTablet, isTabletLandscape, isDesktop } = useDeviceDetect();
 
   const ref = React.useRef();
   const inView = useInView(ref, { threshold: 0.2 });
@@ -118,8 +43,27 @@ const Services = ({ enableRedirect = false }) => {
     }
   }, [inView]);
 
-  const featuredServices = services.filter((service) => service.featured);
-  const regularServices = services.filter((service) => !service.featured);
+  // Logique pour déterminer combien de services afficher
+  const getServicesToShow = () => {
+    if (isMobile && !isMobileLandscape) {
+      return servicesData; // Tous les services sur mobile portrait
+    }
+    if (isMobile && isMobileLandscape) {
+      return servicesData.slice(0, 10); // 10 services sur mobile landscape
+    }
+    if (isTablet && !isTabletLandscape) {
+      return servicesData.slice(0, 10); // 10 services sur tablet portrait
+    }
+    if (isTablet && isTabletLandscape) {
+      return servicesData.slice(0, 9); // 9 services sur tablet landscape
+    }
+    if (isDesktop) {
+      return servicesData.slice(0, 9); // 9 services sur desktop
+    }
+    return servicesData.slice(0, 9); // Par défaut
+  };
+
+  const servicesToShow = getServicesToShow();
 
   const ServiceCard = ({ service, index }) => {
     const cardContent = (
@@ -174,7 +118,7 @@ const Services = ({ enableRedirect = false }) => {
 
     if (enableRedirect) {
       return (
-        <Link href={service.endPoint}>
+        <Link href={`/services${service.endPoint}`}>
           {cardContent}
         </Link>
       );
@@ -188,7 +132,7 @@ const Services = ({ enableRedirect = false }) => {
       {isVisible && (
         <motion.div variants={variants} initial="hidden" animate="show">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+            {servicesToShow.map((service, index) => (
               <motion.div key={service.id} variants={cardVariants}>
                 <ServiceCard service={service} index={index} />
               </motion.div>

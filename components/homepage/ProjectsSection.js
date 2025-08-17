@@ -7,18 +7,24 @@ import Link from "next/link";
 import { FaMapMarkerAlt, FaArrowRight, FaImages } from "react-icons/fa";
 import { getFeaturedProjects } from "@/data/portfolio";
 import ImageModal from "@/components/ImageModal";
+import useDeviceDetect from "@/hooks/useDeviceDetect";
 
 function ProjectsSection() {
   const featuredProjects = getFeaturedProjects();
+  const { isTablet, isTabletLandscape, isMobile, isMobileLandscape } = useDeviceDetect();
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentProject, setCurrentProject] = useState(0);
+
+  const projectsToShow = (isTablet && !isTabletLandscape) || (isMobile && isMobileLandscape)
+    ? featuredProjects.slice(0, 2) 
+    : featuredProjects.slice(0, 3);
 
   const openImageModal = (projectIndex, imageIndex) => {
     setCurrentProject(projectIndex);
     setCurrentImageIndex(imageIndex);
     
-    const project = featuredProjects[projectIndex];
+    const project = projectsToShow[projectIndex];
     const imageUrl = project.images[imageIndex];
     
     setSelectedImage({
@@ -34,7 +40,7 @@ function ProjectsSection() {
   };
 
   const navigateImage = (direction) => {
-    const currentProjectImages = featuredProjects[currentProject].images;
+    const currentProjectImages = projectsToShow[currentProject].images;
     let newIndex;
 
     if (direction === "next") {
@@ -51,7 +57,7 @@ function ProjectsSection() {
 
     setCurrentImageIndex(newIndex);
     
-    const project = featuredProjects[currentProject];
+    const project = projectsToShow[currentProject];
     const imageUrl = project.images[newIndex];
     
     setSelectedImage({
@@ -86,7 +92,7 @@ function ProjectsSection() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredProjects.map((project, index) => (
+            {projectsToShow.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0 }}

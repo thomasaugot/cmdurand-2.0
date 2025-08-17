@@ -19,23 +19,46 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const services = [
-    { name: "Charpente Traditionnelle", href: "/services/charpente-traditionelle" },
-    { name: "Charpente Industrielle", href: "/services/charpente-industrielle" },
-    { name: "Extension Ossature Bois", href: "/services/extension-ou-maison-ossature" },
+    {
+      name: "Charpente Traditionnelle",
+      href: "/services/charpente-traditionnelle",
+    },
+    {
+      name: "Charpente Industrielle",
+      href: "/services/charpente-industrielle",
+    },
+    {
+      name: "Extension Ossature Bois",
+      href: "/services/extension-ou-maison-ossature",
+    },
     { name: "Bardage & Façades", href: "/services/bardage" },
     { name: "Menuiserie Générale", href: "/services/menuiserie-generale" },
     { name: "Menuiserie Extérieure", href: "/services/menuiserie-exterieure" },
     { name: "Terrasses & Aménagements", href: "/services/terrasse" },
-    { name: "Aménagement des Combles", href: "/services/amenagement-des-combles" },
+    {
+      name: "Aménagement des Combles",
+      href: "/services/amenagement-des-combles",
+    },
     { name: "Préaux & Abris", href: "/services/preau" },
     { name: "Carports", href: "/services/carport" },
-    { name: "Solivage Porteur", href: "/services/solivage-porteur" }
+    { name: "Solivage Porteur", href: "/services/solivage-porteur" },
   ];
 
   const navItems = [
     { id: 1, text: "Accueil", href: "/", target: "home" },
-    { id: 2, text: "Nos Services", href: "/services", target: "about", hasSubmenu: true },
-    { id: 3, text: "Nos Réalisations", href: "/nos-realisations", target: "gallery" },
+    {
+      id: 2,
+      text: "Nos Services",
+      href: "/services",
+      target: "about",
+      hasSubmenu: true,
+    },
+    {
+      id: 3,
+      text: "Nos Réalisations",
+      href: "/nos-realisations",
+      target: "gallery",
+    },
     { id: 4, text: "Contactez-nous", href: "/contact", target: "contact" },
   ];
 
@@ -114,31 +137,37 @@ const Navbar = () => {
               {/* Desktop Menu */}
               <div className="hidden lg:flex items-center gap-8 relative">
                 {navItems.map((item) => (
-                  <div 
-                    key={item.id} 
+                  <div
+                    key={item.id}
                     className="relative"
-                    onMouseEnter={() => item.hasSubmenu && setIsServicesOpen(true)}
-                    onMouseLeave={() => item.hasSubmenu && setIsServicesOpen(false)}
+                    onMouseEnter={() =>
+                      item.hasSubmenu && setIsServicesOpen(true)
+                    }
+                    onMouseLeave={() =>
+                      item.hasSubmenu && setIsServicesOpen(false)
+                    }
                   >
                     <Link
                       href={item.href}
                       className={`font-semibold transition-colors py-2 text-lg px-3 flex items-center gap-1 ${
-                        pathname === item.href || (item.hasSubmenu && pathname.startsWith('/services'))
+                        pathname === item.href ||
+                        (item.hasSubmenu && pathname.startsWith("/services"))
                           ? "text-primary border-b-2 border-primary"
                           : "text-darkGrey hover:text-primary"
                       }`}
                       style={
-                        pathname === item.href || (item.hasSubmenu && pathname.startsWith('/services'))
+                        pathname === item.href ||
+                        (item.hasSubmenu && pathname.startsWith("/services"))
                           ? { textShadow: "1px 1px 1px rgba(0, 0, 0, 0.3)" }
                           : {}
                       }
                     >
                       {item.text}
                       {item.hasSubmenu && (
-                        <FaChevronDown 
+                        <FaChevronDown
                           className={`text-xs transition-transform duration-200 ${
-                            isServicesOpen ? 'rotate-180' : ''
-                          }`} 
+                            isServicesOpen ? "rotate-180" : ""
+                          }`}
                         />
                       )}
                     </Link>
@@ -243,14 +272,16 @@ const Navbar = () => {
                     {item.hasSubmenu ? (
                       <div>
                         <button
-                          onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                          onClick={() =>
+                            setIsMobileServicesOpen(!isMobileServicesOpen)
+                          }
                           className="flex items-center justify-between w-full text-darkGrey font-bold text-xl py-2 hover:text-primary transition-colors"
                         >
                           {item.text}
-                          <FaChevronDown 
+                          <FaChevronDown
                             className={`text-sm transition-transform duration-200 ${
-                              isMobileServicesOpen ? 'rotate-180' : ''
-                            }`} 
+                              isMobileServicesOpen ? "rotate-180" : ""
+                            }`}
                           />
                         </button>
                         <AnimatePresence>
@@ -312,7 +343,9 @@ const Navbar = () => {
                   transition={{ delay: 0.5 }}
                   className="bg-darkGrey rounded-xl p-6"
                 >
-                  <h3 className="text-white font-bold text-lg mb-4">Contact Direct</h3>
+                  <h3 className="text-white font-bold text-lg mb-4">
+                    Contact Direct
+                  </h3>
                   <div
                     className="flex items-center gap-4 mb-4 cursor-pointer group"
                     onClick={handlePhoneClick}
@@ -324,7 +357,9 @@ const Navbar = () => {
                       <span className="text-white font-semibold text-lg block">
                         +33 6 76 50 85 51
                       </span>
-                      <span className="text-gray-300 text-sm">Appel direct</span>
+                      <span className="text-gray-300 text-sm">
+                        Appel direct
+                      </span>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -332,8 +367,12 @@ const Navbar = () => {
                       <FaLocationDot className="text-white" size={18} />
                     </div>
                     <div>
-                      <span className="text-white font-semibold block">Z.A. la Pommeraie, Rue des Indes</span>
-                      <span className="text-white font-semibold block">44780 Missillac</span>
+                      <span className="text-white font-semibold block">
+                        Z.A. la Pommeraie, Rue des Indes
+                      </span>
+                      <span className="text-white font-semibold block">
+                        44780 Missillac
+                      </span>
                     </div>
                   </div>
                 </motion.div>
@@ -344,11 +383,15 @@ const Navbar = () => {
                   transition={{ delay: 0.6 }}
                   className="bg-gray-100 rounded-xl p-6"
                 >
-                  <h3 className="text-darkGrey font-bold text-lg mb-4">Horaires</h3>
+                  <h3 className="text-darkGrey font-bold text-lg mb-4">
+                    Horaires
+                  </h3>
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Lun - Ven</span>
-                      <span className="text-darkGrey font-semibold">8h - 18h30</span>
+                      <span className="text-darkGrey font-semibold">
+                        8h - 18h30
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Weekend</span>

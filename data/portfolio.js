@@ -118,7 +118,7 @@ export const portfolioProjects = [
     title: "Charpente Industrielle avec Carport Traditionnel",
     year: "2021",
     categories: ["autres", "charpente"],
-    featured: false,
+    featured: true,
     images: [
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-1.jpg",
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-2.jpg",
