@@ -45,7 +45,7 @@ function TestimonialCard({ testimonial }) {
         </div>
 
         <span
-          className="text-xs text-primary bg-secondary px-3 py-1 rounded-full font-medium"
+          className="text-xs text-primary bg-primary/20 px-3 py-1 rounded-full font-medium"
         >
           {type}
         </span>
