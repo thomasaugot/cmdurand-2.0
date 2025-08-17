@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaShieldAlt, FaPalette, FaLeaf } from "react-icons/fa";
 
 const CharpenteProcess = () => {
   const steps = [
@@ -40,7 +41,7 @@ const CharpenteProcess = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Notre processus
           </h2>
@@ -90,7 +91,7 @@ const CharpenteProcess = () => {
                   </h4>
 
                   <p
-                    className="text-darkGrey text-sm leading-relaxed"
+                    className="text-darkGrey text-base leading-relaxed"
                   >
                     {step.description}
                   </p>
@@ -120,35 +121,41 @@ const CharpenteProcess = () => {
           </h4>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <div className="text-primary text-2xl mb-2">🏛️</div>
+              <div className="text-primary text-2xl mb-2 flex justify-center">
+                <FaShieldAlt />
+              </div>
               <h5
-                className="font-bold text-darkGrey mb-2"
+                className="font-bold text-lg text-darkGrey mb-2"
               >
                 Durabilité
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Résistance exceptionnelle et longévité séculaire
               </p>
             </div>
             <div>
-              <div className="text-primary text-2xl mb-2">🎨</div>
+              <div className="text-primary text-2xl mb-2 flex justify-center">
+                <FaPalette />
+              </div>
               <h5
-                className="font-bold text-darkGrey mb-2"
+                className="font-bold text-lg text-darkGrey mb-2"
               >
                 Esthétique
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Beauté naturelle et charme authentique
               </p>
             </div>
             <div>
-              <div className="text-primary text-2xl mb-2">🌿</div>
+              <div className="text-primary text-2xl mb-2 flex justify-center">
+                <FaLeaf />
+              </div>
               <h5
-                className="font-bold text-darkGrey mb-2"
+                className="font-bold text-darkGrey text-lg mb-2"
               >
                 Écologie
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Matériau renouvelable et circuit court
               </p>
             </div>

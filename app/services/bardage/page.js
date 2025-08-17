@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import BardageHero from "@/components/services-pages/bardage-page/BardageHero";
 import BardageIntro from "@/components/services-pages/bardage-page/BardageIntro";
@@ -18,10 +17,6 @@ function Bardage() {
     "/assets/img/bardage/img3.webp",
     "/assets/img/bardage/img4.webp",
     "/assets/img/bardage/img5.webp",
-    "/assets/img/bardage/img6.webp",
-    "/assets/img/bardage/img7.webp",
-    "/assets/img/bardage/img8.webp",
-    "/assets/img/bardage/img9.webp",
     "/assets/img/bardage/img10.webp"
   ];
 
@@ -31,8 +26,6 @@ function Bardage() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
-
       <BardageHero />
 
       <BardageIntro />

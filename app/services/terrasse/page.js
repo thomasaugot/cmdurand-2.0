@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import TerrasseHero from "@/components/services-pages/terrasse-page/TerrasseHero";
 import TerrasseIntro from "@/components/services-pages/terrasse-page/TerrasseIntro";
@@ -24,8 +23,6 @@ function Terrasse() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
-
       <TerrasseHero />
 
       <TerrasseIntro />

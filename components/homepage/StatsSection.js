@@ -12,7 +12,7 @@ const stats = [
   },
   {
     icon: FaHome,
-    number: "200+",
+    number: "50+",
     label: "Clients satisfaits",
     color: "text-primary",
   },
@@ -24,7 +24,7 @@ const stats = [
   },
   {
     icon: FaClock,
-    number: "24h",
+    number: "48h",
     label: "Réponse garantie",
     color: "text-primary",
   },

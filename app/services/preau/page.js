@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import PreauHero from "@/components/services-pages/preau-page/PreauHero";
 import PreauIntro from "@/components/services-pages/preau-page/PreauIntro";
@@ -24,7 +23,6 @@ function Préau() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
 
       <PreauHero />
 

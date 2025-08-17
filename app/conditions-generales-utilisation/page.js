@@ -4,15 +4,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { gotham } from "@/lib/fonts";
-import ContactDetailsService from "@/components/ContactDetailsService";
 
 export default function ConditionsGeneralesUtilisation() {
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
       
       {/* Hero Section */}
-      <section className="relative pt-52 pb-24 px-6 lg:px-12 text-center overflow-hidden bg-darkGrey">
+      <section className="relative pt-52 pb-24 px-6 lg:px-12 text-center overflow-hidden bg-darkGrey brick-bg-dark">
         {/* Zone blanche pour navbar */}
         <div className="absolute top-0 left-0 right-0 h-[90px] md:h-36 bg-white z-0"></div>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaTree, FaSeedling, FaFlask, FaBolt } from "react-icons/fa";
 
 const TerrasseMaterials = () => {
   const materials = [
@@ -11,7 +12,7 @@ const TerrasseMaterials = () => {
         "Naturellement imputrescible",
         "Vieillissement noble",
       ],
-      icon: "🌳",
+      icon: <FaTree className="text-primary" />,
     },
     {
       title: "Bois Européen",
@@ -21,13 +22,13 @@ const TerrasseMaterials = () => {
         "Traitement classe 4",
         "Aspect chaleureux",
       ],
-      icon: "🌲",
+      icon: <FaSeedling className="text-primary" />,
     },
     {
       title: "Composite",
       description: "Performance et facilité d'entretien",
       features: ["Sans entretien", "Anti-dérapant", "Couleurs durables"],
-      icon: "🔬",
+      icon: <FaFlask className="text-primary" />,
     },
     {
       title: "Mixte",
@@ -37,7 +38,7 @@ const TerrasseMaterials = () => {
         "Habillage bois/composite",
         "Grandes portées",
       ],
-      icon: "⚡",
+      icon: <FaBolt className="text-primary" />,
     },
   ];
 
@@ -113,7 +114,7 @@ const TerrasseMaterials = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Matériaux & configurations
           </h2>
@@ -145,7 +146,7 @@ const TerrasseMaterials = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 border-2 border-lightGrey/30 hover:border-primary hover:shadow-custom-heavy transition-all duration-300"
             >
-              <div className="text-4xl mb-4 text-center">{material.icon}</div>
+              <div className="text-4xl mb-4 text-center flex justify-center">{material.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3 text-center"
@@ -154,7 +155,7 @@ const TerrasseMaterials = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm mb-4 text-center leading-relaxed"
+                className="text-darkGrey text-base mb-4 text-center leading-relaxed"
               >
                 {material.description}
               </p>
@@ -163,7 +164,7 @@ const TerrasseMaterials = () => {
                 {material.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="text-darkGrey text-xs flex items-center"
+                    className="text-darkGrey text-base flex items-center"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
                     {feature}
@@ -209,23 +210,23 @@ const TerrasseMaterials = () => {
                     {config.title}
                   </h5>
                   <span
-                    className="text-darkGrey text-xs font-medium bg-primary/10 px-2 py-1 rounded"
+                    className="text-darkGrey text-base font-medium bg-primary/10 px-2 py-1 rounded"
                   >
                     {config.surface}
                   </span>
                 </div>
 
                 <p
-                  className="text-darkGrey text-sm mb-4 leading-relaxed"
+                  className="text-darkGrey text-base mb-4 leading-relaxed"
                 >
                   {config.description}
                 </p>
 
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {config.characteristics.map((char, charIndex) => (
                     <li
                       key={charIndex}
-                      className="text-darkGrey text-xs flex items-center"
+                      className="text-darkGrey text-base flex items-center"
                     >
                       <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
                       {char}
@@ -284,7 +285,7 @@ const TerrasseMaterials = () => {
                     </h5>
 
                     <p
-                      className="text-darkGrey text-sm leading-relaxed"
+                      className="text-darkGrey text-base leading-relaxed"
                     >
                       {step.description}
                     </p>

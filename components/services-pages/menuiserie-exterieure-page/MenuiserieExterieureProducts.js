@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaDoorOpen, FaWindowMaximize, FaShieldAlt, FaHome } from "react-icons/fa";
 
 const MenuiserieExterieureProducts = () => {
   const products = [
@@ -12,7 +13,7 @@ const MenuiserieExterieureProducts = () => {
         "Serrures haute sécurité",
         "Finitions durables",
       ],
-      icon: "🚪",
+      icon: <FaDoorOpen className="text-primary" />,
     },
     {
       title: "Fenêtres sur mesure",
@@ -23,7 +24,7 @@ const MenuiserieExterieureProducts = () => {
         "Isolation thermique",
         "Entretien facilité",
       ],
-      icon: "🪟",
+      icon: <FaWindowMaximize className="text-primary" />,
     },
     {
       title: "Volets bois",
@@ -34,7 +35,7 @@ const MenuiserieExterieureProducts = () => {
         "Traitement longue durée",
         "Quincaillerie de qualité",
       ],
-      icon: "🪟",
+      icon: <FaShieldAlt className="text-primary" />,
     },
     {
       title: "Terrasses & Aménagements",
@@ -45,7 +46,7 @@ const MenuiserieExterieureProducts = () => {
         "Pergolas intégrées",
         "Mobilier fixe",
       ],
-      icon: "🏡",
+      icon: <FaHome className="text-primary" />,
     },
   ];
 
@@ -103,7 +104,7 @@ const MenuiserieExterieureProducts = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Nos produits
           </h2>
@@ -134,7 +135,7 @@ const MenuiserieExterieureProducts = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 border-2 border-lightGrey/30 hover:border-primary transition-colors duration-300"
             >
-              <div className="text-4xl mb-4 text-center">{product.icon}</div>
+              <div className="text-4xl mb-4 text-center flex justify-center">{product.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3 text-center"
@@ -143,7 +144,7 @@ const MenuiserieExterieureProducts = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm mb-4 text-center leading-relaxed"
+                className="text-darkGrey text-base mb-4 text-center leading-relaxed"
               >
                 {product.description}
               </p>
@@ -152,7 +153,7 @@ const MenuiserieExterieureProducts = () => {
                 {product.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="text-darkGrey text-xs flex items-center"
+                    className="text-darkGrey text-base flex items-center"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
                     {feature}
@@ -197,11 +198,11 @@ const MenuiserieExterieureProducts = () => {
                   {wood.name}
                 </h5>
                 <p
-                  className="text-darkGrey text-sm mb-3 italic"
+                  className="text-darkGrey text-base mb-3 italic"
                 >
                   {wood.characteristics}
                 </p>
-                <p className="text-darkGrey text-xs">
+                <p className="text-darkGrey text-base">
                   {wood.usage}
                 </p>
               </motion.div>
@@ -245,14 +246,14 @@ const MenuiserieExterieureProducts = () => {
                       {finish.type}
                     </h5>
                     <p
-                      className="text-darkGrey text-sm leading-relaxed"
+                      className="text-darkGrey text-base leading-relaxed"
                     >
                       {finish.description}
                     </p>
                   </div>
                   <div className="bg-lightGrey/30 rounded-lg p-3 mt-4">
                     <p
-                      className="text-darkGrey text-xs font-medium"
+                      className="text-darkGrey text-base font-medium"
                     >
                       {finish.maintenance}
                     </p>

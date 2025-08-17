@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaTree, FaCogs, FaIndustry, FaWrench, FaRuler, FaSquareRootAlt, FaCheckCircle, FaShieldAlt } from "react-icons/fa";
 
 const SolivageTechniques = () => {
   const techniques = [
@@ -11,7 +12,7 @@ const SolivageTechniques = () => {
         "Assemblages traditionnels",
         "Durabilité maximale",
       ],
-      icon: "🌲",
+      icon: <FaTree className="text-primary" />,
     },
     {
       title: "Planchers Techniques",
@@ -21,7 +22,7 @@ const SolivageTechniques = () => {
         "Passages techniques",
         "Rigidité renforcée",
       ],
-      icon: "⚙️",
+      icon: <FaCogs className="text-primary" />,
     },
     {
       title: "Solivage Mixte",
@@ -31,7 +32,7 @@ const SolivageTechniques = () => {
         "Déformations minimales",
         "Optimisation des coûts",
       ],
-      icon: "🏗️",
+      icon: <FaIndustry className="text-primary" />,
     },
     {
       title: "Renforcement",
@@ -41,7 +42,7 @@ const SolivageTechniques = () => {
         "Solutions sur mesure",
         "Respect de l'existant",
       ],
-      icon: "🔧",
+      icon: <FaWrench className="text-primary" />,
     },
   ];
 
@@ -75,25 +76,25 @@ const SolivageTechniques = () => {
       title: "Classes de bois",
       description:
         "Utilisation exclusive de bois classés C24 minimum pour usage structurel",
-      icon: "📏",
+      icon: <FaRuler className="text-primary" />,
     },
     {
       title: "Normes de calcul",
       description:
         "Respect de l'Eurocode 5 pour tous les dimensionnements structures",
-      icon: "📐",
+      icon: <FaSquareRootAlt className="text-primary" />,
     },
     {
       title: "Contrôle qualité",
       description:
         "Vérification systématique des assemblages et de la géométrie",
-      icon: "✅",
+      icon: <FaCheckCircle className="text-primary" />,
     },
     {
       title: "Garantie décennale",
       description:
         "Couverture complète de la responsabilité décennale sur l'ouvrage",
-      icon: "🛡️",
+      icon: <FaShieldAlt className="text-primary" />,
     },
   ];
 
@@ -108,7 +109,7 @@ const SolivageTechniques = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Nos techniques
           </h2>
@@ -141,7 +142,7 @@ const SolivageTechniques = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 border-2 border-lightGrey/30 hover:border-primary hover:shadow-custom-heavy transition-all duration-300"
             >
-              <div className="text-4xl mb-4 text-center">{technique.icon}</div>
+              <div className="text-4xl mb-4 text-center flex justify-center">{technique.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3 text-center"
@@ -150,7 +151,7 @@ const SolivageTechniques = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm mb-4 text-center leading-relaxed"
+                className="text-darkGrey text-base mb-4 text-center leading-relaxed"
               >
                 {technique.description}
               </p>
@@ -159,7 +160,7 @@ const SolivageTechniques = () => {
                 {technique.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="text-darkGrey text-xs flex items-center"
+                    className="text-darkGrey text-base flex items-center"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
                     {feature}
@@ -217,7 +218,7 @@ const SolivageTechniques = () => {
                     </h4>
 
                     <p
-                      className="text-darkGrey text-sm leading-relaxed"
+                      className="text-darkGrey text-base leading-relaxed"
                     >
                       {step.description}
                     </p>
@@ -233,7 +234,7 @@ const SolivageTechniques = () => {
           </div>
         </motion.div>
 
-        {/* Spécifications techniques */}
+        {/* Spécifications techniques - Layout en 3 colonnes */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -242,38 +243,80 @@ const SolivageTechniques = () => {
           className="bg-lightGrey/20 rounded-xl p-8"
         >
           <h4
-            className="font-bold text-darkGrey text-2xl mb-8 text-center"
+            className="font-bold text-darkGrey text-2xl mb-12 text-center"
           >
             Exigences techniques
           </h4>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {specifications.map((spec, index) => (
-              <motion.div
-                key={index}
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: "easeOut",
-                }}
-                className="bg-white rounded-xl p-6 text-center shadow-custom-light"
-              >
-                <div className="text-3xl mb-3">{spec.icon}</div>
-                <h5
-                  className="font-bold text-darkGrey mb-2"
-                >
-                  {spec.title}
-                </h5>
-                <p
-                  className="text-darkGrey text-sm leading-relaxed"
-                >
-                  {spec.description}
-                </p>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaRuler className="text-primary" />
+              </div>
+              <h5 className="font-bold text-primary text-xl mb-6">Qualité</h5>
+              <ul className="space-y-4">
+                <li className="flex items-center justify-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+                  <span className="text-darkGrey text-base">{specifications[0].title}</span>
+                </li>
+                <li className="flex items-center justify-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+                  <span className="text-darkGrey text-base">{specifications[2].title}</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaSquareRootAlt className="text-primary" />
+              </div>
+              <h5 className="font-bold text-primary text-xl mb-6">Conformité</h5>
+              <ul className="space-y-4">
+                <li className="flex items-center justify-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+                  <span className="text-darkGrey text-base">{specifications[1].title}</span>
+                </li>
+                <li className="flex items-center justify-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+                  <span className="text-darkGrey text-base">Réglementation DTU</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaShieldAlt className="text-primary" />
+              </div>
+              <h5 className="font-bold text-primary text-xl mb-6">Sécurité</h5>
+              <ul className="space-y-4">
+                <li className="flex items-center justify-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+                  <span className="text-darkGrey text-base">{specifications[3].title}</span>
+                </li>
+                <li className="flex items-center justify-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+                  <span className="text-darkGrey text-base">Assurance décennale</span>
+                </li>
+              </ul>
+            </motion.div>
           </div>
         </motion.div>
       </div>

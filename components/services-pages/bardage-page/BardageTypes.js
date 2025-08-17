@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaTree, FaFlask, FaIndustry, FaBolt, FaShieldAlt, FaThermometerHalf, FaStar } from "react-icons/fa";
 
 const BardageTypes = () => {
   const bardageTypes = [
@@ -11,13 +12,13 @@ const BardageTypes = () => {
         "Traitement autoclave",
         "Finitions variées",
       ],
-      icon: "🌲",
+      icon: <FaTree className="text-primary" />,
     },
     {
       title: "Composite",
       description: "Innovation et durabilité sans compromis",
       features: ["Sans entretien", "Résistant aux UV", "Aspect bois garanti"],
-      icon: "🔬",
+      icon: <FaFlask className="text-primary" />,
     },
     {
       title: "Fibrociment",
@@ -27,13 +28,13 @@ const BardageTypes = () => {
         "Résistant intempéries",
         "Large gamme couleurs",
       ],
-      icon: "🏗️",
+      icon: <FaIndustry className="text-primary" />,
     },
     {
       title: "Métallique",
       description: "Modernité et performance industrielle",
       features: ["Longévité maximale", "Étanchéité parfaite", "Design épuré"],
-      icon: "⚡",
+      icon: <FaBolt className="text-primary" />,
     },
   ];
 
@@ -69,7 +70,7 @@ const BardageTypes = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Types de bardage
           </h2>
@@ -101,7 +102,7 @@ const BardageTypes = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 border-2 border-lightGrey/30 hover:border-primary hover:shadow-custom-heavy transition-all duration-300"
             >
-              <div className="text-4xl mb-4 text-center">{type.icon}</div>
+              <div className="text-4xl mb-4 text-center flex justify-center">{type.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3 text-center"
@@ -110,7 +111,7 @@ const BardageTypes = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm mb-4 text-center leading-relaxed"
+                className="text-darkGrey text-base mb-4 text-center leading-relaxed"
               >
                 {type.description}
               </p>
@@ -119,7 +120,7 @@ const BardageTypes = () => {
                 {type.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="text-darkGrey text-xs flex items-center"
+                    className="text-darkGrey text-base flex items-center"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
                     {feature}
@@ -164,7 +165,7 @@ const BardageTypes = () => {
                   {technique.title}
                 </h5>
                 <p
-                  className="text-darkGrey text-sm leading-relaxed"
+                  className="text-darkGrey text-base leading-relaxed"
                 >
                   {technique.description}
                 </p>
@@ -188,35 +189,41 @@ const BardageTypes = () => {
           </h4>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
-              <div className="text-primary text-3xl mb-4">🛡️</div>
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaShieldAlt className="text-primary" />
+              </div>
               <h5
                 className="font-bold text-darkGrey mb-2"
               >
                 Protection
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Bouclier efficace contre intempéries et UV
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
-              <div className="text-primary text-3xl mb-4">🌡️</div>
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaThermometerHalf className="text-primary" />
+              </div>
               <h5
                 className="font-bold text-darkGrey mb-2"
               >
                 Isolation
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Amélioration des performances thermiques
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
-              <div className="text-primary text-3xl mb-4">✨</div>
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaStar className="text-primary" />
+              </div>
               <h5
                 className="font-bold text-darkGrey mb-2"
               >
                 Esthétique
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Modernisation et valorisation de la façade
               </p>
             </div>

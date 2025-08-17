@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaRuler, FaWeight, FaFire, FaBolt, FaCogs } from "react-icons/fa";
 
 const CharpenteIndustrielleSpecs = () => {
   const specifications = [
@@ -7,23 +8,23 @@ const CharpenteIndustrielleSpecs = () => {
       title: "Portées exceptionnelles",
       description:
         "Jusqu'à 30 mètres de portée libre sans poteau intermédiaire",
-      icon: "📏",
+      icon: <FaRuler className="text-primary" />,
     },
     {
       title: "Charges importantes",
       description:
         "Dimensionnement pour charges lourdes et contraintes industrielles",
-      icon: "⚖️",
+      icon: <FaWeight className="text-primary" />,
     },
     {
       title: "Résistance au feu",
       description: "Traitement ignifuge selon normes européennes EN 1995",
-      icon: "🔥",
+      icon: <FaFire className="text-primary" />,
     },
     {
       title: "Rapidité d'exécution",
       description: "Préfabrication en atelier pour un montage ultra-rapide",
-      icon: "⚡",
+      icon: <FaBolt className="text-primary" />,
     },
   ];
 
@@ -61,7 +62,7 @@ const CharpenteIndustrielleSpecs = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Spécifications techniques
           </h2>
@@ -94,14 +95,14 @@ const CharpenteIndustrielleSpecs = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 text-center hover:shadow-custom-heavy transition-shadow duration-300"
             >
-              <div className="text-4xl mb-4">{spec.icon}</div>
+              <div className="text-4xl mb-4 flex justify-center">{spec.icon}</div>
               <h4
                 className="font-bold text-darkGrey text-lg mb-3"
               >
                 {spec.title}
               </h4>
               <p
-                className="text-darkGrey text-sm leading-relaxed"
+                className="text-darkGrey text-base leading-relaxed"
               >
                 {spec.description}
               </p>
@@ -135,7 +136,7 @@ const CharpenteIndustrielleSpecs = () => {
                   {advantage.points.map((point, pointIndex) => (
                     <li
                       key={pointIndex}
-                      className="text-darkGrey flex items-center justify-center"
+                      className="text-darkGrey text-base flex items-center justify-center"
                     >
                       <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
                       {point}
@@ -163,26 +164,26 @@ const CharpenteIndustrielleSpecs = () => {
                 Conformité et certifications
               </h4>
               <p
-                className="text-darkGrey leading-relaxed mb-6"
+                className="text-darkGrey text-base leading-relaxed mb-6"
               >
                 Toutes nos réalisations respectent scrupuleusement les normes en
                 vigueur et font l'objet d'un suivi qualité rigoureux.
               </p>
               <ul className="space-y-2">
                 <li
-                  className="text-darkGrey flex items-center"
+                  className="text-darkGrey text-base flex items-center"
                 >
                   <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
                   Eurocode 5 (calcul structures bois)
                 </li>
                 <li
-                  className="text-darkGrey flex items-center"
+                  className="text-darkGrey text-base flex items-center"
                 >
                   <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
                   DTU 31.1 et 31.2 (charpentes bois)
                 </li>
                 <li
-                  className="text-darkGrey flex items-center"
+                  className="text-darkGrey text-base flex items-center"
                 >
                   <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
                   NF EN 14081 (bois de structure)
@@ -192,9 +193,10 @@ const CharpenteIndustrielleSpecs = () => {
 
             <div className="bg-primary/10 rounded-xl p-6">
               <h5
-                className="font-bold text-primary text-lg mb-3"
+                className="font-bold text-primary text-lg mb-3 flex items-center gap-2"
               >
-                🏗️ Notre processus qualité
+                <FaCogs />
+                Notre processus qualité
               </h5>
               <div className="space-y-3">
                 <div className="flex items-center">
@@ -202,7 +204,7 @@ const CharpenteIndustrielleSpecs = () => {
                     1
                   </span>
                   <span
-                    className="text-darkGrey text-sm"
+                    className="text-darkGrey text-base"
                   >
                     Étude structure par ingénieur
                   </span>
@@ -212,7 +214,7 @@ const CharpenteIndustrielleSpecs = () => {
                     2
                   </span>
                   <span
-                    className="text-darkGrey text-sm"
+                    className="text-darkGrey text-base"
                   >
                     Contrôle qualité matériaux
                   </span>
@@ -222,7 +224,7 @@ const CharpenteIndustrielleSpecs = () => {
                     3
                   </span>
                   <span
-                    className="text-darkGrey text-sm"
+                    className="text-darkGrey text-base"
                   >
                     Suivi de chantier rigoureux
                   </span>

@@ -3,7 +3,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import ContactHero from "@/components/contact-page/ContactHero";
 import ContactForm from "@/components/contact-page/ContactForm";
 import ContactInfo from "@/components/contact-page/ContactInfo";

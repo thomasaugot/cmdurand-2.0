@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaRuler, FaHome, FaSun, FaExpand, FaHeart } from "react-icons/fa";
+import { FaStairs, FaEuroSign } from "react-icons/fa6";
+
 
 const AmenagementComblesProcess = () => {
   const steps = [
@@ -33,22 +36,22 @@ const AmenagementComblesProcess = () => {
     {
       title: "Hauteur minimum",
       description: "1,80m sous le faîtage pour un aménagement confortable",
-      icon: "📏",
+      icon: <FaRuler className="text-primary" />,
     },
     {
       title: "Isolation renforcée",
       description: "Performance thermique optimale été comme hiver",
-      icon: "🏠",
+      icon: <FaHome className="text-primary" />,
     },
     {
       title: "Accès sécurisé",
       description: "Escalier fixe aux normes pour un usage quotidien",
-      icon: "🪜",
+      icon: <FaStairs className="text-primary" />,
     },
     {
       title: "Éclairage naturel",
       description: "Fenêtres de toit ou lucarnes selon la configuration",
-      icon: "☀️",
+      icon: <FaSun className="text-primary" />,
     },
   ];
 
@@ -63,7 +66,7 @@ const AmenagementComblesProcess = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Notre méthode
           </h2>
@@ -114,7 +117,7 @@ const AmenagementComblesProcess = () => {
                   </h4>
 
                   <p
-                    className="text-darkGrey text-sm leading-relaxed"
+                    className="text-darkGrey text-base leading-relaxed"
                   >
                     {step.description}
                   </p>
@@ -157,14 +160,14 @@ const AmenagementComblesProcess = () => {
                 }}
                 className="bg-white rounded-xl p-6 text-center shadow-custom-light"
               >
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="text-3xl mb-3 flex justify-center">{item.icon}</div>
                 <h5
                   className="font-bold text-darkGrey mb-2"
                 >
                   {item.title}
                 </h5>
                 <p
-                  className="text-darkGrey text-sm leading-relaxed"
+                  className="text-darkGrey text-base leading-relaxed"
                 >
                   {item.description}
                 </p>
@@ -188,35 +191,41 @@ const AmenagementComblesProcess = () => {
           </h4>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
-              <div className="text-primary text-3xl mb-4">💰</div>
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaEuroSign className="text-primary" />
+              </div>
               <h5
                 className="font-bold text-darkGrey mb-2"
               >
                 Valeur ajoutée
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Augmentation significative de la valeur de votre bien
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
-              <div className="text-primary text-3xl mb-4">📐</div>
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaExpand className="text-primary" />
+              </div>
               <h5
                 className="font-bold text-darkGrey mb-2"
               >
                 Surface habitable
               </h5>
-              <p className="text-sm text-darkGrey">
+              <p className="text-darkGrey text-base">
                 Gain d'espace sans extension au sol
               </p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-custom-light">
-              <div className="text-primary text-3xl mb-4">🏡</div>
+              <div className="text-3xl mb-4 flex justify-center">
+                <FaHeart className="text-primary" />
+              </div>
               <h5
                 className="font-bold text-darkGrey mb-2"
               >
                 Confort de vie
               </h5>
-              <p className="text-darkGrey text-sm">
+              <p className="text-darkGrey text-base">
                 Nouveaux espaces adaptés à vos besoins
               </p>
             </div>

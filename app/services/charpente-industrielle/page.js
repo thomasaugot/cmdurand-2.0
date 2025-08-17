@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import CharpenteIndustrielleHero from "@/components/services-pages/charpente-industrielle-page/CharpenteIndustrielleHero";
 import CharpenteIndustrielleIntro from "@/components/services-pages/charpente-industrielle-page/CharpenteIndustrielleIntro";
@@ -12,7 +11,14 @@ import CharpenteIndustrielleCTA from "@/components/services-pages/charpente-indu
 function CharpenteIndustrielle() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = ["/assets/img/charpente-industrielle/img1.webp"];
+  const images = [
+    "/assets/img/charpente-industrielle/img1.webp",
+    "/assets/img/charpente-industrielle/Charpente_Industrielle_2021/chantier-1.jpg",
+    "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-2.jpg",
+    "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-5.jpg",
+    "/assets/img/charpente-industrielle/Charpente_Industrielle_Maison_2021/chantier-6.jpg",
+    "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-8.jpg",
+  ];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);
@@ -20,8 +26,6 @@ function CharpenteIndustrielle() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
-
       <CharpenteIndustrielleHero />
 
       <CharpenteIndustrielleIntro />

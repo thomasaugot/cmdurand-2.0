@@ -117,31 +117,31 @@ const Footer = () => {
                   <div className="space-y-3">
                     <Link
                       href="/"
-                      className="text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block"
+                      className="text-base sm:text-lg hover:text-primary transition-colors duration-300 block"
                     >
                       Accueil
                     </Link>
                     <Link
                       href="/services"
-                      className="text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block"
+                      className="text-base sm:text-lg hover:text-primary transition-colors duration-300 block"
                     >
                       Nos Services
                     </Link>
                     <Link
                       href="/realisations"
-                      className="text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block"
+                      className="text-base sm:text-lg hover:text-primary transition-colors duration-300 block"
                     >
                       Nos Réalisations
                     </Link>
                     <Link
                       href="/contact"
-                      className="text-sm sm:text-base lg:text-lg hover:text-primary transition-colors duration-300 block"
+                      className="text-base sm:text-lg hover:text-primary transition-colors duration-300 block"
                     >
                       Contactez-nous
                     </Link>
                     <button
                       onClick={() => setIsRecruitmentOpen(true)}
-                      className="text-sm sm:text-base lg:text-lg text-primary hover:text-white transition-colors duration-300 text-left block"
+                      className="text-base sm:text-lg text-primary hover:text-white transition-colors duration-300 text-left block"
                     >
                       Nous recrutons !
                     </button>
@@ -159,24 +159,24 @@ const Footer = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span
-                        className="text-sm sm:text-base lg:text-lg text-gray-300"
+                        className="text-base sm:text-lg text-gray-300"
                       >
                         Lundi - Vendredi
                       </span>
                       <span
-                        className="text-sm sm:text-base lg:text-lg text-white font-semibold"
+                        className="text-base sm:text-lg text-white font-semibold"
                       >
                         8h00 - 18h00
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span
-                        className="text-sm sm:text-base lg:text-lg text-gray-300"
+                        className="text-base sm:text-lg text-gray-300"
                       >
                         Samedi - Dimanche
                       </span>
                       <span
-                        className="text-sm sm:text-base lg:text-lg text-gray-400"
+                        className="text-base sm:text-lg text-gray-400"
                       >
                         Fermé
                       </span>
@@ -191,9 +191,9 @@ const Footer = () => {
                       </h4>
                       <div className="space-y-1">
                         <p
-                          className="text-sm sm:text-base lg:text-lg text-gray-300"
+                          className="text-base sm:text-lg text-gray-300"
                         >
-                          Loire-Atlantique / Bretagne-Sud
+                          Grand-Ouest
                         </p>
                       </div>
                     </div>
@@ -207,12 +207,12 @@ const Footer = () => {
               <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
                 <div className="text-center lg:text-left">
                   <p
-                    className="text-sm sm:text-base lg:text-lg mb-1 sm:mb-2"
+                    className="text-base sm:text-lg mb-1 sm:mb-2"
                   >
                     &copy; 2020 - {currentYear} Sarl Charpente Menuiserie Durand
                   </p>
                   <p
-                    className="text-xs sm:text-sm text-gray-400"
+                    className="text-base text-gray-400"
                   >
                     Site Web développé par{" "}
                     <a
@@ -229,13 +229,13 @@ const Footer = () => {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 text-center">
                   <Link
                     href="/politique-de-confidentialite"
-                    className="text-xs sm:text-sm lg:text-base hover:text-primary transition-colors duration-300"
+                    className="text-base hover:text-primary transition-colors duration-300"
                   >
                     Politique de Confidentialité
                   </Link>
                   <Link
                     href="/conditions-generales-utilisation"
-                    className="text-xs sm:text-sm lg:text-base hover:text-primary transition-colors duration-300"
+                    className="text-base hover:text-primary transition-colors duration-300"
                   >
                     Conditions Générales
                   </Link>
@@ -254,7 +254,7 @@ const Footer = () => {
         >
           <div className="bg-primary text-white px-3 sm:px-4 py-3 sm:py-4 rounded-l-lg sm:rounded-l-xl shadow-lg hover:bg-primary/90 transition-colors duration-300 flex items-center gap-2 sm:gap-3">
             <span
-              className="font-bold text-xs sm:text-sm hidden sm:block lg:block"
+              className="font-bold text-base hidden sm:block lg:block"
             >
               Suivez-nous
             </span>

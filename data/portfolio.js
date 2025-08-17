@@ -3,7 +3,7 @@ export const portfolioProjects = [
     id: "agrandissement-ossature-bois-2025",
     title: "Agrandissement Ossature Bois",
     year: "2025",
-    categories: ["extension", "charpente"],
+    categories: ["extension"],
     featured: true,
     images: [
       "/assets/img/extension-maison-ossature/Agrandissement_Ossature_Bois_2025/chantier-1.jpg",
@@ -61,7 +61,7 @@ export const portfolioProjects = [
     id: "charpente-traditionnelle-plancher-porteur-2024",
     title: "Charpente Traditionnelle avec Plancher Porteur",
     year: "2024",
-    categories: ["charpente", "menuiserie"],
+    categories: ["charpente", "autres"],
     featured: false,
     images: [
       "/assets/img/charpente-traditionnelle/Charpente_Traditionnelle_Plancher_Porteur_2024/chantier-1.jpg",
@@ -82,6 +82,9 @@ export const portfolioProjects = [
       "/assets/img/charpente-industrielle/Charpente_Industrielle_2021/chantier-1.jpg",
       "/assets/img/charpente-industrielle/Charpente_Industrielle_2021/chantier-2.jpg",
       "/assets/img/charpente-industrielle/Charpente_Industrielle_2021/chantier-3.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_2021/chantier-8.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_2021/chantier-5.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_2021/chantier-9.jpg",
     ],
   },
   {
@@ -96,18 +99,6 @@ export const portfolioProjects = [
     ],
   },
   {
-    id: "charpente-industrielle-zone-amenageable-2021",
-    title: "Charpente Industrielle avec Zone Aménageable",
-    year: "2021",
-    categories: ["charpente", "extension"],
-    featured: false,
-    images: [
-      "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-1.jpg",
-      "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-2.jpg",
-      "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-3.jpg",
-    ],
-  },
-  {
     id: "charpente-industrielle-maison-2021",
     title: "Charpente Industrielle sur Maison",
     year: "2021",
@@ -117,6 +108,9 @@ export const portfolioProjects = [
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Maison_2021/chantier-1.jpg",
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Maison_2021/chantier-2.jpg",
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Maison_2021/chantier-3.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_Maison_2021/chantier-4.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_Maison_2021/chantier-5.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_Maison_2021/chantier-6.jpg",
     ],
   },
   {
@@ -129,8 +123,26 @@ export const portfolioProjects = [
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-1.jpg",
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-2.jpg",
       "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-3.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-4.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-5.jpg",
+      "/assets/img/charpente-industrielle/Charpente_Industrielle_Carport_Traditionnel_2021/chantier-6.jpg",
     ],
   },
+  // {
+  //   id: "charpente-industrielle-zone-amenageable-2021",
+  //   title: "Charpente Industrielle avec Zone Aménageable",
+  //   year: "2021",
+  //   categories: ["charpente", "extension"],
+  //   featured: false,
+  //   images: [
+  //     "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-1.jpg",
+  //     "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-2.jpg",
+  //     "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-3.jpg",
+  //     "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-4.jpg",
+  //     "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-5.jpg",
+  //     "/assets/img/charpente-industrielle/Charpente_Industrielle_Zone_Amenageable_2021/chantier-6.jpg",
+  //   ],
+  // },
   {
     id: "carport-structure-bois-bardage-douglas-2020",
     title: "Carport Structure Bois Bardage Douglas",

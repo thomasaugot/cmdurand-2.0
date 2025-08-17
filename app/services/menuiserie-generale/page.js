@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import MenuiserieGeneraleHero from "@/components/services-pages/menuiserie-generale-page/MenuiserieGeneraleHero";
 import MenuiserieGeneraleIntro from "@/components/services-pages/menuiserie-generale-page/MenuiserieGeneraleIntro";
@@ -12,7 +11,7 @@ import MenuiserieGeneraleCTA from "@/components/services-pages/menuiserie-genera
 function MenuiserieGenerale() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const images = ["/assets/img/menuiserie-générale/img1.webp"];
+  const images = ["/assets/img/menuiserie-générale/img1.webp", "/assets/img/menuiserie-générale/Habillage_Escalier_Beton_Lamelle_Colle_Chene_2020/chantier-3.jpg", "/assets/img/menuiserie-générale/Parquet_Teck_Pont_Bateau_Salle_Bain_2020/chantier-1.jpg"];
 
   const handleToggleForm = () => {
     setIsFormOpen(!isFormOpen);
@@ -20,8 +19,6 @@ function MenuiserieGenerale() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
-
       <MenuiserieGeneraleHero />
 
       <MenuiserieGeneraleIntro />

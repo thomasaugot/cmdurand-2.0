@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaUmbrella, FaDollarSign, FaPalette, FaChartLine } from "react-icons/fa";
 
 const CarportAdvantages = () => {
   const advantages = [
@@ -7,23 +8,23 @@ const CarportAdvantages = () => {
       title: "Protection toutes saisons",
       description:
         "Votre véhicule à l'abri des intempéries, grêle, neige et UV",
-      icon: "☂️",
+      icon: <FaUmbrella className="text-primary" />,
     },
     {
       title: "Solution économique",
       description: "Alternative abordable au garage, installation rapide",
-      icon: "💰",
+      icon: <FaDollarSign className="text-primary" />,
     },
     {
       title: "Design personnalisable",
       description: "Styles variés pour s'harmoniser avec votre architecture",
-      icon: "🎨",
+      icon: <FaPalette className="text-primary" />,
     },
     {
       title: "Valorisation du bien",
       description:
         "Ajout fonctionnel qui augmente la valeur de votre propriété",
-      icon: "📈",
+      icon: <FaChartLine className="text-primary" />,
     },
   ];
 
@@ -95,7 +96,7 @@ const CarportAdvantages = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Avantages & Solutions
           </h2>
@@ -127,7 +128,7 @@ const CarportAdvantages = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 text-center hover:shadow-custom-heavy transition-shadow duration-300"
             >
-              <div className="text-4xl mb-4">{advantage.icon}</div>
+              <div className="text-4xl mb-4 flex justify-center">{advantage.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3"
@@ -136,7 +137,7 @@ const CarportAdvantages = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm leading-relaxed"
+                className="text-darkGrey text-base leading-relaxed"
               >
                 {advantage.description}
               </p>
@@ -157,38 +158,30 @@ const CarportAdvantages = () => {
           >
             Nos matériaux de construction
           </h4>
-
-          <div className="grid md:grid-cols-3 gap-6">
+          
+          <div className="grid md:grid-cols-3 gap-8">
             {materials.map((material, index) => (
               <motion.div
                 key={index}
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.6,
                   delay: index * 0.1,
                   ease: "easeOut",
                 }}
-                className="bg-white rounded-xl p-6 shadow-custom-light"
+                className="text-center"
               >
-                <h5
-                  className="font-bold text-primary text-lg mb-3"
-                >
-                  {material.name}
-                </h5>
-                <p
-                  className="text-darkGrey text-sm mb-4 italic"
-                >
-                  {material.usage}
-                </p>
+                <h5 className="font-bold text-primary text-lg mb-4">{material.name}</h5>
+                <p className="text-darkGrey text-base mb-4 italic">{material.usage}</p>
                 <ul className="space-y-2">
                   {material.benefits.map((benefit, benefitIndex) => (
                     <li
                       key={benefitIndex}
-                      className="text-darkGrey text-sm flex items-center"
+                      className="text-darkGrey text-base flex items-center justify-center"
                     >
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></span>
                       {benefit}
                     </li>
                   ))}
@@ -211,8 +204,8 @@ const CarportAdvantages = () => {
           >
             Configurations disponibles
           </h4>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div className="grid md:grid-cols-2 gap-6">
             {configurations.map((config, index) => (
               <motion.div
                 key={index}
@@ -232,15 +225,15 @@ const CarportAdvantages = () => {
                   {config.type}
                 </h5>
                 <p
-                  className="text-darkGrey text-sm mb-4 font-medium"
+                  className="text-darkGrey text-base mb-4 font-medium"
                 >
                   {config.description}
                 </p>
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {config.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="text-darkGrey text-xs flex items-center"
+                      className="text-darkGrey text-base flex items-center"
                     >
                       <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
                       {feature}

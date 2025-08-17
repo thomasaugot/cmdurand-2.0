@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import AmenagementComblesHero from "@/components/services-pages/amenagement-combles-page/AmenagementComblesHero";
 import AmenagementComblesIntro from "@/components/services-pages/amenagement-combles-page/AmenagementComblesIntro";
@@ -20,7 +19,6 @@ function AmenagementCombles() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
 
       <AmenagementComblesHero />
 

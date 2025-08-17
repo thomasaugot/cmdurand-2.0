@@ -170,9 +170,6 @@ function ProjectsSection() {
                       <FaMapMarkerAlt className="text-primary" size={14} />
                       <span className="text-sm">{project.year}</span>
                     </p>
-                    <p className="text-darkGrey/80 text-sm mb-3">
-                      {project.categories.join(" • ")}
-                    </p>
                     
                     {/* View Project Button */}
                     <div className="flex items-center justify-between">

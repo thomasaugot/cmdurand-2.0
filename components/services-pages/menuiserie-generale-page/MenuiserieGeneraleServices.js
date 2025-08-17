@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaCouch, FaHome, FaUtensils, FaPaintBrush, FaRuler, FaTree, FaStar, FaClock } from "react-icons/fa";
 
 const MenuiserieGeneraleServices = () => {
   const services = [
@@ -12,7 +13,7 @@ const MenuiserieGeneraleServices = () => {
         "Bureaux et tables",
         "Étagères murales",
       ],
-      icon: "🪑",
+      icon: <FaCouch className="text-primary" />,
     },
     {
       title: "Aménagements intérieurs",
@@ -23,7 +24,7 @@ const MenuiserieGeneraleServices = () => {
         "Escaliers intérieurs",
         "Habillages muraux",
       ],
-      icon: "🏠",
+      icon: <FaHome className="text-primary" />,
     },
     {
       title: "Cuisine & Salle de bain",
@@ -34,7 +35,7 @@ const MenuiserieGeneraleServices = () => {
         "Meubles vasques",
         "Éléments décoratifs",
       ],
-      icon: "🍳",
+      icon: <FaUtensils className="text-primary" />,
     },
     {
       title: "Décoration & Finitions",
@@ -45,7 +46,7 @@ const MenuiserieGeneraleServices = () => {
         "Cadres et encadrements",
         "Objets déco bois",
       ],
-      icon: "🎨",
+      icon: <FaPaintBrush className="text-primary" />,
     },
   ];
 
@@ -76,22 +77,22 @@ const MenuiserieGeneraleServices = () => {
     {
       title: "100% Sur mesure",
       description: "Chaque création est unique et adaptée à vos besoins précis",
-      icon: "📐",
+      icon: <FaRuler className="text-primary" />,
     },
     {
       title: "Matériaux nobles",
       description: "Sélection rigoureuse d'essences de bois de qualité",
-      icon: "🌳",
+      icon: <FaTree className="text-primary" />,
     },
     {
       title: "Finitions parfaites",
       description: "Attention aux détails et finitions de niveau artisanal",
-      icon: "✨",
+      icon: <FaStar className="text-primary" />,
     },
     {
       title: "Durabilité garantie",
       description: "Créations conçues pour durer et traverser le temps",
-      icon: "⏳",
+      icon: <FaClock className="text-primary" />,
     },
   ];
 
@@ -107,7 +108,7 @@ const MenuiserieGeneraleServices = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Nos services
           </h2>
@@ -138,7 +139,7 @@ const MenuiserieGeneraleServices = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 border-2 border-lightGrey/30 hover:border-primary transition-colors duration-300"
             >
-              <div className="text-4xl mb-4 text-center">{service.icon}</div>
+              <div className="text-4xl mb-4 text-center flex justify-center">{service.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3 text-center"
@@ -147,16 +148,16 @@ const MenuiserieGeneraleServices = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm mb-4 text-center leading-relaxed"
+                className="text-darkGrey text-base mb-4 text-center leading-relaxed"
               >
                 {service.description}
               </p>
 
-              <ul className="space-y-1">
+              <ul className="space-y-2">
                 {service.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="text-darkGrey text-xs flex items-center"
+                    className="text-darkGrey text-base flex items-center"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
                     {item}
@@ -214,7 +215,7 @@ const MenuiserieGeneraleServices = () => {
                     </h5>
 
                     <p
-                      className="text-darkGrey text-sm leading-relaxed"
+                      className="text-darkGrey text-base leading-relaxed"
                     >
                       {item.description}
                     </p>
@@ -258,14 +259,14 @@ const MenuiserieGeneraleServices = () => {
                 }}
                 className="bg-white rounded-xl p-6 shadow-custom-light text-center"
               >
-                <div className="text-3xl mb-4">{advantage.icon}</div>
+                <div className="text-3xl mb-4 flex justify-center">{advantage.icon}</div>
                 <h5
                   className="font-bold text-primary text-lg mb-2"
                 >
                   {advantage.title}
                 </h5>
                 <p
-                  className="text-darkGrey text-sm leading-relaxed"
+                  className="text-darkGrey text-base leading-relaxed"
                 >
                   {advantage.description}
                 </p>

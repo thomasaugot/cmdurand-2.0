@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaBolt, FaThermometerHalf, FaRulerCombined, FaSeedling } from "react-icons/fa";
 
 const ExtensionOssatureBenefits = () => {
   const benefits = [
@@ -7,24 +8,24 @@ const ExtensionOssatureBenefits = () => {
       title: "Rapidité de construction",
       description:
         "Montage en atelier puis assemblage sur site pour un chantier éclair",
-      icon: "⚡",
+      icon: <FaBolt className="text-primary" />,
     },
     {
       title: "Performance énergétique",
       description:
         "Isolation intégrée et étanchéité parfaite pour un confort optimal",
-      icon: "🌡️",
+      icon: <FaThermometerHalf className="text-primary" />,
     },
     {
       title: "Flexibilité architecturale",
       description: "Grandes portées et ouvertures possibles, design sur mesure",
-      icon: "🏗️",
+      icon: <FaRulerCombined className="text-primary" />,
     },
     {
       title: "Respect de l'environnement",
       description:
         "Matériau renouvelable, stockage carbone et faible empreinte",
-      icon: "🌱",
+      icon: <FaSeedling className="text-primary" />,
     },
   ];
 
@@ -136,7 +137,7 @@ const ExtensionOssatureBenefits = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 text-center hover:shadow-custom-heavy transition-shadow duration-300"
             >
-              <div className="text-4xl mb-4">{benefit.icon}</div>
+              <div className="text-4xl mb-4 flex justify-center">{benefit.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3"
@@ -145,7 +146,7 @@ const ExtensionOssatureBenefits = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm leading-relaxed"
+                className="text-darkGrey text-base leading-relaxed"
               >
                 {benefit.description}
               </p>
@@ -188,23 +189,23 @@ const ExtensionOssatureBenefits = () => {
                     {type.title}
                   </h5>
                   <span
-                    className="text-darkGrey text-xs font-medium bg-primary/10 px-2 py-1 rounded"
+                    className="text-darkGrey text-base font-medium bg-primary/10 px-2 py-1 rounded"
                   >
                     {type.surface}
                   </span>
                 </div>
 
                 <p
-                  className="text-darkGrey text-sm mb-4 leading-relaxed"
+                  className="text-darkGrey text-base mb-4 leading-relaxed"
                 >
                   {type.description}
                 </p>
 
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {type.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="text-darkGrey text-xs flex items-center"
+                      className="text-darkGrey text-base flex items-center"
                     >
                       <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
                       {feature}
@@ -263,7 +264,7 @@ const ExtensionOssatureBenefits = () => {
                     </h5>
 
                     <p
-                      className="text-darkGrey text-sm leading-relaxed"
+                      className="text-darkGrey text-base leading-relaxed"
                     >
                       {item.description}
                     </p>

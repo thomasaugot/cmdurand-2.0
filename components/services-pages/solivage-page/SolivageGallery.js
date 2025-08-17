@@ -1,31 +1,44 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { IoMdClose } from "react-icons/io";
-import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import ImageModal from "@/components/ImageModal";
 
 const SolivageGallery = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const openModal = (index) => {
-    setCurrentIndex(index);
-    setSelectedImage(images[index]);
+  const openImageModal = (imageIndex) => {
+    setCurrentImageIndex(imageIndex);
+    
+    setSelectedImage({
+      src: images[imageIndex],
+      alt: `Solivage porteur - Photo ${imageIndex + 1}`,
+      title: "Solivage porteur",
+      description: `Structure porteuse ${imageIndex + 1}/${images.length}`
+    });
   };
 
-  const closeModal = () => {
+  const closeImageModal = () => {
     setSelectedImage(null);
   };
 
   const navigateImage = (direction) => {
     let newIndex;
+
     if (direction === "next") {
-      newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+      newIndex = currentImageIndex < images.length - 1 ? currentImageIndex + 1 : 0;
     } else {
-      newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+      newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : images.length - 1;
     }
-    setCurrentIndex(newIndex);
-    setSelectedImage(images[newIndex]);
+
+    setCurrentImageIndex(newIndex);
+    
+    setSelectedImage({
+      src: images[newIndex],
+      alt: `Solivage porteur - Photo ${newIndex + 1}`,
+      title: "Solivage porteur",
+      description: `Structure porteuse ${newIndex + 1}/${images.length}`
+    });
   };
 
   return (
@@ -40,7 +53,7 @@ const SolivageGallery = ({ images }) => {
             className="text-center mb-16"
           >
             <h2
-              className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+              className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
             >
               Galerie
             </h2>
@@ -71,7 +84,7 @@ const SolivageGallery = ({ images }) => {
                   ease: "easeOut",
                 }}
                 className="cursor-pointer rounded-xl overflow-hidden bg-white shadow-custom-light group"
-                onClick={() => openModal(index)}
+                onClick={() => openImageModal(index)}
               >
                 <div className="relative aspect-[4/3]">
                   <Image
@@ -83,7 +96,7 @@ const SolivageGallery = ({ images }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-sm font-medium">
+                    <p className="text-base font-medium">
                       Cliquer pour agrandir
                     </p>
                   </div>
@@ -94,62 +107,11 @@ const SolivageGallery = ({ images }) => {
         </div>
       </section>
 
-      {/* Modal Image */}
-      {selectedImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/95 flex justify-center items-center z-50 p-4"
-          onClick={closeModal}
-        >
-          <div
-            className="relative max-w-[90vw] max-h-[90vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 z-10 text-white hover:text-lightGrey transition-colors bg-black/50 rounded-full p-2"
-            >
-              <IoMdClose size={24} />
-            </button>
-
-            <button
-              onClick={() => navigateImage("prev")}
-              className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white hover:text-lightGrey transition-colors bg-black/50 rounded-full p-2"
-            >
-              <GrFormPrevious size={32} />
-            </button>
-
-            <button
-              onClick={() => navigateImage("next")}
-              className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white hover:text-lightGrey transition-colors bg-black/50 rounded-full p-2"
-            >
-              <GrFormNext size={32} />
-            </button>
-
-            <div className="absolute bottom-4 left-4 bg-black/70 text-white p-4 rounded-lg backdrop-blur-sm">
-              <p className="text-sm">
-                Solivage {currentIndex + 1} sur {images.length}
-              </p>
-            </div>
-
-            <div className="relative">
-              <Image
-                src={selectedImage}
-                alt={`Solivage ${currentIndex + 1}`}
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: "auto", height: "auto" }}
-                className="max-w-full max-h-[90vh] object-contain rounded-lg"
-                priority
-                quality={95}
-              />
-            </div>
-          </div>
-        </motion.div>
-      )}
+      <ImageModal
+        selectedImage={selectedImage}
+        closeImageModal={closeImageModal}
+        navigateImage={navigateImage}
+      />
     </>
   );
 };

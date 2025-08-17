@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import SolivageHero from "@/components/services-pages/solivage-page/SolivageHero";
 import SolivageIntro from "@/components/services-pages/solivage-page/SolivageIntro";
@@ -24,8 +23,6 @@ function Solivage() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
-
       <SolivageHero />
 
       <SolivageIntro />

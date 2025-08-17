@@ -1,28 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaUmbrella, FaBullseye, FaLeaf, FaShieldAlt } from "react-icons/fa";
 
 const PreauFeatures = () => {
   const features = [
     {
       title: "Protection intégrale",
       description: "Abri efficace contre pluie, neige, vent et rayons UV",
-      icon: "☔",
+      icon: <FaUmbrella className="text-primary" />,
     },
     {
       title: "Polyvalence d'usage",
       description:
         "Espace modulable pour détente, jeux, réceptions ou stockage",
-      icon: "🎯",
+      icon: <FaBullseye className="text-primary" />,
     },
     {
       title: "Intégration paysagère",
       description: "Design harmonieux qui s'intègre à votre environnement",
-      icon: "🌿",
+      icon: <FaLeaf className="text-primary" />,
     },
     {
       title: "Solidité garantie",
       description: "Structure robuste conçue pour résister aux intempéries",
-      icon: "🏗️",
+      icon: <FaShieldAlt className="text-primary" />,
     },
   ];
 
@@ -97,7 +98,7 @@ const PreauFeatures = () => {
           className="text-center mb-16"
         >
           <h2
-            className={`font-roboto text-primary text-sm font-bold mb-4 uppercase tracking-wider`}
+            className={`font-roboto text-primary text-base font-bold mb-4 uppercase tracking-wider`}
           >
             Avantages
           </h2>
@@ -128,7 +129,7 @@ const PreauFeatures = () => {
               }}
               className="bg-white rounded-xl shadow-custom-medium p-6 text-center hover:shadow-custom-heavy transition-shadow duration-300"
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
+              <div className="text-4xl mb-4 flex justify-center">{feature.icon}</div>
 
               <h4
                 className="font-bold text-darkGrey text-lg mb-3"
@@ -137,7 +138,7 @@ const PreauFeatures = () => {
               </h4>
 
               <p
-                className="text-darkGrey text-sm leading-relaxed"
+                className="text-darkGrey text-base leading-relaxed"
               >
                 {feature.description}
               </p>
@@ -180,23 +181,23 @@ const PreauFeatures = () => {
                     {app.title}
                   </h5>
                   <span
-                    className="text-darkGrey text-xs font-medium bg-primary/10 px-2 py-1 rounded"
+                    className="text-darkGrey text-base font-medium bg-primary/10 px-2 py-1 rounded"
                   >
                     {app.surface}
                   </span>
                 </div>
 
                 <p
-                  className="text-darkGrey text-sm mb-4 leading-relaxed"
+                  className="text-darkGrey text-base mb-4 leading-relaxed"
                 >
                   {app.description}
                 </p>
 
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {app.characteristics.map((char, charIndex) => (
                     <li
                       key={charIndex}
-                      className="text-darkGrey text-xs flex items-center"
+                      className="text-darkGrey text-base flex items-center"
                     >
                       <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
                       {char}
@@ -255,7 +256,7 @@ const PreauFeatures = () => {
                     </h5>
 
                     <p
-                      className="text-darkGrey text-sm leading-relaxed"
+                      className="text-darkGrey text-base leading-relaxed"
                     >
                       {item.description}
                     </p>

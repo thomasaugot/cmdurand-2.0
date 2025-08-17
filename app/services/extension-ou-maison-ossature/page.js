@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ContactDetailsService from "@/components/ContactDetailsService";
 import PopupForm from "@/components/forms/PopupForm";
 import ExtensionOssatureHero from "@/components/services-pages/extension-ou-maison-ossature-page/ExtensionOssatureHero";
 import ExtensionOssatureIntro from "@/components/services-pages/extension-ou-maison-ossature-page/ExtensionOssatureIntro";
@@ -15,12 +14,10 @@ function ExtensionOssature() {
   const images = [
     "/assets/img/extension-maison-ossature/img1.webp",
     "/assets/img/extension-maison-ossature/img2.webp",
-    "/assets/img/extension-maison-ossature/img3.webp",
-    "/assets/img/extension-maison-ossature/img4.webp",
-    "/assets/img/extension-maison-ossature/img5.webp",
-    "/assets/img/extension-maison-ossature/img6.webp",
-    "/assets/img/extension-maison-ossature/img7.webp",
-    "/assets/img/extension-maison-ossature/img8.webp"
+    "/assets/img/extension-maison-ossature/Agrandissement_Ossature_Bois_2025/chantier-1.jpg",
+    "/assets/img/extension-maison-ossature/Bardage_Maison_Ossature_Bois_2024/chantier-1.jpg",
+    "/assets/img/extension-maison-ossature/Maison_Ossature_Bois_Charpente_2024/chantier-8.jpg",
+    "/assets/img/bardage/img3.webp",
   ];
 
   const handleToggleForm = () => {
@@ -29,8 +26,6 @@ function ExtensionOssature() {
 
   return (
     <div className="min-h-screen">
-      <ContactDetailsService />
-
       <ExtensionOssatureHero />
 
       <ExtensionOssatureIntro />
