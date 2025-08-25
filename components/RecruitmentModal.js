@@ -10,18 +10,112 @@ import {
   FaTools,
   FaUser,
   FaStar,
+  FaUpload,
+  FaTrash,
+  FaFile,
 } from "react-icons/fa";
 import { jobOffer, applicationForm } from "@/data/recruitmentData";
+import emailjs from "@emailjs/browser";
 
 const RecruitmentModal = ({ isOpen, closeModal }) => {
   const [activeTab, setActiveTab] = useState("offer");
   const [formData, setFormData] = useState({});
+  const [files, setFiles] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileUpload = (e) => {
+    const selectedFiles = Array.from(e.target.files);
+    const maxFiles = 5;
+    const maxSize = 10 * 1024 * 1024; // 10MB par fichier
+    const allowedTypes = [
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "text/plain",
+      "image/jpeg",
+      "image/png",
+    ];
+
+    // Vérifier le nombre total de fichiers
+    if (files.length + selectedFiles.length > maxFiles) {
+      setSubmitMessage(`Vous pouvez uploader maximum ${maxFiles} fichiers.`);
+      setTimeout(() => setSubmitMessage(""), 5000);
+      return;
+    }
+
+    const validFiles = [];
+    const errors = [];
+
+    selectedFiles.forEach((file) => {
+      if (!allowedTypes.includes(file.type)) {
+        errors.push(`${file.name}: Type de fichier non supporté`);
+      } else if (file.size > maxSize) {
+        errors.push(`${file.name}: Fichier trop volumineux (max 10MB)`);
+      } else {
+        validFiles.push({
+          file,
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          id: Date.now() + Math.random(),
+        });
+      }
+    });
+
+    if (errors.length > 0) {
+      setSubmitMessage(errors.join(", "));
+      setTimeout(() => setSubmitMessage(""), 5000);
+    }
+
+    if (validFiles.length > 0) {
+      setFiles((prev) => [...prev, ...validFiles]);
+    }
+
+    // Reset input
+    e.target.value = "";
+  };
+
+  const removeFile = (fileId) => {
+    setFiles((prev) => prev.filter((f) => f.id !== fileId));
+  };
+
+  const formatFileSize = (bytes) => {
+    if (bytes === 0) return "0 Bytes";
+    const k = 1024;
+    const sizes = ["Bytes", "KB", "MB", "GB"];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+  };
+
+  const getFileIcon = (fileType) => {
+    if (fileType.includes("pdf")) return "📄";
+    if (fileType.includes("word") || fileType.includes("document")) return "📝";
+    if (fileType.includes("image")) return "🖼️";
+    return "📎";
+  };
+
+  const convertFilesToBase64 = (files) => {
+    return Promise.all(
+      files.map((fileObj) => {
+        return new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            resolve({
+              name: fileObj.name,
+              type: fileObj.type,
+              content: e.target.result.split(",")[1], // Enlever le préfixe data:...;base64,
+            });
+          };
+          reader.readAsDataURL(fileObj.file);
+        });
+      })
+    );
   };
 
   const handleSubmit = async (e) => {
@@ -43,30 +137,49 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
       return;
     }
 
-    // Simulation envoi email
     try {
-      const mailtoLink = `mailto:${
-        jobOffer.contact.email
-      }?subject=${encodeURIComponent(
-        jobOffer.contact.subject
-      )}&body=${encodeURIComponent(
-        `Candidature de ${formData.firstName} ${formData.lastName}\n\n` +
-          `Email: ${formData.email}\n` +
-          `Téléphone: ${formData.phone}\n` +
-          `Expérience: ${formData.experience}\n\n` +
-          `Lettre de motivation:\n${formData.motivation}`
-      )}`;
+      let attachments = [];
 
-      window.location.href = mailtoLink;
+      if (files.length > 0) {
+        // Convertir les fichiers en base64 pour l'envoi par EmailJS
+        attachments = await convertFilesToBase64(files);
+      }
 
-      setSubmitMessage("Votre candidature va être envoyée !");
+      // Préparer les données pour EmailJS
+      const templateParams = {
+        to_name: "Melvyn",
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        experience: formData.experience,
+        message: formData.motivation,
+        attachments: attachments.map((att) => ({
+          name: att.name,
+          content: att.content,
+          contentType: att.type,
+        })),
+      };
+
+      // Envoi avec EmailJS (même structure que StaticForm)
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID_RECRUITMENT,
+        templateParams,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY || "tJE4pvbpWA5LNecY3"
+      );
+
+      setSubmitMessage("Candidature envoyée avec succès !");
       setFormData({});
+      setFiles([]);
       setTimeout(() => {
         setSubmitMessage("");
         closeModal();
       }, 2000);
     } catch (error) {
       setSubmitMessage("Erreur lors de l'envoi. Veuillez réessayer.");
+      console.error("Erreur:", error);
     }
 
     setIsSubmitting(false);
@@ -103,9 +216,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
               <FaTimes size={24} />
             </button>
 
-            <h2
-              className="text-2xl lg:text-3xl font-bold mb-2"
-            >
+            <h2 className="text-2xl lg:text-3xl font-bold mb-2">
               {jobOffer.title}
             </h2>
 
@@ -155,18 +266,14 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
               <div className="space-y-8">
                 {/* Description */}
                 <div>
-                  <p
-                    className="text-lg text-darkGrey leading-relaxed"
-                  >
+                  <p className="text-lg text-darkGrey leading-relaxed">
                     {jobOffer.description}
                   </p>
                 </div>
 
                 {/* Missions */}
                 <div>
-                  <h3
-                    className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2"
-                  >
+                  <h3 className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2">
                     <FaTools className="text-primary" />
                     Vos missions
                   </h3>
@@ -185,9 +292,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
 
                 {/* Profil */}
                 <div>
-                  <h3
-                    className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2"
-                  >
+                  <h3 className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2">
                     <FaUser className="text-primary" />
                     Profil recherché
                   </h3>
@@ -206,9 +311,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
 
                 {/* Avantages */}
                 <div>
-                  <h3
-                    className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2"
-                  >
+                  <h3 className="text-xl font-bold text-darkGrey mb-4 flex items-center gap-2">
                     <FaStar className="text-primary" />
                     Ce que nous offrons
                   </h3>
@@ -248,9 +351,7 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
                         field.type === "textarea" ? "md:col-span-2" : ""
                       }
                     >
-                      <label
-                        className="block text-sm font-semibold text-darkGrey mb-2"
-                      >
+                      <label className="block text-sm font-semibold text-darkGrey mb-2">
                         {field.label}{" "}
                         {field.required && (
                           <span className="text-red-500">*</span>
@@ -294,6 +395,69 @@ const RecruitmentModal = ({ isOpen, closeModal }) => {
                       )}
                     </div>
                   ))}
+                </div>
+
+                {/* Section Upload de fichiers */}
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-darkGrey mb-2">
+                    Documents (CV, lettre de motivation, etc.)
+                  </label>
+
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
+                    <input
+                      type="file"
+                      multiple
+                      accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png"
+                      onChange={handleFileUpload}
+                      className="hidden"
+                      id="file-upload"
+                    />
+                    <label
+                      htmlFor="file-upload"
+                      className="cursor-pointer flex flex-col items-center gap-2"
+                    >
+                      <FaUpload className="text-primary text-3xl" />
+                      <span className="text-darkGrey font-medium">
+                        Cliquez pour sélectionner des fichiers
+                      </span>
+                      <span className="text-sm text-gray-500">
+                        PDF, Word, images - Max 5 fichiers, 10MB chacun
+                      </span>
+                    </label>
+                  </div>
+
+                  {/* Liste des fichiers uploadés */}
+                  {files.length > 0 && (
+                    <div className="mt-4 space-y-2">
+                      {files.map((fileObj) => (
+                        <div
+                          key={fileObj.id}
+                          className="flex items-center justify-between bg-gray-50 p-3 rounded-lg"
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className="text-xl">
+                              {getFileIcon(fileObj.type)}
+                            </span>
+                            <div>
+                              <p className="text-sm font-medium text-darkGrey">
+                                {fileObj.name}
+                              </p>
+                              <p className="text-xs text-gray-500">
+                                {formatFileSize(fileObj.size)}
+                              </p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(fileObj.id)}
+                            className="text-red-500 hover:text-red-700 transition-colors"
+                          >
+                            <FaTrash />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Submit */}
