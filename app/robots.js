@@ -1,17 +1,5 @@
 export default function robots() {
-  const baseUrl = 'https://www.cmdurand.fr'
-  const isProduction = process.env.NODE_ENV === 'production'
-  
-  // Block everything in development/staging
-  if (!isProduction) {
-    return {
-      rules: {
-        userAgent: '*',
-        disallow: '/',
-      },
-      sitemap: `${baseUrl}/sitemap.xml`,
-    }
-  }
+  const baseUrl = 'https://www.cmdurand.fr/'
 
   // Production rules
   return {
